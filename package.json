@@ -7,7 +7,7 @@
     "async": "^2.6.2",
     "bluebird": "^3.5.4",
     "moment": "^2.24.0",
-    "mongoose": "^5.5.11",
+    "mongoose": "^5.7.5",
     "parallel-walker": "^0.1.2",
     "qrcode": "^1.3.3",
     "ssh-config": "^2.0.0-beta.1",
