@@ -1,0 +1,1 @@
+require('./weapon.js');

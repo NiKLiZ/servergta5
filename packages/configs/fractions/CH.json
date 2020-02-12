@@ -1,0 +1,441 @@
+{
+    "minemaized": false,
+    "vehs": [
+        { 
+            "model": "xls2", 
+            "pos": { 
+                "x": -498.6409606933594, 
+                "y": -177.7650146484375, 
+                "z": 37.5246467590332 
+            }, 
+            "heading": 210, 
+            "color": [ 
+                [ 
+                    255, 
+                    255, 
+                    255 
+                ], 
+                [ 
+                    255, 
+                    255, 
+                    255 
+                ] 
+            ], 
+            "rank": 0 
+            },
+            { 
+            "model": "xls2", 
+            "pos": { 
+            "x": -495.48321533203125, 
+            "y": -183.04647827148438, 
+            "z": 37.365478515625 
+            }, 
+            "heading": 210, 
+            "color": [ 
+            [ 
+            255, 
+            255, 
+            255 
+            ], 
+            [ 
+            255, 
+            255, 
+            255 
+            ] 
+            ], 
+            "rank": 0 
+            },
+            { 
+            "model": "stretch", 
+            "pos": { 
+            "x": -491.5341796875, 
+            "y": -190.88583374023438, 
+            "z": 36.91237258911133 
+            }, 
+            "heading": 209.8377227783203, 
+            "color": [ 
+            [ 
+            255, 
+            255, 
+            255 
+            ], 
+            [ 
+            255, 
+            255, 
+            255 
+            ] 
+            ], 
+            "rank": 0 
+            },
+            { 
+            "model": "cog552", 
+            "pos": { 
+            "x": -487.7026672363281, 
+            "y": -198.07327270507812, 
+            "z": 36.52903747558594 
+            }, 
+            "heading": 206.52517700195312, 
+            "color": [ 
+            [ 
+            255, 
+            255, 
+            255 
+            ], 
+            [ 
+            255, 
+            255, 
+            255 
+            ] 
+            ], 
+            "rank": 0 
+            },
+            { 
+            "model": "cognoscenti2", 
+            "pos": { 
+            "x": -483.8201599121094, 
+            "y": -205.1407012939453, 
+            "z": 36.421844482421875 
+            }, 
+            "heading": 210.4464111328125, 
+            "color": [ 
+            [ 
+            255, 
+            255, 
+            255 
+            ], 
+            [ 
+            255, 
+            255, 
+            255 
+            ] 
+            ], 
+            "rank": 0 
+            },
+            { 
+            "model": "schafter6", 
+            "pos": { 
+            "x": -479.3487548828125, 
+            "y": -211.76014709472656, 
+            "z": 36.17477798461914 
+            }, 
+            "heading": 211.22152709960938, 
+            "color": [ 
+            [ 
+            255, 
+            255, 
+            255 
+            ], 
+            [ 
+            255, 
+            255, 
+            255 
+            ] 
+            ], 
+            "rank": 0 
+            },
+            { 
+            "model": "schafter5", 
+            "pos": { 
+            "x": -474.9007873535156, 
+            "y": -219.2662353515625, 
+            "z": 35.94816589355469 
+            }, 
+            "heading": 211.23643493652344, 
+            "color": [ 
+            [ 
+            255, 
+            255, 
+            255 
+            ], 
+            [ 
+            255, 
+            255, 
+            255 
+            ] 
+            ], 
+            "rank": 0 
+            }
+    ],
+    "rank": [
+        {
+            "name": "Водитель",
+			"salary": 75,
+            "cuff":true,
+            "atach":true,
+            "clothes":[
+                [
+                    {
+                        "component":6,
+                        "drawable": 10
+                    },
+                    {
+                        "component":4,
+                        "drawable": 10
+                    },
+                    {
+                        "component":11,
+                        "drawable": 13
+                    },
+                    {
+                        "component":3,
+                        "drawable": 11
+                    },
+                    {
+                        "component":8,
+                        "drawable": 15
+                    },
+                    {
+                        "component":7,
+                        "drawable": 0
+                    }
+                ],
+                [
+                    {
+                        "component":6,
+                        "drawable": 29
+                    },
+                    {
+                        "component":11,
+                        "drawable": 79
+                    },
+                    {
+                        "component":4,
+                        "drawable": 6
+                    },
+                    {
+                        "component":3,
+                        "drawable": 1
+                    },
+                    {
+                        "component":8,
+                        "drawable": 15
+                    },
+                    {
+                        "component":7,
+                        "drawable": 0
+                    }
+                ]
+            ],
+            "props": [
+                [
+                    {
+                        "component":2,
+                        "drawable": 0
+                    }
+                ],
+                [
+                    {
+                        "component":2,
+                        "drawable": 0
+                    }
+                ]
+            ]
+        },
+        {
+            "name": "Охранник",
+			"salary": 75,
+            "cuff":true,
+            "atach":true,
+            "weapons": [
+                ["weapon_stungun",100],
+                ["weapon_heavypistol",100],
+                ["weapon_nightstick",100]
+            ],
+            "clothes":[
+                [
+                    {
+                        "component":11,
+                        "drawable": 4
+                    },
+                    {
+                        "component":6,
+                        "drawable": 10
+                    },
+                    {
+                        "component":4,
+                        "drawable": 35
+                    },
+                    {
+                        "component":8,
+                        "drawable": 21
+                    },
+                    {
+                        "component":3,
+                        "drawable": 4
+                    },
+                    {
+                        "component":7,
+                        "drawable": 0
+                    }
+                ],
+                [
+                    {
+                        "component":6,
+                        "drawable": 29
+                    },
+                    {
+                        "component":4,
+                        "drawable": 6
+                    },
+                    {
+                        "component":11,
+                        "drawable": 7
+                    },
+                    {
+                        "component":8,
+                        "drawable": 37
+                    },
+                    {
+                        "component":3,
+                        "drawable": 3
+                    },
+                    {
+                        "component":7,
+                        "drawable": 0
+                    }
+                ]
+            ],
+            "props": [
+                [
+                    {
+                        "component":2,
+                        "drawable": 0
+                    }
+                ],
+                [
+                    {
+                        "component":2,
+                        "drawable": 0
+                    }
+                ]
+            ]
+        },
+        {
+            "name": "Начальник Охраны",
+			"salary": 125,
+            "weapons": [
+                ["weapon_stungun",100],
+                ["weapon_nightstick",100],
+                ["weapon_heavypistol",100],
+                ["weapon_smg",100]
+            ],
+            "clothes":[
+                [
+                    {
+                        "component":11,
+                        "drawable": 31
+                    },
+                    {
+                        "component":6,
+                        "drawable": 10
+                    },
+                    {
+                        "component":4,
+                        "drawable": 35
+                    },
+                    {
+                        "component":8,
+                        "drawable": 69
+                    },
+                    {
+                        "component":3,
+                        "drawable": 4
+                    },
+                    {
+                        "component":7,
+                        "drawable": 0
+                    }
+                ],
+                [
+                    {
+                        "component":6,
+                        "drawable": 29
+                    },
+                    {
+                        "component":4,
+                        "drawable": 6
+                    },
+                    {
+                        "component":11,
+                        "drawable": 57
+                    },
+                    {
+                        "component":8,
+                        "drawable": 37
+                    },
+                    {
+                        "component":3,
+                        "drawable": 1
+                    },
+                    {
+                        "component":7,
+                        "drawable": 0
+                    }
+                ]
+            ],
+            "props": [
+                [
+                    {
+                        "component":2,
+                        "drawable": 0
+                    }
+                ],
+                [
+                    {
+                        "component":2,
+                        "drawable": 0
+                    }
+                ]
+            ]
+        },
+        {
+            "name": "Пресс-Секретарь",
+			"salary": 150,
+            "upWarn": true
+        },
+        {
+            "name": "Секретарь",
+			"salary": 175,
+            "giveAward": true,
+            "upWarn": true
+        },
+        {
+            "name": "Адвокат",
+			"salary": 200,
+            "upWarn": true,
+            "unJail": true,
+            "vievImprisoned": true,
+            "viewArticle": true
+        },
+        {
+            "name": "Прокурор",
+			"salary": 225,
+            "upWarn": true,
+            "downWarn":true
+        },
+        {
+            "name": "Советник",
+			"salary": 250,
+            "upWarn": true,
+            "downWarn":true
+        },
+        {
+            "name": "Зам мэра",
+			"salary": 300,
+            "upWarn": true,
+            "lastWarn": true,
+            "downWarn":true,
+            "clear": true,
+            "invite": true
+        },
+        {
+            "name": "Мэр",
+			"salary": 400,
+            "upWarn": true,
+            "lastWarn": true,
+            "downWarn":true,
+            "clear": true,
+            "invite": true
+        }
+    ]
+}

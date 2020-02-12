@@ -1,0 +1,482 @@
+[
+    {
+        "title": "Low Autoroom №1",
+        "blipId": 225 ,
+        "price": 200000,
+        "blipColor": 0,
+        "pos": {
+            "x": -946.2498168945312,
+            "y": -1192.5906982421875,
+            "z": 3.905250072479248
+        },
+        "buyVehicle": { 
+            "pos": { 
+                "x": -912.5071411132812, 
+                "y": -1167.0513916015625, 
+                "z": 4.490340709686279 
+            }, 
+            "heading": 208.77984619140625 
+        },             
+        "trunckerPos": {
+            "x": -909.2205810546875,
+            "y": -1183.5284423828125,
+            "z": 3.931542158126831
+        },
+        "stock": [
+            {
+                "model": "Blista",
+                "price": 5500
+            },
+            {
+                "model": "Blista2",
+                "price": 5900
+            },
+            {
+                "model": "Dilettante",
+                "price": 6200
+            },
+            {
+                "model": "Prairie",
+                "price": 7000
+            },
+            {
+                "model": "Rhapsody",
+                "price": 7100
+            },
+            {
+                "model": "Blade",
+                "price": 7600
+            },
+            {
+                "model": "Buccaneer",
+                "price": 7800
+            },
+            {
+                "model": "Chino",
+                "price": 7800
+            },
+            {
+                "model": "Dukes",
+                "price": 8050
+            },
+            {
+                "model": "Ellie",
+                "price": 8600
+            },
+            {
+                "model": "Faction",
+                "price": 9000
+            },
+            {
+                "model": "Gauntlet",
+                "price": 10000
+            },
+            {
+                "model": "Moonbeam",
+                "price": 7500
+            },
+            {
+                "model": "Phoenix",
+                "price": 10500
+            },
+            {
+                "model": "Picador",
+                "price": 6700
+            },
+            {
+                "model": "RatLoader",
+                "price": 5500
+            },
+            {
+                "model": "Ruiner",
+                "price": 13500
+            },
+            {
+                "model": "SabreGT",
+                "price": 8000
+            },
+            {
+                "model": "Stalion",
+                "price": 7000
+            },
+            {
+                "model": "Tampa",
+                "price": 6500
+            },
+            {
+                "model": "Vigero",
+                "price": 8900
+            },
+            {
+                "model": "Virgo",
+                "price": 6100
+            },
+            {
+                "model": "Virgo 2",
+                "price": 6000
+            },
+            {
+                "model": "Virgo 3",
+                "price": 6200
+            },
+            {
+                "model": "Voodoo",
+                "price": 5500
+            },
+            {
+                "model": "Voodoo2",
+                "price": 5000
+            },
+            {
+                "model": "Yosemite",
+                "price": 13000
+            },
+            {
+                "model": "bodhi2",
+                "price": 5000
+            },
+            {
+                "model": "Kalahari",
+                "price": 6000
+            },
+            {
+                "model": "Mesa",
+                "price": 6500
+            },
+            {
+                "model": "RancherXL",
+                "price": 7300
+            }
+        ]
+    },
+    {
+        "title": "Premium Autoroom №1",
+        "blipId": 523,
+        "price": 400000,
+        "blipColor": 0,
+        "pos": {
+            "x": -116.79503631591797,
+            "y": -1771.6058349609375,
+            "z": 28.85801887512207
+        },
+        "buyVehicle":  {
+            "pos": {
+                "x": -70.2260971069336,
+                "y": -1825.0032958984375,
+                "z": 26.560871124267578
+            },
+            "heading": 229.4768524169922
+        },
+        "trunckerPos": {
+            "x": -54.9796028137207,
+            "y": -1836.36669921875,
+            "z": 25.57866859436035
+        },
+        "stock": [
+            {
+                "model": "Exemplar",
+                "price": 26000
+            },
+            {
+                "model": "Felon",
+                "price": 25500
+            },
+            {
+                "model": "Jackal",
+                "price": 28000
+            },
+            {
+                "model": "Oracle",
+                "price": 20000
+            },
+            {
+                "model": "Dubsta2",
+                "price": 30000
+            },
+			{
+                "model": "Zion",
+                "price": 27000
+            },
+            {
+                "model": "Baller2",
+                "price": 37000
+            },
+            {
+                "model": "Huntley",
+                "price": 30000
+            },
+            {
+                "model": "dominator3",
+                "price": 35000
+            },
+            {
+                "model": "Patriot",
+                "price": 34000
+            },
+            {
+                "model": "XLS",
+                "price": 32000
+            },
+            {
+                "model": "Schafter2",
+                "price": 25000
+            }
+        ]
+    },
+    {
+        "title": "Hyper Autoroom №1",
+        "blipId": 531,
+        "price": 900000,
+        "blipColor": 0,
+        "pos": {
+            "x": -804.0094604492188,
+            "y": -224.41329956054688,
+            "z": 36.225425720214844
+        },
+        "buyVehicle": {
+            "pos": {
+                "x": -788.0140991210938,
+                "y": -197.2006072998047,
+                "z": 36.93450164794922
+            },
+            "heading": 299.949951171875
+        },
+        "trunckerPos": {
+            "x": -787.649169921875,
+            "y": -183.9777069091797,
+            "z": 36.283668518066406
+        },
+        "stock": [
+            {
+                "model": "zentorno",
+                "price": 122600
+            },
+            {
+                "model": "visione",
+                "price": 170000
+            },
+            {
+                "model": "vagner",
+                "price": 250000
+            },
+            {
+                "model": "turismor",
+                "price": 200000
+            },
+            {
+                "model": "sc1",
+                "price": 160000
+            },
+            {
+                "model": "prototipo",
+                "price": 220000
+            }
+        ]
+    },
+    {
+        "title": "Deluxe Autoroom №1",
+        "blipId": 669,
+        "price": 1000000,
+        "blipColor": 0,
+        "pos": {
+            "x": -534.4275512695312,
+            "y": 33.054954528808594,
+            "z": 43.57740020751953
+        },
+        "buyVehicle": {
+            "pos": {
+                "x": -530.1072998046875,
+                "y": 30.969167709350586,
+                "z": 52.199462890625
+            },
+            "heading": 356.1547546386719
+        },
+        "trunckerPos": {
+            "x": -519.844482421875,
+            "y": 66.00662231445312,
+            "z": 51.5847282409668
+        },
+        "stock": [
+            {
+                "model": "superd",
+                "price": 50000
+            },
+            {
+                "model": " windsor2",
+                "price": 57000
+            },
+            {
+                "model": " baller4",
+                "price": 43500
+            },
+            {
+                "model": " schafter5",
+                "price": 60000
+            },
+            {
+                "model": " alpha",
+                "price": 55600
+            },
+            {
+                "model": " bestiagts",
+                "price": 61000
+            },
+            {
+                "model": " carbonizzare",
+                "price": 66000
+            },
+            {
+                "model": " elegy2",
+                "price": 54000
+            },
+            {
+                "model": " italigto",
+                "price": 70000
+            },
+            {
+                "model": " furoregt",
+                "price": 50000
+            },
+            {
+                "model": " ninef2",
+                "price": 64000
+            },
+            {
+                "model": " schlagen",
+                "price": 74000
+            }
+        ]
+    },
+    {
+        "title": "Electric Cars Autoroom №1",
+        "blipId": 595,
+        "price": 700000,
+        "blipColor": 0,
+        "pos": {
+            "x": -640.3865356445312,
+            "y": 296.51776123046875,
+            "z": 81.46115112304688
+        },
+        "buyVehicle":  {
+            "pos": {
+                "x": -657.5059204101562,
+                "y": 294.6493835449219,
+                "z": 81.12786865234375
+            },
+            "heading": 159.74464416503906
+        },        
+        "trunckerPos": {
+            "x": -634.7859497070312,
+            "y": 279.2940673828125,
+            "z": 80.34967041015625
+        },
+        "stock": [
+            {
+                "model": "khamelion",
+                "price": 65000
+            },
+            {
+                "model": "cyclone",
+                "price": 70000
+            },
+            {
+                "model": "voltic",
+                "price": 68000
+            },
+            {
+                "model": "neon",
+                "price": 65000
+            },
+            {
+                "model": "raiden",
+                "price": 58000
+            },
+            {
+                "model": "surge",
+                "price": 30000
+            },
+            {
+                "model": "tezeract",
+                "price": 220000
+            }
+        ]
+    },
+    {
+        "title": "Motoroom №1",
+        "blipId": 661,
+        "price": 550000,
+        "blipColor": 0,
+        "pos": {
+            "x": 267.38653564453125,
+            "y": -1155.3792724609375,
+            "z": 28.289775848388672
+        },
+        "buyVehicle": {
+            "pos": {
+                "x": 253.0260772705078,
+                "y": -1157.8372802734375,
+                "z": 28.67035484313965
+            },
+            "heading": 91.48306274414062
+        },
+        "trunckerPos": {
+            "x": 249.43263244628906,
+            "y": -1155.29931640625,
+            "z": 28.21122932434082
+        },
+        "stock": [
+            {
+                "model": "Akuma",
+                "price": 19000
+            },
+            {
+                "model": "Avarus",
+                "price": 33000
+            },	
+            {
+                "model": "Bagger",
+                "price": 28000
+            },
+            {
+                "model": "Bati",
+                "price": 27500
+            },
+            {
+                "model": "Bf400",
+                "price": 13500
+            },
+            {
+                "model": "CarbonRS",
+                "price": 32200
+            },
+            {
+                "model": "Chimera",
+                "price": 36000
+            },
+            {
+                "model": "Cliffhanger",
+                "price": 28000
+            },
+            {
+                "model": "Daemon2",
+                "price": 23000
+            },
+            {
+                "model": "Defiler",
+                "price": 27500
+            },
+            {
+                "model": "Diablous",
+                "price": 27000
+            },
+            {
+                "model": "Diablous2",
+                "price": 29000
+            },
+            {
+                "model": "Blazer",
+                "price": 19000
+            }
+        ]
+    }
+]

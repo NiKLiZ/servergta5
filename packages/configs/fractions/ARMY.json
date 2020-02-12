@@ -1,0 +1,1791 @@
+{
+    "vehs": [
+        {
+            "model": "crusader",
+            "pos": {
+                "x": -2311.788818359375,
+                "y": 3266.180419921875,
+                "z": 32.3346061706543
+            },
+            "heading": 58.993038177490234,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "crusader",
+            "pos": {
+                "x": -2310.304443359375,
+                "y": 3268.6845703125,
+                "z": 32.3338737487793
+            },
+            "heading": 59.90011978149414,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "crusader",
+            "pos": {
+                "x": -2308.667724609375,
+                "y": 3271.64111328125,
+                "z": 32.33393096923828
+            },
+            "heading": 59.91426467895508,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "crusader",
+            "pos": {
+                "x": -2306.97802734375,
+                "y": 3274.61279296875,
+                "z": 32.33399200439453
+            },
+            "heading": 59.58858871459961,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "crusader",
+            "pos": {
+                "x": -2305.229248046875,
+                "y": 3277.61474609375,
+                "z": 32.33313751220703
+            },
+            "heading": 59.201725006103516,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "crusader",
+            "pos": {
+                "x": -2303.5673828125,
+                "y": 3280.603759765625,
+                "z": 32.333641052246094
+            },
+            "heading": 60.6388053894043,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "fbi2",
+            "pos": {
+                "x": -2309.755126953125,
+                "y": 3348.042724609375,
+                "z": 32.458763122558594
+            },
+            "heading": 148.55445861816406,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "fbi2",
+            "pos": {
+                "x": -2314.41943359375,
+                "y": 3350.73974609375,
+                "z": 32.45936584472656
+            },
+            "heading": 148.9954833984375,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "fbi2",
+            "pos": {
+                "x": -2318.84814453125,
+                "y": 3353.326416015625,
+                "z": 32.45693588256836
+            },
+            "heading": 149.10208129882812,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "fbi2",
+            "pos": {
+                "x": -2323.887451171875,
+                "y": 3356.3017578125,
+                "z": 32.45525360107422
+            },
+            "heading": 149.33782958984375,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "rumpo3",
+            "pos": {
+                "x": -2328.0751953125,
+                "y": 3358.833251953125,
+                "z": 33.03929138183594
+            },
+            "heading": 149.37237548828125,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "mesa3",
+            "pos": {
+                "x": -2353.5322265625,
+                "y": 3369.949951171875,
+                "z": 32.60302734375
+            },
+            "heading": 148.4616241455078,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "mesa3",
+            "pos": {
+                "x": -2357.153076171875,
+                "y": 3372.295654296875,
+                "z": 32.602962493896484
+            },
+            "heading": 148.8094482421875,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "mesa3",
+            "pos": {
+                "x": -2362.565673828125,
+                "y": 3375.52734375,
+                "z": 32.60206604003906
+            },
+            "heading": 148.89804077148438,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "insurgent2",
+            "pos": {
+                "x": -2384.618896484375,
+                "y": 3365.382080078125,
+                "z": 32.7620735168457
+            },
+            "heading": 330.3271484375,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "insurgent2",
+            "pos": {
+                "x": -2388.41796875,
+                "y": 3358.8662109375,
+                "z": 32.76149368286133
+            },
+            "heading": 330.2990417480469,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "insurgent2",
+            "pos": {
+                "x": -2393.551025390625,
+                "y": 3361.262451171875,
+                "z": 32.761474609375
+            },
+            "heading": 331.40374755859375,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "insurgent2",
+            "pos": {
+                "x": -2389.651611328125,
+                "y": 3368.059814453125,
+                "z": 32.76141357421875
+            },
+            "heading": 332.1561584472656,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "besra",
+            "pos": {
+                "x": -2287.358154296875,
+                "y": 3181.996337890625,
+                "z": 33.579715728759766
+            },
+            "heading": 239.0529327392578,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "besra",
+            "pos": {
+                "x": -2264.296142578125,
+                "y": 3223.837158203125,
+                "z": 33.57829666137695
+            },
+            "heading": 239.67184448242188,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "lazer",
+            "pos": {
+                "x": -2767.8525390625,
+                "y": 3308.009765625,
+                "z": 33.31560134887695
+            },
+            "heading": 240.09616088867188,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "savage",
+            "pos": {
+                "x": -2142.2734375,
+                "y": 3023.240966796875,
+                "z": 33.31812286376953
+            },
+            "heading": 331.2212829589844,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "savage",
+            "pos": {
+                "x": -2014.6312255859375,
+                "y": 2945.718505859375,
+                "z": 33.30865478515625
+            },
+            "heading": 333.1468811035156,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "cargobob4",
+            "pos": {
+                "x": -2188.228271484375,
+                "y": 3169.9853515625,
+                "z": 33.27122497558594
+            },
+            "heading": 331.74359130859375,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "cargobob4",
+            "pos": {
+                "x": -1928.8477783203125,
+                "y": 3018.691650390625,
+                "z": 33.271385192871094
+            },
+            "heading": 331.6460876464844,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "buzzard2",
+            "pos": {
+                "x": -2121.665771484375,
+                "y": 3135.144775390625,
+                "z": 32.70884323120117
+            },
+            "heading": 332.70477294921875,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "buzzard2",
+            "pos": {
+                "x": -2057.3623046875,
+                "y": 3095.53271484375,
+                "z": 32.709022521972656
+            },
+            "heading": 330.3176574707031,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "buzzard2",
+            "pos": {
+                "x": -1991.6036376953125,
+                "y": 3059.5517578125,
+                "z": 32.709075927734375
+            },
+            "heading": 331.0419921875,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "titan",
+            "pos": {
+                "x": -1839.37353515625,
+                "y": 2981.975341796875,
+                "z": 33.65146255493164
+            },
+            "heading": 60.14665603637695,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "luxor",
+            "pos": {
+                "x": -2131.775634765625,
+                "y": 3267.73681640625,
+                "z": 33.41410446166992
+            },
+            "heading": 150.20526123046875,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "barracks3",
+            "pos": {
+                "x": -2428.481201171875,
+                "y": 3303.650634765625,
+                "z": 32.59733200073242
+            },
+            "heading": 239.34481811523438,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "barracks3",
+            "pos": {
+                "x": -2425.474609375,
+                "y": 3308.88232421875,
+                "z": 32.59721755981445
+            },
+            "heading": 239.87295532226562,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "barracks3",
+            "pos": {
+                "x": -2418.530517578125,
+                "y": 3322.58203125,
+                "z": 32.448699951171875
+            },
+            "heading": 240.27996826171875,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "barracks3",
+            "pos": {
+                "x": -2415.376708984375,
+                "y": 3327.8681640625,
+                "z": 32.448143005371094
+            },
+            "heading": 240.12454223632812,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "barracks3",
+            "pos": {
+                "x": -2412.334228515625,
+                "y": 3333.325439453125,
+                "z": 32.44826126098633
+            },
+            "heading": 239.964111328125,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "barracks3",
+            "pos": {
+                "x": -2200.679443359375,
+                "y": 3304.17431640625,
+                "z": 32.43582534790039
+            },
+            "heading": 178.7346954345703,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "barracks3",
+            "pos": {
+                "x": -2193.7431640625,
+                "y": 3304.157470703125,
+                "z": 32.43465805053711
+            },
+            "heading": 180.47982788085938,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "barracks3",
+            "pos": {
+                "x": -2187.671630859375,
+                "y": 3303.972900390625,
+                "z": 32.43346405029297
+            },
+            "heading": 179.8612823486328,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "predator",
+            "pos": {
+                "x": 3083.108642578125,
+                "y": -4803.1982421875,
+                "z": 0.7036281824111938
+            },
+            "heading": 196.31448364257812,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "predator",
+            "pos": {
+                "x": 3094.1123046875,
+                "y": -4800.5634765625,
+                "z": 0.7367236614227295
+            },
+            "heading": 196.8970947265625,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "dinghy4",
+            "pos": {
+                "x": 3097.2392578125,
+                "y": -4813.52392578125,
+                "z": 0.3910628855228424
+            },
+            "heading": 194.25595092773438,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "dinghy4",
+            "pos": {
+                "x": 3086.155517578125,
+                "y": -4816.6162109375,
+                "z": 0.31326740980148315
+            },
+            "heading": 198.57955932617188,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "buzzard2",
+            "pos": {
+                "x": 3072.417236328125,
+                "y": -4615.21337890625,
+                "z": 15.16044807434082
+            },
+            "heading": 102.50506591796875,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "buzzard2",
+            "pos": {
+                "x": 3045.886962890625,
+                "y": -4761.74365234375,
+                "z": 15.16004467010498
+            },
+            "heading": 283.7200012207031,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        },
+        {
+            "model": "buzzard2",
+            "pos": {
+                "x": 3118.611328125,
+                "y": -4789.25146484375,
+                "z": 15.160323143005371
+            },
+            "heading": 84.0289306640625,
+            "color": [
+                210,
+                183,
+                115
+            ],
+            "rank": 0
+        }
+    ],
+    "rank": [
+        {
+            "name": "Рекрут",
+			"salary": 50,
+            "weapons": [
+                
+            ],
+            "clothes": {
+                "base": [
+                    [ 
+                        {
+                            "component": 11,
+                            "drawable": 97,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 9,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 72,
+							"color": 12
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 88,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 30,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 36,
+							"color": 0
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Рядовой",
+			"salary": 75,
+            "weapons": [
+
+            ],
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 97,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 9,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 72,
+							"color": 12
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 88,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 30,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 36,
+							"color": 0
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Специалист",
+			"salary": 100,
+            "weapons": [
+
+            ],
+            "clothes": {
+                "base": [
+                    [ 
+                        {
+                            "component": 11,
+                            "drawable": 97,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 9,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 72,
+							"color": 12
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 88,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 30,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 36,
+							"color": 0
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Капрал",
+			"salary": 125,
+			"cuff":true,
+            "weapons": [
+
+            ],
+            "clothes": {
+                "base": [
+                    [ 
+                        {
+                            "component": 11,
+                            "drawable": 97,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 9,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 72,
+							"color": 12
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 88,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 30,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 36,
+							"color": 0
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Сержант",
+			"salary": 150,
+			"cuff":true,
+            "weapons": [
+
+            ],
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 97,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 9,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 72,
+							"color": 12
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 88,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 30,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 36,
+							"color": 0
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Штаб-сержант",
+			"salary": 175,
+			"cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                        {
+                            "component": 11,
+                            "drawable": 97,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 9,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 72,
+							"color": 12
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 88,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 30,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 36,
+							"color": 0
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Первый сержант",
+			"salary": 175,
+			"cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 98,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 9,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 72,
+							"color": 12
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 54,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 30,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 36,
+							"color": 0
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Команд-сержант-майор",
+			"salary": 175,
+			"cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 98,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 9,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 72,
+							"color": 12
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 54,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 30,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 36,
+							"color": 0
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Сержант-майор СВ",
+			"salary": 175,
+			"cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 98,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 47,
+							"color": 0
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 72,
+							"color": 12
+                        },
+                        {
+                            "prop": 0,
+                            "drawable": 108
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 54,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 30,
+							"color": 1
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 25,
+							"color": 14
+                        },
+                        {
+                            "prop": 0,
+                            "drawable": 107
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Уоернер офицер 1",
+			"salary": 200,
+			"cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 98,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 47,
+							"color": 0
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 54,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 102,
+							"color": 0
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 66,
+							"color": 14
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Уоернер офицер 2",
+			"salary": 200,
+			"cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                      {
+                            "component": 11,
+                            "drawable": 98,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 47,
+							"color": 0
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 54,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 102,
+							"color": 0
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 66,
+							"color": 14
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Уоернер офицер 3",
+			"salary": 225,
+			"cuff":true,
+            "weapons": [
+
+            ],
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 98,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 47,
+							"color": 0
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 54,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 102,
+							"color": 0
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 66,
+							"color": 14
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Уоернер офицер 4",
+			"salary": 225,
+			"cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 98,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 47,
+							"color": 0
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 54,
+							"color": 0
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 102,
+							"color": 0
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 66,
+							"color": 14
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Лейтенант",
+			"salary": 250,
+			"cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 222,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 86,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 232,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 89,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 25,
+							"color": 14
+                        }
+                    ]
+                ]
+            }
+        },
+		{
+            "name": "Второй лейтенант",
+			"salary": 250,
+			"cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 222,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 86,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 232,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 89,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 25,
+							"color": 14
+                        }
+                    ]
+                ]
+            }
+        },
+		{
+            "name": "Лейтенант",
+			"salary": 250,
+			"cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 222,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 86,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 232,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 89,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 25,
+							"color": 14
+                        }
+                    ]
+                ]
+            }
+        },
+		{
+            "name": "Капитан",
+			"salary": 250,
+			"cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 222,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 86,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 232,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 89,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 25,
+							"color": 14
+                        }
+                    ]
+                ]
+            }
+        },
+		{
+            "name": "Майор",
+			"salary": 275,
+			"invite": true,
+			"cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                        {
+                            "component": 11,
+                            "drawable": 221,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 86,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        },
+                        {
+                            "prop": 0,
+                            "drawable": 106,
+							"color": 4
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 231,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 89,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 66,
+							"color": 14
+                        },
+                        {
+                            "prop": 0,
+                            "drawable": 10,
+							"color": 4
+                        }
+                    ]
+                ]
+            }
+        },
+		{
+            "name": "Подполковник",
+			"salary": 275,
+			"upWarn": true,
+            "lastWarn": true,
+            "clear": true,
+			"uninvite": true,
+            "invite": true,
+            "downWarn":true,
+			"FRang": true,
+            "cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                        {
+                            "component": 11,
+                            "drawable": 221,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 86,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        },
+                        {
+                            "prop": 0,
+                            "drawable": 103,
+							"color": 0
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 231,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 89,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 66,
+							"color": 14
+                        },
+                        {
+                            "prop": 0,
+                            "drawable": 58
+                        }
+                    ]
+                ]
+            }
+        },
+		{
+            "name": "Полковник",
+			"salary": 300,
+	        "upWarn": true,
+            "lastWarn": true,
+            "clear": true,
+			"FRang": true,
+			"uninvite": true,
+            "invite": true,
+            "downWarn":true,
+            "cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                       {
+                            "component": 11,
+                            "drawable": 221,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 86,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        },
+                        {
+                            "prop": 0,
+                            "drawable": 107,
+							"color": 4
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 231,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 89,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 66,
+							"color": 14
+                        },
+                        {
+                            "prop": 4,
+                            "drawable": 106
+                        }
+                    ]
+                ]
+            }
+        },
+		{
+            "name": "Бригадирный Генерал",
+			"salary": 325,
+		    "upWarn": true,
+            "lastWarn": true,
+            "clear": true,
+			"uninvite": true,
+			"FRang": true,
+            "invite": true,
+            "downWarn":true,
+            "cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                        {
+                            "component": 11,
+                            "drawable": 221,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 86,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        },
+                        {
+                            "prop": 0,
+                            "drawable": 114,
+							"color": 15
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 231,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 89,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 66,
+							"color": 14
+                        },
+                        {
+                            "prop": 0,
+                            "drawable": 113,
+							"color": 15
+                        }
+                    ]
+                ]
+            }
+        },
+		{
+            "name": "Генерал Армии",
+			"salary": 350,
+		    "upWarn": true,
+            "lastWarn": true,
+            "clear": true,
+			"uninvite": true,
+			"FRang": true,
+            "invite": true,
+            "downWarn":true,
+            "cuff":true,
+            "weapons": [
+
+            ]
+            ,
+            "clothes": {
+                "base": [
+                    [ 
+                        {
+                            "component": 11,
+                            "drawable": 221,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 86,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 63,
+							"color": 0
+                        },
+                        {
+                            "prop": 0,
+                            "drawable": 113,
+							"color": 5
+                        }
+                    ],
+                    [
+                        {
+                            "component": 11,
+                            "drawable": 231,
+							"color": 4
+                        },
+                        {
+                            "component": 4,
+                            "drawable": 89,
+							"color": 4
+                        },
+                        {
+                            "component": 6,
+                            "drawable": 66,
+							"color": 14
+                        },
+                        {
+                            "prop": 0,
+                            "drawable": 112,
+							"color": 5
+                        }
+                    ]
+                ]
+            }
+        }
+    ]
+}

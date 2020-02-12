@@ -1,0 +1,78 @@
+
+.shop{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 40vw;
+	max-height: 100vh;
+	z-index: 5;
+}
+.shop .title{
+	position: relative;
+	background-color: #344491;
+	padding: 10px 0; 
+}
+.shop .title h1{
+	font-family: "Muller Medium";
+	margin: 0;
+	color: #fff;
+	text-align: center;
+	font-size: 1.2em;
+}
+.shop .title .exit{
+	position: absolute;
+	top: 15px;
+	color: #d4d7e8;
+	right: 25px;
+}
+.shop .main{
+	background-color: rgba(0,0,0,.7);
+	display: flex;
+}
+.shop .categories{
+	width: 13vw;
+	float: left;
+	display: inline-block;
+
+}
+.shop .categories .categorie{
+	padding: 10px 0; 
+	margin: 0;
+	color: #fff;
+	text-align: center;
+	font-size: 1.2em;
+}
+.shop .categories .categorie.active{
+	color: #26388b;
+	background-color: #fff;
+}
+.shop .items {
+	width: 27vw;
+	float: right;
+	display: inline-block;
+	min-height: 40vh;
+}
+.shop .item {
+	display: inline-block;
+	vertical-align: bottom;
+	width: 7vw;
+	height: 7vw;
+	margin: 0.8vw;
+	position: relative;
+	background-color: #fff;
+
+}
+.shop .item .price{
+	position: absolute;
+	font-family: "Muller Medium";
+	bottom: 0px;
+	background-color: #26388b;
+	color: #fff;
+	width: 70%;
+	text-align: center;
+	right: 0px;
+}
+.shop .items .item img{
+	width: 80%;
+	padding: 10%;
+}

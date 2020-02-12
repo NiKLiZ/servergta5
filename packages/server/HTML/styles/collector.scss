@@ -1,0 +1,119 @@
+.collector{
+    background-color: rgba(31, 33, 43, 0.75);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    .collector-menu{
+        font-family: "Muller Regular";
+        width: 50vw;
+        height: 70vh;
+        margin: 20vh auto;
+        position: relative;
+        .exit{
+            position: absolute;
+            top: 0px;
+            font-size: 2em;
+            color: #6a6c6f;
+            right: 0px;
+        }
+        h1{
+            font-family: "Muller Bold";
+            font-size: 1.7em;
+            color: #fff;
+        }
+        h2{
+            font-family: "Muller Regular";
+            font-size: 1.4em;
+            color: #8b8b8d;
+            margin: 10px 0;
+        }
+        .select{
+            width: 40%;
+            float: left;
+            .lobbys{
+                height: 50vh;
+                .lobby{
+                    color: #afaeae;
+                    background-color: #f4f4f5;
+                    padding: 16px 12px;
+                    font-family: "Muller Bold";
+                    margin: 3px 0;
+                    .name{
+                        text-align: left;
+                        display: inline-block;
+                        font-size: 1.2em;
+                    }
+                    .players{
+                        float: right;
+                        span{
+                            color: #000000;
+                            font-size: 1.1em;
+                        }
+                        i{
+                            font-size: 1.1em;
+                            color: #9b9b9b;
+                        }
+        
+                    }
+                    &.active{
+                        background-color: #344491;
+                        color: #ffffff;
+                        span{
+                            color: #ffffff;
+                        }
+                        i{
+                            color: #ffffff;
+    
+                        }
+                    }
+                }
+            }
+        }
+        .infoLobby{
+            margin-left: 25px;
+            width: calc(60% - 25px);
+            float: left;
+            .info{
+                height: calc(50vh - 30px);
+                background-color: #f4f4f4;
+                padding: 15px 20px;
+                position: relative;
+                h3{
+                    font-size: 2em;
+                    font-family: "Muller Bold";
+                }
+                .players{
+                    margin-top: 10px;
+                    .player{
+                        font-size: 1.2em;
+                        .nick{
+                            display: inline-block;
+                        }
+                        .mission{
+                            display: inline-block;
+                            margin-right: 10px;
+                            color: #aeaeae;
+                        }
+                        .del{
+                            display: inline-block;
+                            margin-right: 10px;
+                            color: #be1818; 
+                        }
+                    }
+                }
+                .start{
+                    background-color: #344491;
+                    color: #ffffff;
+                    font-family: "Muller Bold";
+                    font-size: 1.2em;
+                    padding: 10px 15px;
+                    position: absolute;
+                    border-radius: 5px;
+                    bottom: 30px;
+                    right: 20px;
+                }
+            }
+        }
+    }
+}

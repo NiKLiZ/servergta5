@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'Proxima Nova Regular';
+    src: url('../fonts/ProximaNova/ProximaNova-Regular.eot');
+    src: url('../fonts/ProximaNova/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
+    url('../fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova Bold';
+    src: url('../fonts/ProximaNova/ProximaNova-Bold.eot');
+    src: url('../fonts/ProximaNova/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
+    url('../fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+    src: url('../fonts/montserrat/montserrat-v12-latin_cyrillic-regular.eot');
+    src: url('../fonts/montserrat/montserrat-v12-latin_cyrillic-regular?#iefix') format('embedded-opentype'),
+    url('../fonts/montserrat/montserrat-v12-latin_cyrillic-regular.woff') format('woff'),
+    url('../fonts/montserrat/montserrat-v12-latin_cyrillic-regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: "HouseIndustries"; 
+	src: url("../fonts/CopyrightHouseIndustries.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+
+@font-face {
+	font-family: "Muller Medium"; 
+	src: url("../fonts/MullerMedium.otf"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+@font-face {
+	font-family: "Muller Bold"; 
+	src: url("../fonts/MullerBold.otf"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+@font-face {
+	font-family: "Muller Regular"; 
+	src: url("../fonts/MullerRegular.otf"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+@font-face {
+	font-family: "Muller BoldI talic"; 
+	src: url("../fonts/MullerBoldItalic.otf"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+@font-face {
+	font-family: "Myriad"; 
+	src: url("../fonts/MyriadProRegular.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+@font-face {
+	font-family: "Autograf"; 
+	src: url("../fonts/Autograf_PersonalUseOnly.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+@font-face {
+	font-family: "TickingTimebomb"; 
+	src: url("../fonts/TickingTimebomb/TickingTimebombBB.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+@font-face {
+	font-family: "TickingTimebomb Ital"; 
+	src: url("../fonts/TickingTimebomb/TickingTimebombBB_ital.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+@font-face {
+	font-family: "NTHarmonica"; 
+	src: url("../fonts/NTHarmonica.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 

@@ -1,0 +1,854 @@
+.donate{
+    background-color: rgba(0,0,0,.70);
+    width: 100vw;
+    height: 102vh;
+    position: absolute;
+    font-family: 'Roboto';
+    .overlay{
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,.50);
+        padding-top: 30vmin;
+        position: absolute;
+        z-index: 1;
+        .alert{
+            text-align: center;
+            color: #ff7c7c;
+        }
+        .content{
+            background-color: #20232e;
+            width: 30vh;
+            margin: 0 auto;
+            padding: 30px 95px;
+            .exit{
+                color: #979797;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 1.2em;
+            }
+            h1{
+                color: #ffffff;
+                font-size: 16px;
+                text-align: center;
+            }
+            .coin{
+                color: #ffd949;
+                text-align: center;
+                span{
+                    display: inline-block;
+                    font-size: 18px;
+                }
+                img{
+                    display: inline-block;
+                    width: 14px;
+                    line-height: 18px;
+                }
+                margin: 20px auto;
+            }
+            .buttons{
+                display: flex;
+                justify-content: center;
+                .but{
+                    display: table;
+                    padding: 10px 20px;
+                    text-align: center;
+                    color: #ffffff;
+                    background-color: #14171f;
+                    display: inline-block;
+                    margin: 0 10px;
+                    position: relative;
+                    background-size: cover;
+                    border: 1px solid transparent;
+                    box-sizing: border-box;
+                    &:hover{
+                        border: 1px solid transparent;
+                        -webkit-border-image: -webkit-linear-gradient(right top, #FFD949, rgba(255, 217, 73, 0), #FFD949);
+                        border-image-slice: 1;
+                        box-sizing: border-box;
+                        .bgcActive{
+                            display: block;
+                            position: absolute;
+                            height: 100%;
+                            width: 100%;
+                            left: 0;
+                            top: 0;
+                            background: url(../img/donate/bgActiveItem.png);
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                    .bgcActive{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .character{
+        position: absolute;
+        width: 70vmin;
+        bottom: 0;
+        left: 0;
+        &.character2{
+            width: 30vmin;
+        }
+        &.character3{
+            width: 45vmin;
+        }
+    }
+    .content{
+        position: relative;
+        padding: 0 20vmin;
+        padding-top: 7vmin;
+        .toolbar{
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            color: #ffffff;
+            border-bottom: 2px solid rgba(255,255,255,0.15);
+            box-sizing: border-box;
+            .left{
+                display: inline-block;
+                width: 20%;
+                text-align: left;
+                .coin{
+                    color: #ffd949;
+                    float: left;
+                    span{
+                        display: inline-block;
+                        font-size: 18px;
+                    }
+                    img{
+                        display: inline-block;
+                        width: 14px;
+                        line-height: 18px;
+                    }
+                }
+                .money{
+                    float: left;
+                    margin-left: 20px;
+                    font-size: 18px;
+                    color: #1ec743;
+                }
+            }
+            .center{
+                width: 60%;
+                display: inline-block;
+                text-align: center;
+                .item{
+                    display: inline-block;
+                    padding: 10px 20px;
+                    &.premium{
+                        color: #ffd949;
+                        img{
+                            display: inline-block;
+                            width: 12px;
+                            line-height: 18px;
+                            vertical-align: sub;
+                            margin-right: 5px;
+                        }
+                    }
+                    &.active.premium{
+                        color: #ffd949;
+                        border-bottom: 2px solid #FFD949;
+                        background-image: url(../img/donate/lightYellow.png);
+                    }
+                    opacity: 0.5;
+                    &.active{
+                        opacity: 1;
+                        border-bottom: 2px solid #fff;
+                        background: url(../img/donate/light.png) center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
+                }
+            }
+            .right{
+                text-align: right;
+                width: 20%;
+                display: inline-block;
+                font-size: 18px;
+                .premium{
+                    color: rgba(#ffffff,20);
+                        &.active{
+                            color: #FFD949;
+                        }
+                }
+                img{
+                    display: inline-block;
+                    width: 14px;
+                    line-height: 18px;
+                    vertical-align: sub;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .tabs{
+            margin-top: 30px;
+            .item{
+                background: url(../img/donate/bgItem.png);
+                background-size: cover;
+                width: calc(100%/5 - 15px);
+                display: inline-block;
+                background-repeat: no-repeat;
+                height: 45vh;
+                margin-right: 18px;
+                border: 1px solid transparent;
+                box-sizing: border-box;
+                position: relative;
+                box-sizing: border-box;
+                &.bigCoin{
+                    background-image: url(../img/donate/bigCoinItem.png);
+                    
+                }
+                
+                .coins{
+                    width: 40%;
+                    margin: 0 auto;
+                    display: block;
+                    height: 40%;
+                    left: 50%;
+                    position: absolute;
+                    margin: 30px;
+                    margin-left: calc(-40%/2);
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .info{
+                    position: absolute;
+                    height: calc(60% + 30px);
+                    top: calc(40% - 30px);
+                    padding: 0 10px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    
+                    .bottom{
+                        .coin{
+                            color: #ffd949;
+                            float: left;
+                            margin-bottom: 10px;
+                            span{
+                                display: inline-block;
+                                font-size: 20px;
+                            }
+                            img{
+                                display: inline-block;
+                                width: 16px;
+                                line-height: 20px;
+                                vertical-align: sub;
+                            }
+                        }
+                        .bonus{
+                            color: #ffd949;
+                            margin-top: 8px;
+                            margin-bottom: 8px;
+                            clear: both;
+                            margin: 10px 0;
+                        }
+                        position: absolute;
+                        right: 10px;
+                        bottom: 16px;
+                        font-size: 14px;
+                        width: calc(100% - 20px);
+                        padding-left: 10px;
+                        .name{
+                            color: #ffffff;
+                            font-size: 16px;
+                        }
+                        .price{
+                            color: #ffffff;
+                        }
+                        .placeholder{
+                            margin-top: 7.5px;
+                            color: #7e7e87;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                        }
+                        .buy{
+                            margin-top: 10px;
+                            .price{
+                                color: #ffffff;
+                                font-size: 24px;
+                                float: left;
+                                font-family: Roboto;
+                                font-style: normal;
+                                font-weight: 500;
+                            }
+                            .point{
+                                float: right;
+                                opacity: 0;
+                                line-height: 29px;
+                                img{
+                                    width: 14px;
+                                    display: inline-block;
+                                }
+                                span{
+                                    font-size: 14px;
+                                    color:#FFFFFF;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover{
+                    border: 1px solid transparent;
+                    -webkit-border-image: -webkit-linear-gradient(right top, #FFD949, rgba(255, 217, 73, 0), #FFD949);
+                    border-image-slice: 1;
+                    box-sizing: border-box;
+                    .bgcActive{
+                        display: block;
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        top: 0;
+                        background: url(../img/donate/bgActiveItem.png);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                    .info{
+                        .bottom{
+                            .point{
+                                opacity: 0.5;
+                            }
+                        }
+                    }
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
+                .bgcActive{
+                    display: none;
+                }
+            }
+            .replenish{
+                .item{
+                    .info{
+                        .coin{
+                            display: inline-block;
+                            font-size: 20px;
+                            span{
+                                display: inline-block;
+                                line-height: 20px;
+                                width: auto;
+                                vertical-align: bottom;
+                            }
+                            img{
+                                width: 20px;
+                            }
+                        }
+                    }      
+                }
+                .interaction{
+                    margin-top: 30px;
+                    box-sizing: border-box;
+                    span{
+                        color: #ffffff;
+                    }
+                    .transactions{
+                        line-height: 43px;
+                        font-size: 14px;
+                        color: rgba(255, 255, 255, 0.5);
+                        text-decoration: underline;
+                        margin-top: 25px;
+                        display: block;
+                        float: right;
+                    }
+                    .block{
+                        margin-top: 5px;
+                        float: left;
+                        margin-right: 5vmin;
+                        &.replenish{
+                            .elements{
+                                width: 100%;
+                            }
+                        }
+                        &.exchange{
+                            width: 38%;
+                            .elements{
+                                input{
+                                    width: calc(33.3333333% - 20px);
+                                    &.yellow{
+                                        color: #f4bf1a;
+                                    }
+                                    &.green{
+                                        color: #1EC743;
+                                    }
+                                }
+                                .but{
+                                    width: calc(33.3333333%);
+                                }
+                            }
+
+                        }
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                        .elements{
+                            margin-top: 5px;
+                            position: relative;
+                            display: table;
+                            .equally{
+                                margin-right: 10px;
+                                float: left;
+                                line-height: 42px;
+                            }
+                            input{
+                                margin-right: 10px;
+                                display: inline-block;
+                                border: 0;
+                                font-size: 18px;
+                                float: left;
+                                padding: 11px 0px;
+                                background: url(../img/donate/input.png);
+                                background-size: cover;
+                                color: #ffffff;
+                                text-align: center;
+                                width: calc(50% - 5px);
+                                box-sizing: border-box;
+                                &:focus{
+                                    outline: none;
+                                }
+                            }
+                            .but{
+                                background-color: #2fa550;
+                                font-size: 16px;
+                                box-sizing: border-box;
+                                padding: 12px 12px;
+                                width: calc(50% - 5px);
+                                float: left;
+                                color: #ffffff;
+                                text-align: center
+                            }
+                        }
+                    }
+                }
+            }
+            .premium{
+                .items{
+                    .item{
+                        .coins{
+                            margin-left: calc(-65%/2);
+                            width: 65%;
+                        }
+                        .price{
+                            .coin{
+                                color: #ffd949;
+                                float: left;
+                                span{
+                                    display: inline-block;
+                                    font-size: 24px;
+                                }
+                                img{
+                                    display: inline-block;
+                                    width: 24px;
+                                    line-height: 24px;
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                        
+                        .days{
+                            color: #ffd949;
+                            font-size: 25px;
+                            margin-bottom: 10px;
+                        }
+                        .point{
+                            margin-top: 7px;
+                        }
+                    }
+                    .advantages{
+                        width: calc(40% - 13px);
+                        display: inline-block;
+                        position: relative;
+                        height: 45vh;
+                        max-height: 45vh;
+                        box-sizing: border-box;
+                        .items{
+                            position: absolute;
+                            
+                            h1{
+                                font-family: Roboto;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 24px;
+                                line-height: normal;
+                                letter-spacing: 0.03em;
+                                color: #EFDFAB;
+                            }
+                            .advantage{
+                                .icon{
+                                    float: left;
+                                    margin-top: 5px;
+                                }
+                                span{
+                                    color: #ffffff;
+                                    position: relative;
+                                    left: 8px;
+                                    width: calc(100% - 22px);
+                                    float: left;
+                                    margin-top: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .times{
+                    display: table;
+                    margin: 0 auto;
+                    margin-top: 20px;
+                    h1{
+                        color: #efdfab;
+                        font-size: 1.4em;
+                    }
+                    .button{
+                        background: url(../img/donate/bgButton.png) center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        padding: 10px 15px;
+                        color: #ffffff;
+                        text-align: center;
+                        display: table;
+                        margin: 0 auto;
+                    }
+                    .bonus{
+                        font-size: 2em;
+                        margin-top: 10px;
+                        .button{
+                            font-size: 14px;
+                        }
+                    }
+                    .clock{
+                        font-size: 2.5em;
+                        text-align: center;
+                        .time{
+                            position: relative;
+                            margin-top: 5px;
+                            display: inline-block;
+                            &.active{
+                                .number{
+                                    color: #37d462;
+                                }
+                            }
+                            .number{
+                                font-family: 'TickingTimebomb';
+                                color: #ff003d;
+                                font-size: 1em;
+                            }
+                            .name{
+                                color: #7e7e87;
+                                font-size: 0.25em;
+                                text-align: center;
+                            }
+                        }
+                        .time:last-child:after{
+                            content: '';
+                            display: inline-block;
+                        }
+                        .time:after{
+                            content: ':';
+                            display: inline-block;
+                            position: absolute;
+                            top: -0.25em;
+                            color: #7E7E87;
+                            right: -0.25em;
+                        }
+                    }
+                }
+            }
+            .amenities{
+                .items{
+                    .item{
+                        .coins{
+                            width: 80%;
+                            margin: 0 auto;
+                            display: block;
+                            height: 80%;
+                            left: 50%;
+                            position: absolute;
+                            margin: 30px;
+                            margin-left: calc(-80%/2);
+                            margin-bottom: 30px;
+                            margin-top: 0;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .price{
+                            .coin{
+                                img{
+                                    vertical-align: initial; 
+                                }
+                            }
+                        }
+                        .amenitiesText{
+                            color: #fff;
+                            font-size: 16px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                    .vertically{
+                        display: inline-block;
+                        width: calc(40% - 15px);
+                        float: right;
+                        .buy{
+                            position: absolute;
+                            float: right;
+                            right: 35px;
+                            text-align: right;
+                            top: calc(50% - 15px);
+                            img{
+                                width: 18px;
+                            }
+                            .price{
+                                color: #ffffff;
+                                font-size: 24px;
+                                float: left;
+                                font-family: Roboto;
+                                font-style: normal;
+                                font-weight: 500;
+                                float: right;
+                            }
+                            .point{
+                                float: right;
+                                opacity: 0;
+                                line-height: 29px;
+                                img{
+                                    width: 14px;
+                                    display: inline-block;
+                                }
+                                span{
+                                    font-size: 14px;
+                                    color:#FFFFFF;
+                                }
+                            }
+                        }
+                        .item{
+                            background: url(../img/donate/bgItem.png);
+                            background-size: cover;
+                            width: 100%;
+                            display: inline-block;
+                            background-repeat: no-repeat;
+                            height: calc(15vh - 3px);
+                            margin-right: 18px;
+                            border: 1px solid transparent;
+                            box-sizing: border-box;
+                            position: relative;
+                            box-sizing: border-box;
+                            &:hover{
+                                border: 1px solid transparent;
+                                -webkit-border-image: -webkit-linear-gradient(right top, #FFD949, rgba(255, 217, 73, 0), #FFD949);
+                                border-image-slice: 1;
+                                box-sizing: border-box;
+                                .info{
+                                    .bottom{
+                                        .point{
+                                            float: right;
+                                            opacity: 0;
+                                            line-height: 29px;
+                                            img{
+                                                width: 14px;
+                                                display: inline-block;
+                                            }
+                                            span{
+                                                font-size: 14px;
+                                                color:#FFFFFF;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .coins{
+                                width: 25%;
+                                height: 100%;
+                                position: relative;
+                                display: block;
+                                margin: 0;
+                                padding: 0;
+                                left: 0;
+                                float: left;
+                                img{
+                                    height: 100%;
+                                }
+                            }
+                            .info{
+                                position: relative;
+                                float: left;
+                                width: auto;
+                                .name{
+                                    font-size: 25px;
+                                    color: #ffd949;
+                                    text-transform: uppercase;
+                                }
+                                .bottom{
+                                    position: relative;
+                                    width: auto;
+                                    top: 0px;
+                                    .placeholder{
+                                        color: #7e7e87;
+                                        margin-top: 0;
+                                    }
+                                    .amenitiesText{
+                                        margin-bottom: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .referral{
+                width: 70%;
+                margin: 0 auto;
+                position: relative;
+                span{
+                    color: #efdfab;
+                    font-size: 16px;
+                    margin: 8px 0;
+                    line-height: 1.5em;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                }
+                .left{
+                    width: 50%;
+                    float: left;
+                    box-sizing: border-box;
+                    position: relative;
+                    .playtime{
+                        .time{
+                            color: #ffffff;
+                            margin-left: 20px;
+                            display: inline-block;
+                        }
+                    }
+                    .input{
+                        position: relative;
+                        width: 100%;
+                        input{
+                            background-color: rgba(#000000,.5);
+                            width: 100%;
+                            border: none;
+                            font-size: 16px;
+                            padding: 14px 20px;
+                            color: #ffffff;
+                            box-sizing: border-box;
+                        }
+                        svg{
+                            position: absolute;
+                            right: 35px;
+                            left: auto;
+                            top: calc(50% - 10px);
+                        }
+                        .but{
+                            position: absolute;
+                            right: 10px;
+                            top: 5px;
+                            display: table;
+                            padding: 8px 16px;
+                            text-align: center;
+                            color: #ffffff;
+                            background-color: #2B2E38;
+                            box-sizing: border-box;
+                        }
+                    }
+                    p{
+                        color: rgba(#ffffff,.75);
+                        line-height: 1.25em;
+                        font-size: 14px;
+                        margin-top: 10px;
+                        margin-bottom: 20px;
+                    }
+                    .error{
+                        color: #ff7c7c;
+                        font-size: 14px;
+                        margin-top: 10px;
+                    }
+                }
+                .right{
+                    width: 50%;
+                    float: left;
+                    box-sizing: border-box;
+                    position: relative;
+                    padding-left: 20px;
+                    .gameTime{
+                        font-size: 12px;
+                        color: #ffd949;
+                        margin-right: 9px;
+                        display: inline-block;
+                    }
+                    .name{
+                        color: #ffffff;
+                        display: inline-block;
+                        font-size: 16px;
+                        vertical-align: middle;
+                    }
+                    .empty {
+                        color: #ffffff;
+                        font-size: 16px;
+                        display: inline-block;
+                    }
+                    .invited{
+                        span { margin-right: 1vw; }
+                        margin-bottom: 30px;
+                    }
+                    .invites{
+                        display: inline-block;
+                        vertical-align: top;
+                        .invite{
+                            margin: 10px 0;
+                        }
+                    }
+                    .got{
+                        display: inline-block;
+                        margin-left: 1vw;
+                        .money{
+                            img{
+                                display: inline-block;
+                            }
+                            span{
+                                display: inline-block;
+                                vertical-align: top;
+                                line-height: 40px;
+                                color: #37d462;
+                            }
+                        }
+                        .but{
+                            display: table;
+                            padding: 10px 30px;
+                            text-align: center;
+                            color: #ffffff;
+                            background-color: #1C1F2A;
+                            box-sizing: border-box;
+                            &:hover {
+                                background-color: lighten(#1C1F2A, 10%);
+                            }
+                        }
+                    }
+                }
+                .bottom{
+                    clear: both;
+                    text-align: center;
+                    color: #ffffff;
+                    padding-top: 5vh;
+                    .circle{
+                        color: #FFD949;
+                        border: 3px solid #FFD949;
+                        width: 30px;
+                        height: 30px;
+                        font-size: 14px;
+                        text-align: center;
+                        margin: 10px auto;
+                        line-height: 25px;
+                        border-radius: 50%;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+    }
+}

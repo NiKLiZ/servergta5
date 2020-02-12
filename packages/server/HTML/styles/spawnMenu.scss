@@ -1,0 +1,98 @@
+.spawnMenu{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(52, 68, 145, .5);
+    color: #ffffff;
+    z-index: 1;
+    .main{
+        h1{
+            padding: 10vh 0 5vh 0;
+            text-align: center;
+        }
+        .items{
+            width: 70%;
+            margin: 0 auto;
+            position: relative;
+            .item{
+                width: calc(33.333333% - 15px);
+                padding: 0 5vw;
+                float: left;
+                margin-top: 15vh;
+                height: 40vh;
+                text-align: center;
+                margin-left: 5px;
+                box-sizing: border-box;
+                position: relative;
+                border-radius: 6px;
+                background-color: rgba(0,0,0,.25);
+                background-image: linear-gradient(0deg, rgba(100, 99, 219, 0) 0%, rgba(100, 99, 219, 0) 100%);
+                border-image-slice: 1;
+                border: 2px solid transparent;
+                .bottom{
+                    position: absolute;
+                    bottom: -0.5em;
+                    left: calc(50% - 0.5em);
+                    font-size: 2em;
+                }
+                &.disable{
+                    i.bottom{
+                        color: #ff0000;
+                    }
+                    &:hover{
+                        border-image-slice: 1;
+                    }
+                }
+                &.active{
+                    i.bottom{
+                        color: #61FF00;
+                    }
+                }
+                &:hover{
+                    border-image: linear-gradient(rgba(101, 99, 219, 0), #6463DB);
+                    border-image-slice: 1;
+                    border-bottom: 3px solid #ffffff;
+                }
+                .icon{
+                    font-size: 3em;
+                    width: 100%;
+                    margin-top: 5vh;
+                    color:#6D6CEF;
+                    position: relative;
+                    .bottom{
+                        position: absolute;
+                        top: 0;
+                        font-size: 1em;
+                        left: calc(50% - 0.5em);
+                        margin-top: 5px;
+                        filter: blur(25px);
+                        color: #6D6CEF;
+                    }
+                }
+                .placeholder{
+                    line-height: 1.5em;
+                    width: 100%;
+                    color: rgba(255, 255, 255, 0.4);
+                    font-size: 1.2em;
+                    margin: 2vh 0;
+                    margin-top: 4vh;
+                    font-family: 'Montserrat';
+                    
+                }
+                .title{
+                    font-size: 1.4em;
+                    width: 100%;
+                    color: #fff;
+                    margin: 2vh 0;
+                    font-family: 'Roboto';
+                }
+                
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px){
+    .spawnMenu .memu{
+        font-size: 0.9em;
+    }
+}

@@ -1,0 +1,303 @@
+#help {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0F121A;
+    color: #ffffff;
+    max-height: 595px;
+}
+
+#help>.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/helpMenu/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.15;
+}
+
+#help>.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 12px;
+    line-height: 12px;
+    width: 12px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#help>.close-button > svg {
+    height: 100%;
+    width: 100%;
+}
+
+#help>.close-button > svg path {
+    fill: #979797;
+}
+
+#help>.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#help>.container .top {
+    padding: 20px 20px 20px 40px;
+}
+
+#help>.container .top .menu {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+
+#help>.container .top .menu::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+#help>.container .top .menu .item {
+    padding: 0 22.5px 15px 22.5px;
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.05rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+#help>.container .top .menu .item.active {
+    color: rgba(255, 255, 255, 1);
+}
+
+#help>.container .top .menu .item.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient(farthest-side at 50% 100%, rgba(255, 255, 255, 0.5) 0%, rgba(29, 29, 34, 0) 80%);
+}
+
+#help>.container .top .menu .item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#help>.container .main {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 20px 20px 40px 40px;
+}
+
+#help>.container .main .sidebar {
+    padding-right: 28px;
+    overflow-y: scroll;
+    overflow-x: visible;
+    min-width: 221px;
+    min-height: 461px;
+    max-height: 461px;
+}
+
+#help>.container .main .scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+#help>.container .main .scrollbar::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+}
+
+#help>.container .main .scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+
+#help>.container .main .sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#help>.container .main .sidebar .menu .item {
+    position: relative;
+    width: 100%;
+}
+
+#help>.container .main .sidebar .menu .item>.item-title {
+    font-weight: 500;
+    letter-spacing: 0.03rem;
+    position: relative;
+    transition: all 0.15s ease;
+}
+
+#help>.container .main .sidebar .menu:not(.submenu) > .item:first-child > .item-title > .label-toggle {
+    margin-top: 0;
+}
+
+#help>.container .main .sidebar .menu:not(.submenu) > .item:last-child > .item-title > .label-toggle {
+    margin-bottom: 0;
+}
+
+#help>.container .main .sidebar .menu .item>.item-title .toggle {
+    display: none;
+}
+
+#help>.container .main .sidebar .menu .item > .item-title .label-toggle {
+    display: block;
+    padding: 16px 20px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 1);
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 16px;
+    position: relative;
+    margin: 5px 0;
+}
+
+#help>.container .main .sidebar .menu .item.active >.item-title > .label-toggle {
+    border: 1px solid #F2C94C;
+    color: #F2C94C;
+}
+
+#help>.container .main .sidebar .menu .item.active > .item-title > .label-toggle::after {
+    width: 7.5%;
+    padding-top: calc(7.5% - 1px);
+    background-color: rgba(0, 0, 0, 1);
+    position: absolute;
+    content: '';
+    top: 50%;
+    transform: rotate(45deg) translateY(-50%);
+    right: -1.5%;
+    border-top: 1px solid #F2C94C;
+    border-right: 1px solid #F2C94C;
+    border-radius: 2px;
+}
+
+#help>.container .main .sidebar .menu.submenu {
+    padding-left: 50px;
+    padding-right: 10px;
+    margin-right: -10px;
+}
+
+#help>.container .main .sidebar .menu.submenu .item {
+    width: 100%;
+}
+
+#help>.container .main .sidebar .menu.submenu .item>.item-title .label-toggle {
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+#help>.container .main .sidebar .menu .item .submenu {
+    max-height: 0;
+    overflow: hidden;
+}
+
+#help>.container .main .sidebar .menu > .item.active .label-toggle + .submenu {
+    max-height: 9999px;
+}
+
+#help>.container .main .content {
+    padding-left: 32px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+#help>.container .main .content .info {
+    padding-right: 20px;
+    overflow-y: scroll;
+    max-height: 391px;
+}
+
+#help>.container .main .content .info .header-img {
+    height: 100px;
+    width: 717px;
+    margin-bottom: 24px;
+}
+
+#help>.container .main .content .info .header-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#help>.container .main .content .info .description {
+    width: 100%;
+    letter-spacing: 0.03rem;
+    font-size: 14px;
+    line-height: 25px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#help>.container .main .content .info .description h1 {
+    margin: 0;
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #EFDFAB;
+}
+
+#help>.container .main .content .info .description p {
+    margin: 0;
+}
+
+#help>.container .main .content .mark-button {
+    position: absolute;
+    bottom: 0;
+}
+
+#help>.container .main .content .mark-button .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 52px;
+    background-color: #2C2F39;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+}

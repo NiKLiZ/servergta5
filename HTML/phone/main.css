@@ -1,0 +1,4096 @@
+.shop{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 40vw;
+	max-height: 100vh;
+	z-index: 5;
+}
+.shop .title{
+	position: relative;
+	background-color: #344491;
+	padding: 10px 0; 
+}
+.shop .title h1{
+	font-family: "Muller Medium";
+	margin: 0;
+	color: #fff;
+	text-align: center;
+	font-size: 1.2em;
+}
+.shop .title .exit{
+	position: absolute;
+	top: 15px;
+	color: #d4d7e8;
+	right: 25px;
+}
+.shop .main{
+	background-color: rgba(0,0,0,.7);
+	display: flex;
+}
+.shop .categories{
+	width: 13vw;
+	float: left;
+	display: inline-block;
+
+}
+.shop .categories .categorie{
+	padding: 10px 0; 
+	margin: 0;
+	color: #fff;
+	text-align: center;
+	font-size: 1.2em;
+}
+.shop .categories .categorie.active{
+	color: #26388b;
+	background-color: #fff;
+}
+.shop .items {
+	width: 27vw;
+	float: right;
+	display: inline-block;
+	min-height: 40vh;
+}
+.shop .item {
+	display: inline-block;
+	vertical-align: bottom;
+	width: 7vw;
+	height: 7vw;
+	margin: 0.8vw;
+	position: relative;
+	background-color: #fff;
+
+}
+.shop .item .price{
+	position: absolute;
+	font-family: "Muller Medium";
+	bottom: 0px;
+	background-color: #26388b;
+	color: #fff;
+	width: 70%;
+	text-align: center;
+	right: 0px;
+}
+.shop .items .item img{
+	width: 80%;
+	padding: 10%;
+}
+/* line 1, stdin */
+.inventory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh; }
+  /* line 8, stdin */
+  .inventory .itemdrag {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    z-index: 99999; }
+  /* line 18, stdin */
+  .inventory .out {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    top: 0;
+    right: 0; }
+  /* line 26, stdin */
+  .inventory .modal-item {
+    z-index: 50;
+    left: -100%;
+    top: -100%;
+    position: absolute;
+    background-color: rgba(18, 19, 23, 0.75);
+    -webkit-transition: .3s;
+    transition: .3s;
+    max-width: 170px;
+    width: 100%; }
+    /* line 36, stdin */
+    .inventory .modal-item ul {
+      position: relative; }
+      /* line 38, stdin */
+      .inventory .modal-item ul li {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        list-style: none;
+        border-bottom: solid 1px rgba(255, 255, 255, 0.07); }
+        /* line 44, stdin */
+        .inventory .modal-item ul li a {
+          opacity: .35;
+          display: block;
+          padding: 10px 0;
+          font-size: 12px;
+          font-weight: 400;
+          padding-left: 18px;
+          -webkit-transition: .3s;
+          transition: .3s;
+          line-height: 20px;
+          text-decoration: none;
+          color: #fff;
+          width: 100%; }
+          /* line 57, stdin */
+          .inventory .modal-item ul li a:hover {
+            opacity: 1;
+            font-weight: 400;
+            background-color: #989898; }
+        /* line 63, stdin */
+        .inventory .modal-item ul li:last-child {
+          border-bottom: none; }
+  /* line 69, stdin */
+  .inventory .modal-item.active {
+    opacity: 1;
+    visibility: visible; }
+  /* line 73, stdin */
+  .inventory .modal-item__headline {
+    opacity: .35;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 18px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: #000;
+    font-weight: 400;
+    font-size: 12px;
+    height: 38px;
+    color: #fff; }
+  /* line 89, stdin */
+  .inventory .container {
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    background-image: url("../img/inventory/inventorybg.png");
+    background-repeat-x: no-repeat;
+    background-position: top;
+    background-size: 100%;
+    max-width: 1000px;
+    width: 100%;
+    padding: 25px 0; }
+  /* line 107, stdin */
+  .inventory .container_middle {
+    margin-top: 26px !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    margin: 0 auto;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-width: 745px;
+    width: 100%; }
+  /* line 130, stdin */
+  .inventory .container_top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    margin: 0 auto;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-width: 745px;
+    width: 100%; }
+  /* line 143, stdin */
+  .inventory .container_bottom {
+    margin: 26px auto 0;
+    display: -ms-grid;
+    display: grid;
+    max-width: 745px;
+    width: 100%; }
+  /* line 150, stdin */
+  .inventory .container_middle__bottomclothes-item {
+    max-width: 350px;
+    position: relative;
+    width: 100%; }
+    /* line 157, stdin */
+    .inventory .container_middle__bottomclothes-item table tbody tr td {
+      z-index: 50; }
+      /* line 159, stdin */
+      .inventory .container_middle__bottomclothes-item table tbody tr td img {
+        max-width: 36px !important;
+        max-height: 40px; }
+  /* line 168, stdin */
+  .inventory .container_middle__topclothes-item {
+    max-width: 350px;
+    position: relative;
+    width: 100%; }
+    /* line 175, stdin */
+    .inventory .container_middle__topclothes-item table tbody tr td {
+      z-index: 50; }
+      /* line 177, stdin */
+      .inventory .container_middle__topclothes-item table tbody tr td img {
+        max-width: 36px !important;
+        max-height: 40px; }
+  /* line 186, stdin */
+  .inventory .container_top__backpack-item {
+    position: relative;
+    width: 100%;
+    max-width: 231px; }
+    /* line 187, stdin */
+    .inventory .container_top__backpack-item table {
+      margin-top: -2px; }
+      /* line 190, stdin */
+      .inventory .container_top__backpack-item table tbody tr {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 1px;
+        grid-row-gap: 1px;
+        justify-items: stretch;
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch; }
+        /* line 191, stdin */
+        .inventory .container_top__backpack-item table tbody tr td {
+          z-index: 50;
+          min-height: 54px !important;
+          margin-top: -1px; }
+          /* line 195, stdin */
+          .inventory .container_top__backpack-item table tbody tr td img {
+            max-width: 40px; }
+  /* line 217, stdin */
+  .inventory .container_bottom__trunk-item {
+    position: relative;
+    width: 100%; }
+    /* line 222, stdin */
+    .inventory .container_bottom__trunk-item table tbody tr {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      -ms-grid-rows: 2fr;
+      grid-template-rows: 2fr;
+      grid-column-gap: 1px;
+      grid-row-gap: 1px;
+      justify-items: stretch;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch; }
+      /* line 223, stdin */
+      .inventory .container_bottom__trunk-item table tbody tr td {
+        z-index: 50; }
+        /* line 225, stdin */
+        .inventory .container_bottom__trunk-item table tbody tr td img {
+          max-height: 40px;
+          max-width: 40px; }
+      /* line 243, stdin */
+      .inventory .container_bottom__trunk-item table tbody tr:nth-child(1) td {
+        min-height: 52px;
+        height: 100%; }
+      /* line 247, stdin */
+      .inventory .container_bottom__trunk-item table tbody tr:nth-child(1) td.big {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+        grid-column: 1/3;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 2;
+        grid-row: 1/3; }
+        /* line 254, stdin */
+        .inventory .container_bottom__trunk-item table tbody tr:nth-child(1) td.big img {
+          min-height: 62px; }
+      /* line 258, stdin */
+      .inventory .container_bottom__trunk-item table tbody tr:nth-child(1) td.big2 {
+        -ms-grid-column: 5;
+        -ms-grid-column-span: 3;
+        grid-column: 5/8;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        grid-row: 1/2; }
+        /* line 265, stdin */
+        .inventory .container_bottom__trunk-item table tbody tr:nth-child(1) td.big2 img {
+          max-height: 16px; }
+      /* line 269, stdin */
+      .inventory .container_bottom__trunk-item table tbody tr:nth-child(1) td.big3 {
+        -ms-grid-column: 10;
+        -ms-grid-column-span: 3;
+        grid-column: 10/13;
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
+        grid-row: 2/3; }
+        /* line 276, stdin */
+        .inventory .container_bottom__trunk-item table tbody tr:nth-child(1) td.big3 img {
+          max-height: 32px; }
+  /* line 285, stdin */
+  .inventory .container_top__my-item {
+    position: relative;
+    width: 100%;
+    max-width: 290px; }
+    /* line 289, stdin */
+    .inventory .container_top__my-item table {
+      border-spacing: 0px;
+      border-collapse: collapse; }
+      /* line 291, stdin */
+      .inventory .container_top__my-item table tbody tr {
+        float: left; }
+        /* line 292, stdin */
+        .inventory .container_top__my-item table tbody tr td {
+          z-index: 50;
+          float: left; }
+          /* line 295, stdin */
+          .inventory .container_top__my-item table tbody tr td.active img {
+            opacity: 1; }
+          /* line 299, stdin */
+          .inventory .container_top__my-item table tbody tr td img {
+            max-height: 40px;
+            opacity: .35;
+            max-width: 36px !important; }
+          /* line 305, stdin */
+          .inventory .container_top__my-item table tbody tr td img.active {
+            opacity: 1; }
+        /* line 311, stdin */
+        .inventory .container_top__my-item table tbody tr:last-child td {
+          -webkit-transform: translateX(1px);
+          transform: translateX(1px);
+          margin: -58px auto 0 auto;
+          width: 56px;
+          max-height: 60px; }
+      /* line 322, stdin */
+      .inventory .container_top__my-item table tbody tr.last td {
+        height: 114px;
+        grid-row: 1/2; }
+        /* line 325, stdin */
+        .inventory .container_top__my-item table tbody tr.last td.allHand {
+          width: 200%; }
+        /* line 328, stdin */
+        .inventory .container_top__my-item table tbody tr.last td:nth-child(3) {
+          margin-top: 0px;
+          max-height: 56px; }
+  /* line 339, stdin */
+  .inventory .container_top__weapon-item {
+    position: relative;
+    width: 100%;
+    max-width: 168px; }
+    /* line 343, stdin */
+    .inventory .container_top__weapon-item table {
+      margin-top: -2px; }
+      /* line 346, stdin */
+      .inventory .container_top__weapon-item table tbody tr td {
+        z-index: 50;
+        position: relative; }
+        /* line 349, stdin */
+        .inventory .container_top__weapon-item table tbody tr td .ammo {
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+          color: #fff;
+          font-size: 10px;
+          opacity: .8;
+          text-transform: uppercase;
+          font-weight: 400; }
+        /* line 359, stdin */
+        .inventory .container_top__weapon-item table tbody tr td img {
+          max-height: 40px;
+          max-height: 32px; }
+  /* line 369, stdin */
+  .inventory .container_middle__topclothes-item-headline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%; }
+    /* line 377, stdin */
+    .inventory .container_middle__topclothes-item-headline h2 {
+      opacity: .8;
+      padding-left: 2px;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 400;
+      max-width: -webkit-fit-content;
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+      color: #fff; }
+    /* line 389, stdin */
+    .inventory .container_middle__topclothes-item-headline ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      /* line 393, stdin */
+      .inventory .container_middle__topclothes-item-headline ul li {
+        opacity: 0.80;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        font-size: 12px;
+        color: #fff; }
+        /* line 401, stdin */
+        .inventory .container_middle__topclothes-item-headline ul li i {
+          content: "";
+          display: block;
+          margin-right: 10px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%; }
+        /* line 409, stdin */
+        .inventory .container_middle__topclothes-item-headline ul li:nth-child(1) {
+          margin-right: 20px; }
+          /* line 410, stdin */
+          .inventory .container_middle__topclothes-item-headline ul li:nth-child(1) i {
+            background-image: url("../img/inventory/icons/fork-and-knife-silhouette.svg");
+            width: 14px;
+            height: 16px;
+            -webkit-filter: drop-shadow(0px 0px 5px rgba(238, 170, 98, 0.5));
+            filter: drop-shadow(0px 0px 5px rgba(238, 170, 98, 0.5)); }
+        /* line 420, stdin */
+        .inventory .container_middle__topclothes-item-headline ul li:nth-child(2) i {
+          background-image: url("../img/inventory/icons/drop-silhouette.svg");
+          width: 11px;
+          height: 17px;
+          -webkit-filter: drop-shadow(0px 0px 5px #5598dd);
+          filter: drop-shadow(0px 0px 5px #5598dd); }
+  /* line 431, stdin */
+  .inventory .container_middle__bottomclothes-item-headline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%; }
+    /* line 439, stdin */
+    .inventory .container_middle__bottomclothes-item-headline h2 {
+      opacity: .8;
+      padding-left: 2px;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 400;
+      max-width: -webkit-fit-content;
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+      color: #fff; }
+    /* line 451, stdin */
+    .inventory .container_middle__bottomclothes-item-headline ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      /* line 455, stdin */
+      .inventory .container_middle__bottomclothes-item-headline ul li {
+        opacity: 0.80;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        font-size: 12px;
+        color: #fff; }
+        /* line 463, stdin */
+        .inventory .container_middle__bottomclothes-item-headline ul li i {
+          content: "";
+          display: block;
+          margin-right: 10px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%; }
+        /* line 471, stdin */
+        .inventory .container_middle__bottomclothes-item-headline ul li:nth-child(1) {
+          margin-right: 20px; }
+          /* line 472, stdin */
+          .inventory .container_middle__bottomclothes-item-headline ul li:nth-child(1) i {
+            background-image: url("../img/inventory/icons/fork-and-knife-silhouette.svg");
+            width: 14px;
+            height: 16px;
+            -webkit-filter: drop-shadow(0px 0px 5px rgba(238, 170, 98, 0.5));
+            filter: drop-shadow(0px 0px 5px rgba(238, 170, 98, 0.5)); }
+        /* line 482, stdin */
+        .inventory .container_middle__bottomclothes-item-headline ul li:nth-child(2) i {
+          background-image: url("../img/inventory/icons/drop-silhouette.svg");
+          width: 11px;
+          height: 17px;
+          -webkit-filter: drop-shadow(0px 0px 5px #5598dd);
+          filter: drop-shadow(0px 0px 5px #5598dd); }
+  /* line 493, stdin */
+  .inventory .container_bottom__trunk-item-headline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%; }
+    /* line 501, stdin */
+    .inventory .container_bottom__trunk-item-headline h2 {
+      opacity: .8;
+      padding-left: 2px;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 400;
+      max-width: -webkit-fit-content;
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+      color: #fff; }
+    /* line 513, stdin */
+    .inventory .container_bottom__trunk-item-headline ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      /* line 517, stdin */
+      .inventory .container_bottom__trunk-item-headline ul li {
+        opacity: 0.80;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        font-size: 12px;
+        color: #fff; }
+        /* line 525, stdin */
+        .inventory .container_bottom__trunk-item-headline ul li i {
+          content: "";
+          display: block;
+          margin-right: 10px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%; }
+        /* line 533, stdin */
+        .inventory .container_bottom__trunk-item-headline ul li:nth-child(1) {
+          margin-right: 20px; }
+          /* line 534, stdin */
+          .inventory .container_bottom__trunk-item-headline ul li:nth-child(1) i {
+            background-image: url("../img/inventory/icons/fork-and-knife-silhouette.svg");
+            width: 14px;
+            height: 16px;
+            -webkit-filter: drop-shadow(0px 0px 5px rgba(238, 170, 98, 0.5));
+            filter: drop-shadow(0px 0px 5px rgba(238, 170, 98, 0.5)); }
+        /* line 544, stdin */
+        .inventory .container_bottom__trunk-item-headline ul li:nth-child(2) i {
+          background-image: url("../img/inventory/icons/drop-silhouette.svg");
+          width: 11px;
+          height: 17px;
+          -webkit-filter: drop-shadow(0px 0px 5px #5598dd);
+          filter: drop-shadow(0px 0px 5px #5598dd); }
+  /* line 555, stdin */
+  .inventory .container_top__backpack-item-headline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%; }
+    /* line 563, stdin */
+    .inventory .container_top__backpack-item-headline h2 {
+      opacity: .8;
+      padding-left: 2px;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 400;
+      max-width: -webkit-fit-content;
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+      color: #fff; }
+    /* line 575, stdin */
+    .inventory .container_top__backpack-item-headline ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      /* line 579, stdin */
+      .inventory .container_top__backpack-item-headline ul li {
+        opacity: 0.80;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        font-size: 12px;
+        color: #fff; }
+        /* line 587, stdin */
+        .inventory .container_top__backpack-item-headline ul li i {
+          content: "";
+          display: block;
+          margin-right: 10px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%; }
+        /* line 595, stdin */
+        .inventory .container_top__backpack-item-headline ul li:nth-child(1) {
+          margin-right: 20px; }
+          /* line 596, stdin */
+          .inventory .container_top__backpack-item-headline ul li:nth-child(1) i {
+            background-image: url("../img/inventory/icons/fork-and-knife-silhouette.svg");
+            width: 14px;
+            height: 16px;
+            -webkit-filter: drop-shadow(0px 0px 5px rgba(238, 170, 98, 0.5));
+            filter: drop-shadow(0px 0px 5px rgba(238, 170, 98, 0.5)); }
+        /* line 606, stdin */
+        .inventory .container_top__backpack-item-headline ul li:nth-child(2) i {
+          background-image: url("../img/inventory/icons/drop-silhouette.svg");
+          width: 11px;
+          height: 17px;
+          -webkit-filter: drop-shadow(0px 0px 5px #5598dd);
+          filter: drop-shadow(0px 0px 5px #5598dd); }
+  /* line 617, stdin */
+  .inventory .container_top__my-item-headline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%; }
+    /* line 625, stdin */
+    .inventory .container_top__my-item-headline h2 {
+      opacity: .8;
+      padding-left: 2px;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 400;
+      max-width: -webkit-fit-content;
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+      color: #fff; }
+    /* line 637, stdin */
+    .inventory .container_top__my-item-headline ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      /* line 641, stdin */
+      .inventory .container_top__my-item-headline ul li {
+        opacity: 0.80;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        font-size: 12px;
+        color: #fff; }
+        /* line 649, stdin */
+        .inventory .container_top__my-item-headline ul li i {
+          content: "";
+          display: block;
+          margin-right: 10px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%; }
+        /* line 657, stdin */
+        .inventory .container_top__my-item-headline ul li:nth-child(1) {
+          margin-right: 20px; }
+          /* line 658, stdin */
+          .inventory .container_top__my-item-headline ul li:nth-child(1) i {
+            background-image: url("../img/inventory/icons/fork-and-knife-silhouette.svg");
+            width: 14px;
+            height: 16px;
+            -webkit-filter: drop-shadow(0px 0px 5px rgba(238, 170, 98, 0.5));
+            filter: drop-shadow(0px 0px 5px rgba(238, 170, 98, 0.5)); }
+        /* line 668, stdin */
+        .inventory .container_top__my-item-headline ul li:nth-child(2) i {
+          background-image: url("../img/inventory/icons/drop-silhouette.svg");
+          width: 11px;
+          height: 17px;
+          -webkit-filter: drop-shadow(0px 0px 5px #5598dd);
+          filter: drop-shadow(0px 0px 5px #5598dd); }
+  /* line 679, stdin */
+  .inventory .container_top__weapon-item-headline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%; }
+    /* line 687, stdin */
+    .inventory .container_top__weapon-item-headline h2 {
+      opacity: .8;
+      padding-left: 2px;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 400;
+      max-width: -webkit-fit-content;
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+      color: #fff; }
+    /* line 699, stdin */
+    .inventory .container_top__weapon-item-headline ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      /* line 703, stdin */
+      .inventory .container_top__weapon-item-headline ul li {
+        opacity: 0.80;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        font-size: 12px;
+        color: #fff; }
+        /* line 711, stdin */
+        .inventory .container_top__weapon-item-headline ul li i {
+          content: "";
+          display: block;
+          margin-right: 10px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%; }
+        /* line 719, stdin */
+        .inventory .container_top__weapon-item-headline ul li:nth-child(1) {
+          margin-right: 20px; }
+          /* line 720, stdin */
+          .inventory .container_top__weapon-item-headline ul li:nth-child(1) i {
+            background-image: url("../img/inventory/icons/fork-and-knife-silhouette.svg");
+            width: 14px;
+            height: 16px;
+            -webkit-filter: drop-shadow(0px 0px 5px rgba(238, 170, 98, 0.5));
+            filter: drop-shadow(0px 0px 5px rgba(238, 170, 98, 0.5)); }
+        /* line 730, stdin */
+        .inventory .container_top__weapon-item-headline ul li:nth-child(2) i {
+          background-image: url("../img/inventory/icons/drop-silhouette.svg");
+          width: 11px;
+          height: 17px;
+          -webkit-filter: drop-shadow(0px 0px 5px #5598dd);
+          filter: drop-shadow(0px 0px 5px #5598dd); }
+  /* line 741, stdin */
+  .inventory table {
+    width: 100%; }
+    /* line 743, stdin */
+    .inventory table tbody {
+      width: 100%; }
+      /* line 745, stdin */
+      .inventory table tbody tr {
+        margin-top: -2px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%; }
+        /* line 751, stdin */
+        .inventory table tbody tr td {
+          margin: auto;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          overflow: hidden;
+          margin-right: -2px;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          background-color: transparent;
+          border: solid 2px rgba(255, 255, 255, 0.15);
+          -webkit-box-shadow: inset 0px 0px 32px 0px rgba(53, 53, 53, 0.68);
+          box-shadow: inset 0px 0px 32px 0px rgba(53, 53, 53, 0.68);
+          -webkit-transition: .3s;
+          transition: .3s;
+          width: 100%;
+          min-height: 56px;
+          height: 100%;
+          z-index: 50; }
+          /* line 774, stdin */
+          .inventory table tbody tr td:hover {
+            background-color: rgba(255, 255, 255, 0.3); }
+        /* line 778, stdin */
+        .inventory table tbody tr td.disabled {
+          border: solid 2px rgba(255, 255, 255, 0.15);
+          background-image: url("../img/inventory/trdisabled.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 110%; }
+          /* line 784, stdin */
+          .inventory table tbody tr td.disabled:hover {
+            background-color: rgba(53, 53, 53, 0.68); }
+  @media (min-height: 671px) and (max-height: 800px) {
+    /* line 793, stdin */
+    .inventory .container_middle__topclothes-item-headline h2 {
+      margin-bottom: 12px; }
+    /* line 798, stdin */
+    .inventory .container_middle__bottomclothes-item-headline h2 {
+      margin-bottom: 12px; }
+    /* line 803, stdin */
+    .inventory .container_bottom__trunk-item-headline h2 {
+      margin-bottom: 12px; }
+    /* line 808, stdin */
+    .inventory .container_top__backpack-item-headline h2 {
+      margin-bottom: 12px; }
+    /* line 813, stdin */
+    .inventory .container_top__my-item-headline h2 {
+      margin-bottom: 12px; }
+    /* line 818, stdin */
+    .inventory .container_top__weapon-item-headline h2 {
+      margin-bottom: 12px; } }
+  @media (min-height: 0px) and (max-height: 670px) {
+    /* line 825, stdin */
+    .inventory .container_middle__topclothes-item-headline h2 {
+      margin-bottom: 5px; }
+    /* line 830, stdin */
+    .inventory .container_middle__bottomclothes-item-headline h2 {
+      margin-bottom: 5px; }
+    /* line 835, stdin */
+    .inventory .container_bottom__trunk-item-headline h2 {
+      margin-bottom: 5px; }
+    /* line 840, stdin */
+    .inventory .container_top__backpack-item-headline h2 {
+      margin-bottom: 5px; }
+    /* line 845, stdin */
+    .inventory .container_top__my-item-headline h2 {
+      margin-bottom: 5px; }
+    /* line 850, stdin */
+    .inventory .container_top__weapon-item-headline h2 {
+      margin-bottom: 5px; } }
+/* line 1, stdin */
+.authorization {
+  background: url("../img/authorization/BG.png") no-repeat fixed center;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  font-family: 'Monsterrat', sans-serif;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); }
+  /* line 12, stdin */
+  .authorization .authorization-head img {
+    margin: 0 auto;
+    display: block;
+    margin-top: 60px;
+    width: 55vmin; }
+  /* line 20, stdin */
+  .authorization h2 {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    display: block;
+    padding-bottom: 10px; }
+  /* line 32, stdin */
+  .authorization .auth h2 {
+    padding-top: 35px; }
+  /* line 37, stdin */
+  .authorization input {
+    display: block;
+    width: 320px;
+    height: 45px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all .5s ease; }
+    /* line 49, stdin */
+    .authorization input::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.35); }
+    /* line 53, stdin */
+    .authorization input:focus {
+      outline: none; }
+    /* line 56, stdin */
+    .authorization input:hover {
+      background-color: rgba(0, 0, 0, 0.3); }
+  /* line 61, stdin */
+  .authorization .password-checkpoint.active {
+    background-color: #6463db;
+    transition: all .5s ease; }
+    /* line 64, stdin */
+    .authorization .password-checkpoint.active:before {
+      content: '';
+      background-color: #fff;
+      left: 20px;
+      transition: all .5s ease; }
+  /* line 71, stdin */
+  .authorization .password-checkpoint {
+    width: 36px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.25);
+    position: relative;
+    transition: all .5s ease; }
+    /* line 78, stdin */
+    .authorization .password-checkpoint:before {
+      content: '';
+      display: block;
+      background-color: #6463db;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+      width: 13px;
+      height: 13px;
+      position: absolute;
+      transition: all .5s ease; }
+  /* line 91, stdin */
+  .authorization .password {
+    margin: 0 auto;
+    display: flex;
+    align-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 320px; }
+    /* line 98, stdin */
+    .authorization .password p {
+      color: white;
+      font-size: 12px;
+      padding-left: 10px;
+      line-height: 20px; }
+    /* line 105, stdin */
+    .authorization .password a {
+      font-size: 12px;
+      color: #bcadb6;
+      text-decoration: underline;
+      padding-left: 60px;
+      line-height: 20px; }
+  /* line 115, stdin */
+  .authorization .checkReg {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    /* line 122, stdin */
+    .authorization .checkReg p {
+      margin-top: 0;
+      margin-left: 7px;
+      color: #ffffff; }
+  /* line 128, stdin */
+  .authorization .slideRight {
+    animation: animationFrames linear 4s;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+    -webkit-animation: animationFrames linear 4s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -moz-animation: animationFrames linear 4s;
+    -moz-animation-iteration-count: 1;
+    -moz-transform-origin: 50% 50%;
+    -o-animation: animationFrames linear 4s;
+    -o-animation-iteration-count: 1;
+    -o-transform-origin: 50% 50%;
+    -ms-animation: animationFrames linear 4s;
+    -ms-animation-iteration-count: 1;
+    -ms-transform-origin: 50% 50%; }
+  /* line 145, stdin */
+  .authorization .button {
+    width: 320px;
+    height: 46px;
+    border-radius: 6px;
+    background-color: #6463db;
+    border: none;
+    margin: 0 auto;
+    color: white;
+    display: block;
+    text-align: center;
+    line-height: 46px;
+    transition: all .5s ease; }
+    /* line 157, stdin */
+    .authorization .button:focus {
+      outline: none;
+      background-color: #8382EF; }
+    /* line 161, stdin */
+    .authorization .button:hover {
+      background-color: #8382EF; }
+    /* line 165, stdin */
+    .authorization .button:active {
+      background-color: #4847AE; }
+  /* line 170, stdin */
+  .authorization .registration {
+    padding-top: 20px;
+    display: block;
+    text-align: center; }
+    /* line 174, stdin */
+    .authorization .registration a {
+      color: #a09fff; }
+    /* line 177, stdin */
+    .authorization .registration p.hasReg {
+      font-size: 14px;
+      opacity: 0.5;
+      color: #ffffff; }
+    /* line 182, stdin */
+    .authorization .registration .form :last-child {
+      margin-bottom: 20px; }
+/* line 1, stdin */
+.personal {
+  font-family: 'Montserrat';
+  width: 60vmin;
+  float: right;
+  z-index: 100;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  margin-right: 30px;
+  margin: 30px; }
+  /* line 11, stdin */
+  .personal .title {
+    font-size: 14px;
+    padding: 10px 30px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.25); }
+  /* line 17, stdin */
+  .personal .heritage {
+    background: url(../img/personal/BG.png) center;
+    background-size: cover;
+    height: auto;
+    background-repeat: no-repeat;
+    display: table;
+    clear: both; }
+    /* line 24, stdin */
+    .personal .heritage .sec {
+      width: calc(50% - 21px);
+      position: relative;
+      float: left;
+      margin-right: 21px; }
+      /* line 30, stdin */
+      .personal .heritage .sec i {
+        color: rgba(255, 255, 255, 0.5); }
+      /* line 34, stdin */
+      .personal .heritage .sec .img img {
+        content: "";
+        width: 100%;
+        display: table;
+        clear: both; }
+      /* line 41, stdin */
+      .personal .heritage .sec .arrows {
+        position: absolute;
+        top: 40%;
+        z-index: 2;
+        font-size: 2em; }
+      /* line 47, stdin */
+      .personal .heritage .sec.mother {
+        z-index: 1; }
+        /* line 50, stdin */
+        .personal .heritage .sec.mother .img img {
+          z-index: 1;
+          transform: translate(38%) scaleX(-1); }
+        /* line 55, stdin */
+        .personal .heritage .sec.mother .arrows {
+          left: 24%; }
+      /* line 61, stdin */
+      .personal .heritage .sec.dad .img img {
+        left: -30px; }
+      /* line 65, stdin */
+      .personal .heritage .sec.dad .arrows {
+        right: 8%;
+        z-index: 2; }
+  /* line 72, stdin */
+  .personal .items {
+    overflow-y: auto;
+    max-height: 70vh; }
+    /* line 75, stdin */
+    .personal .items .back {
+      padding: 3px 30px;
+      color: #fff;
+      font-size: 14px;
+      margin-top: 10px;
+      background-color: rgba(255, 255, 255, 0.1); }
+    /* line 82, stdin */
+    .personal .items .itemsBlock {
+      margin-top: 30px; }
+      /* line 85, stdin */
+      .personal .items .itemsBlock .item.active {
+        background-color: rgba(255, 255, 255, 0.1); }
+      /* line 88, stdin */
+      .personal .items .itemsBlock .item .content {
+        padding: 0 30px;
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 30px; }
+        /* line 93, stdin */
+        .personal .items .itemsBlock .item .content .left {
+          text-align: left;
+          display: inline-block; }
+        /* line 97, stdin */
+        .personal .items .itemsBlock .item .content .right {
+          text-align: right;
+          display: inline-block;
+          float: right; }
+          /* line 101, stdin */
+          .personal .items .itemsBlock .item .content .right span {
+            margin: 0 5px; }
+  /* line 109, stdin */
+  .personal .but {
+    background-color: #2FA550;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 6px;
+    width: calc(100% - 60px);
+    margin: 30px auto;
+    text-align: center;
+    border-bottom: 0px;
+    color: #fff; }
+
+/* line 130, stdin */
+.range-slider {
+  display: inline-block;
+  padding: 0 8px;
+  height: 20px;
+  width: 100%; }
+
+/* line 136, stdin */
+.range-slider.disabled {
+  opacity: 0.5; }
+
+/* line 139, stdin */
+.range-slider-inner {
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  width: 100%; }
+
+/* line 145, stdin */
+.range-slider-rail,
+.range-slider-fill {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  border-radius: 2px;
+  transform: translateY(-50%); }
+
+/* line 155, stdin */
+.range-slider-rail {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.25); }
+
+/* line 162, stdin */
+.range-slider-knob {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  box-sizing: border-box;
+  height: 16px;
+  width: 16px;
+  border: 4px solid #6463DB;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer; }
+
+/* line 175, stdin */
+.range-slider-hidden {
+  display: none; }
+/* line 1, stdin */
+.bank-menu {
+  font-family: "Muller Regular";
+  width: 60vw;
+  height: 70vh;
+  margin: 15vh auto;
+  position: relative; }
+
+/* line 9, stdin */
+.bank-menu .toolbar {
+  font-family: "Muller Medium";
+  position: relative;
+  background-color: #344491;
+  height: 70vh;
+  color: #fff;
+  width: 20%;
+  float: left;
+  padding: 20px; }
+  /* line 18, stdin */
+  .bank-menu .toolbar .addAccount {
+    position: absolute;
+    border-radius: 10px;
+    background-color: #263580;
+    bottom: 20px;
+    padding: 10px;
+    width: calc(90% - 40px);
+    text-align: center; }
+
+/* line 28, stdin */
+.bank-menu .toolbar .user .span {
+  float: left; }
+
+/* line 31, stdin */
+.bank-menu .toolbar .user .icon {
+  border-radius: 50%;
+  background-color: #a7a7a7;
+  width: 2.7em;
+  height: 2.7em;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom; }
+
+/* line 41, stdin */
+.bank-menu .toolbar .user .icon i {
+  position: absolute;
+  bottom: 1px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.7em; }
+
+/* line 48, stdin */
+.bank-menu .toolbar .accounts {
+  margin-top: 20px; }
+
+/* line 51, stdin */
+.bank-menu .toolbar .accounts p {
+  font-size: 0.8em;
+  opacity: .4;
+  margin: 0; }
+
+/* line 56, stdin */
+.bank-menu .toolbar .accounts .account {
+  opacity: .20;
+  font-size: 20px;
+  margin: 10px 0; }
+
+/* line 61, stdin */
+.bank-menu .toolbar .accounts .account.active {
+  opacity: 1;
+  font-size: 2em; }
+
+/* line 65, stdin */
+.bank-menu .main .create_account {
+  font-size: 1.2em;
+  text-align: center;
+  padding: 15px 15px;
+  border-radius: 10px;
+  position: relative;
+  display: table;
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+  background: -webkit-linear-gradient(top, #fff 24%, #dcdcdc 100%);
+  z-index: 0;
+  overflow: hidden; }
+
+/* line 79, stdin */
+.bank-menu .main .create_account:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: -1;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  background-color: #fff;
+  border-radius: 8px; }
+
+/* line 90, stdin */
+.bank-menu .main .create_account #add {
+  color: #fff;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  font-size: 1em;
+  background-color: #344491;
+  display: inline-block;
+  margin-right: 10px; }
+
+/* line 100, stdin */
+.bank-menu .main .create_account #add i {
+  margin-top: 10px; }
+
+/* line 103, stdin */
+.bank-menu .main .create_account span {
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 2;
+  color: #000; }
+
+/* line 109, stdin */
+.bank-menu .main {
+  padding-top: 20px;
+  height: 70vh;
+  background-color: #fff;
+  width: calc(80% - 80px);
+  float: left;
+  overflow-x: hidden;
+  max-height: 70vh;
+  position: relative;
+  padding: 20px; }
+
+/* line 120, stdin */
+.bank-menu .main .money {
+  float: left;
+  width: 50%; }
+
+/* line 124, stdin */
+.bank-menu .main .create_cart {
+  float: left;
+  width: 50%; }
+
+/* line 128, stdin */
+.bank-menu .main span {
+  color: #8b8b8b; }
+
+/* line 131, stdin */
+.bank-menu .main span b {
+  color: #000; }
+
+/* line 134, stdin */
+.bank-menu .main h1 {
+  margin: 5px 0; }
+
+/* line 137, stdin */
+.bank-menu .main .buttons {
+  clear: both;
+  padding: 10px 0; }
+
+/* line 141, stdin */
+.bank-menu .main .but, .bank .bank-input .but {
+  display: inline-block;
+  color: #9d9d9d;
+  font-size: 1.1em;
+  padding: 10px 15px;
+  font-weight: 600;
+  margin-left: 20px 5px;
+  border: 1px solid #cccccc;
+  border-radius: 5px; }
+
+/* line 151, stdin */
+.bank-menu .main .but:hover, .bank .bank-input .but:hover {
+  border: 1px solid #344491;
+  background-color: #344491;
+  color: #fff; }
+
+/* line 156, stdin */
+.bank .bank-input .but {
+  color: #000; }
+
+/* line 159, stdin */
+.bank-menu .main .transactions {
+  margin-top: 15px; }
+
+/* line 162, stdin */
+.bank-menu .main .transactions .transaction {
+  margin: 5px 0; }
+
+/* line 165, stdin */
+.bank-menu .main .transactions .transaction .price {
+  display: inline-block; }
+
+/* line 168, stdin */
+.bank-menu .main .transactions .transaction .discription {
+  margin-left: 15px;
+  display: inline-block; }
+
+/* line 172, stdin */
+.bank-menu .main .exit {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #666;
+  font-size: 1.3em; }
+
+/* line 179, stdin */
+.bank .bank-input {
+  background-color: #fff;
+  font-family: "Muller Regular";
+  width: 20vw;
+  max-height: 60vh;
+  margin: 15vh auto;
+  margin-top: 200px;
+  position: relative;
+  text-align: center;
+  padding: 40px 30px; }
+
+/* line 190, stdin */
+.bank .overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9999999; }
+
+/* line 199, stdin */
+.bank .bank-input .exit {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #666;
+  font-size: 1.3em; }
+
+/* line 206, stdin */
+.bank .bank-input input {
+  display: table;
+  width: calc(100% - 20px);
+  padding: 10px 10px;
+  border: 0px;
+  font-family: "Muller Regular";
+  border: 2px solid #e4e4e4;
+  font-size: 1em;
+  border-radius: 5px;
+  clear: both;
+  margin: 15px 0;
+  text-align: center;
+  outline: none; }
+
+/* line 220, stdin */
+.bank .bank-input input:focus {
+  border: 2px solid #485fca; }
+
+/* line 224, stdin */
+.bank .bank-input h3 {
+  margin: 10px 0; }
+
+/* line 227, stdin */
+.bank .bank-input span {
+  color: #8b8b8b; }
+
+/* line 230, stdin */
+.bank .bank-input .icon {
+  display: inline-block;
+  margin: 10px 10px; }
+
+/* line 235, stdin */
+.bank .bank-input .icon.active {
+  color: #344491; }
+
+/* line 238, stdin */
+.bank-menu.atm {
+  width: 50vw; }
+
+/* line 241, stdin */
+.bank-menu.atm .logo {
+  font-family: "Muller Medium";
+  font-size: 1.4em;
+  color: #c3c3c3; }
+
+/* line 246, stdin */
+.bank-menu.atm .logo:first-letter {
+  border-bottom: 2px #c3c3c3 solid; }
+
+@media screen and (max-width: 1024px) {
+  /* line 251, stdin */
+  .bank-menu {
+    width: 85vw; } }
+/* line 3, stdin */
+.carshowroom .container[data-v-4e3fa309] {
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1250px;
+  height: 100vh; }
+
+/* line 13, stdin */
+.carshowroom .headline[data-v-4e3fa309] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 125px; }
+  /* line 19, stdin */
+  .carshowroom .headline h2[data-v-4e3fa309] {
+    position: relative;
+    font-size: 31px;
+    font-weight: 400;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2), -1px -1px rgba(0, 0, 0, 0.2);
+    color: #fff; }
+    /* line 25, stdin */
+    .carshowroom .headline h2[data-v-4e3fa309]:after {
+      content: "";
+      display: block;
+      margin-top: 44px;
+      background-image: url("../img/carshowroom/header_line.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      width: 100%;
+      height: 3px; }
+
+/* line 39, stdin */
+.carshowroom .carroom_item[data-v-4e3fa309] {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../img/carshowroom/carroom_bg.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 100%;
+  height: 147px; }
+  /* line 50, stdin */
+  .carshowroom .carroom_item-top[data-v-4e3fa309] {
+    margin: 0 auto;
+    display: flex;
+    padding-bottom: 17px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.07);
+    max-width: 855px;
+    width: 100%;
+    height: 36px; }
+    /* line 60, stdin */
+    .carshowroom .carroom_item-top__slide[data-v-4e3fa309] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 265px;
+      width: 100%;
+      height: 36px; }
+      /* line 67, stdin */
+      .carshowroom .carroom_item-top__slide .button[data-v-4e3fa309] {
+        border: 0;
+        opacity: .25;
+        cursor: pointer;
+        display: block;
+        border-radius: 50%;
+        background: transparent url("../img/carshowroom/arrow-slide.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: .5s;
+        width: 36px;
+        height: 36px; }
+        /* line 80, stdin */
+        .carshowroom .carroom_item-top__slide .button[data-v-4e3fa309]:hover {
+          opacity: 1; }
+        /* line 83, stdin */
+        .carshowroom .carroom_item-top__slide .button[data-v-4e3fa309]:last-child {
+          transform: scale(-1); }
+      /* line 87, stdin */
+      .carshowroom .carroom_item-top__slide p[data-v-4e3fa309] {
+        font-size: 21px;
+        font-weight: 400;
+        color: #fff; }
+    /* line 93, stdin */
+    .carshowroom .carroom_item-top__price[data-v-4e3fa309] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      font-weight: 400;
+      color: #41c346;
+      max-width: 150px;
+      width: 100%;
+      height: 36px; }
+      /* line 103, stdin */
+      .carshowroom .carroom_item-top__price i[data-v-4e3fa309] {
+        content: "";
+        display: block;
+        margin-right: 12px;
+        background-image: url("../img/carshowroom/icons/price-icon.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        width: 32px;
+        height: 32px; }
+    /* line 116, stdin */
+    .carshowroom .carroom_item-top__colors[data-v-4e3fa309] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 375px;
+      width: 100%; }
+      /* line 122, stdin */
+      .carshowroom .carroom_item-top__colors p[data-v-4e3fa309] {
+        text-transform: uppercase;
+        margin-right: 12px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #fff; }
+      /* line 129, stdin */
+      .carshowroom .carroom_item-top__colors ul[data-v-4e3fa309] {
+        display: flex;
+        align-items: center; }
+        /* line 132, stdin */
+        .carshowroom .carroom_item-top__colors ul li[data-v-4e3fa309] {
+          content: "";
+          display: block;
+          cursor: pointer;
+          margin-right: 10px;
+          border-radius: 50%;
+          border: solid 2px transparent;
+          transition: .3s;
+          width: 24px;
+          height: 24px; }
+          /* line 142, stdin */
+          .carshowroom .carroom_item-top__colors ul li[data-v-4e3fa309]:last-child {
+            margin-right: 0; }
+          /* line 145, stdin */
+          .carshowroom .carroom_item-top__colors ul li.active[data-v-4e3fa309] {
+            border: solid 2px #fff; }
+          /* line 148, stdin */
+          .carshowroom .carroom_item-top__colors ul li.orange[data-v-4e3fa309] {
+            background-color: #ed8f4a; }
+          /* line 151, stdin */
+          .carshowroom .carroom_item-top__colors ul li.green[data-v-4e3fa309] {
+            background-color: #7ad573; }
+          /* line 154, stdin */
+          .carshowroom .carroom_item-top__colors ul li.blue[data-v-4e3fa309] {
+            background-color: #64b4d9; }
+          /* line 157, stdin */
+          .carshowroom .carroom_item-top__colors ul li.red[data-v-4e3fa309] {
+            background-color: #ef4f4f; }
+          /* line 160, stdin */
+          .carshowroom .carroom_item-top__colors ul li.yellow[data-v-4e3fa309] {
+            background-color: #fae44d; }
+          /* line 163, stdin */
+          .carshowroom .carroom_item-top__colors ul li.silver[data-v-4e3fa309] {
+            background-color: #dedede; }
+  /* line 170, stdin */
+  .carshowroom .carroom_item-bottom[data-v-4e3fa309] {
+    margin: 0 auto;
+    display: flex;
+    margin-top: 18px;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 770px;
+    width: 100%;
+    height: 36px; }
+    /* line 179, stdin */
+    .carshowroom .carroom_item-bottom__info[data-v-4e3fa309] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 500px;
+      width: 100%;
+      height: 36px; }
+      /* line 186, stdin */
+      .carshowroom .carroom_item-bottom__info li[data-v-4e3fa309] {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        font-size: 18px;
+        font-weight: 400;
+        color: #fff;
+        height: 36px; }
+        /* line 194, stdin */
+        .carshowroom .carroom_item-bottom__info li i[data-v-4e3fa309] {
+          content: "";
+          display: block;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          margin-right: 14px; }
+          /* line 201, stdin */
+          .carshowroom .carroom_item-bottom__info li i.speed[data-v-4e3fa309] {
+            background-image: url("../img/carshowroom/icons/speedometr.png");
+            width: 27px;
+            height: 18px; }
+          /* line 206, stdin */
+          .carshowroom .carroom_item-bottom__info li i.condition[data-v-4e3fa309] {
+            background-image: url("../img/carshowroom/icons/vector.png");
+            width: 21px;
+            height: 21px; }
+          /* line 211, stdin */
+          .carshowroom .carroom_item-bottom__info li i.fuel[data-v-4e3fa309] {
+            background-image: url("../img/carshowroom/icons/fuel.png");
+            width: 20px;
+            height: 24px; }
+          /* line 216, stdin */
+          .carshowroom .carroom_item-bottom__info li i.wheel[data-v-4e3fa309] {
+            background-image: url("../img/carshowroom/icons/wheel.png");
+            width: 24px;
+            height: 24px; }
+    /* line 224, stdin */
+    .carshowroom .carroom_item-bottom__buttons[data-v-4e3fa309] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 225px;
+      width: 100%;
+      height: 36px; }
+      /* line 231, stdin */
+      .carshowroom .carroom_item-bottom__buttons-buy[data-v-4e3fa309] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #299c2d;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 18px;
+        transition: .5s;
+        font-size: 18px;
+        font-weight: 400;
+        max-width: 111px;
+        color: #fff;
+        width: 100%;
+        height: 35px; }
+        /* line 246, stdin */
+        .carshowroom .carroom_item-bottom__buttons-buy[data-v-4e3fa309]:hover {
+          background-color: #248627; }
+      /* line 250, stdin */
+      .carshowroom .carroom_item-bottom__buttons-exit[data-v-4e3fa309] {
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: .5s;
+        font-size: 18px;
+        font-weight: 400;
+        color: #fff; }
+        /* line 257, stdin */
+        .carshowroom .carroom_item-bottom__buttons-exit[data-v-4e3fa309]:hover {
+          opacity: .7; }
+      /* line 261, stdin */
+      .carshowroom .carroom_item-bottom__buttons i[data-v-4e3fa309] {
+        content: "";
+        display: block;
+        background-image: url("../img/carshowroom/icons/arrow-panel.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        width: 19px;
+        height: 13px; }
+
+/* line 274, stdin */
+.carshowroom .modal-buy[data-v-4e3fa309] {
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  overflow: auto; }
+  /* line 288, stdin */
+  .carshowroom .modal-buy_content[data-v-4e3fa309] {
+    margin: auto;
+    display: flex;
+    padding: 0 53px;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url("../img/carshowroom/modal_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    max-width: 565px;
+    color: #fff;
+    width: 100%;
+    height: 264px;
+    animation-name: animatetop;
+    animation-duration: 0.4s; }
+    /* line 306, stdin */
+    .carshowroom .modal-buy_content__header[data-v-4e3fa309] {
+      display: flex;
+      position: relative;
+      align-items: center;
+      font-size: 21px;
+      font-weight: 400;
+      color: #ffd789;
+      width: 100%;
+      height: 68px; }
+      /* line 315, stdin */
+      .carshowroom .modal-buy_content__header img[data-v-4e3fa309] {
+        margin-right: 18px; }
+      /* line 318, stdin */
+      .carshowroom .modal-buy_content__header .close[data-v-4e3fa309] {
+        right: 0;
+        opacity: .6;
+        content: "";
+        cursor: pointer;
+        position: absolute;
+        background-image: url("../img/carshowroom/close.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: .3s;
+        width: 25px;
+        height: 25px; }
+        /* line 331, stdin */
+        .carshowroom .modal-buy_content__header .close[data-v-4e3fa309]:hover {
+          opacity: 1; }
+    /* line 336, stdin */
+    .carshowroom .modal-buy_content p[data-v-4e3fa309] {
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 400;
+      color: #ffffff;
+      max-width: 375px;
+      margin: 0 auto; }
+    /* line 345, stdin */
+    .carshowroom .modal-buy_content__buttons[data-v-4e3fa309] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 465px;
+      width: 100%;
+      height: 50px; }
+      /* line 352, stdin */
+      .carshowroom .modal-buy_content__buttons a[data-v-4e3fa309] {
+        opacity: .35;
+        position: relative;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+        transition: .5s;
+        font-size: 18px;
+        font-weight: 400;
+        color: #fff;
+        width: 50%;
+        height: 40px; }
+        /* line 364, stdin */
+        .carshowroom .modal-buy_content__buttons a[data-v-4e3fa309]:hover {
+          opacity: 1; }
+        /* line 367, stdin */
+        .carshowroom .modal-buy_content__buttons a[data-v-4e3fa309]:after {
+          left: 0;
+          right: 0;
+          top: 43px;
+          content: "";
+          margin: auto;
+          position: absolute;
+          transition: .5s;
+          width: 100%;
+          height: 2px; }
+      /* line 380, stdin */
+      .carshowroom .modal-buy_content__buttons .accept[data-v-4e3fa309]:hover:after {
+        background-color: #41c346;
+        box-shadow: 0px 0px 35px 5px rgba(65, 195, 70, 0.75); }
+      /* line 386, stdin */
+      .carshowroom .modal-buy_content__buttons .cancel[data-v-4e3fa309]:hover:after {
+        background-color: #dd5f55;
+        box-shadow: 0px 0px 35px 5px rgba(221, 95, 85, 0.75); }
+/* line 1, stdin */
+.collector {
+  background-color: rgba(31, 33, 43, 0.75);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+  /* line 7, stdin */
+  .collector .collector-menu {
+    font-family: "Muller Regular";
+    width: 50vw;
+    height: 70vh;
+    margin: 20vh auto;
+    position: relative; }
+    /* line 13, stdin */
+    .collector .collector-menu .exit {
+      position: absolute;
+      top: 0px;
+      font-size: 2em;
+      color: #6a6c6f;
+      right: 0px; }
+    /* line 20, stdin */
+    .collector .collector-menu h1 {
+      font-family: "Muller Bold";
+      font-size: 1.7em;
+      color: #fff; }
+    /* line 25, stdin */
+    .collector .collector-menu h2 {
+      font-family: "Muller Regular";
+      font-size: 1.4em;
+      color: #8b8b8d;
+      margin: 10px 0; }
+    /* line 31, stdin */
+    .collector .collector-menu .select {
+      width: 40%;
+      float: left; }
+      /* line 34, stdin */
+      .collector .collector-menu .select .lobbys {
+        height: 50vh; }
+        /* line 36, stdin */
+        .collector .collector-menu .select .lobbys .lobby {
+          color: #afaeae;
+          background-color: #f4f4f5;
+          padding: 16px 12px;
+          font-family: "Muller Bold";
+          margin: 3px 0; }
+          /* line 42, stdin */
+          .collector .collector-menu .select .lobbys .lobby .name {
+            text-align: left;
+            display: inline-block;
+            font-size: 1.2em; }
+          /* line 47, stdin */
+          .collector .collector-menu .select .lobbys .lobby .players {
+            float: right; }
+            /* line 49, stdin */
+            .collector .collector-menu .select .lobbys .lobby .players span {
+              color: #000000;
+              font-size: 1.1em; }
+            /* line 53, stdin */
+            .collector .collector-menu .select .lobbys .lobby .players i {
+              font-size: 1.1em;
+              color: #9b9b9b; }
+          /* line 59, stdin */
+          .collector .collector-menu .select .lobbys .lobby.active {
+            background-color: #344491;
+            color: #ffffff; }
+            /* line 62, stdin */
+            .collector .collector-menu .select .lobbys .lobby.active span {
+              color: #ffffff; }
+            /* line 65, stdin */
+            .collector .collector-menu .select .lobbys .lobby.active i {
+              color: #ffffff; }
+    /* line 73, stdin */
+    .collector .collector-menu .infoLobby {
+      margin-left: 25px;
+      width: calc(60% - 25px);
+      float: left; }
+      /* line 77, stdin */
+      .collector .collector-menu .infoLobby .info {
+        height: calc(50vh - 30px);
+        background-color: #f4f4f4;
+        padding: 15px 20px;
+        position: relative; }
+        /* line 82, stdin */
+        .collector .collector-menu .infoLobby .info h3 {
+          font-size: 2em;
+          font-family: "Muller Bold"; }
+        /* line 86, stdin */
+        .collector .collector-menu .infoLobby .info .players {
+          margin-top: 10px; }
+          /* line 88, stdin */
+          .collector .collector-menu .infoLobby .info .players .player {
+            font-size: 1.2em; }
+            /* line 90, stdin */
+            .collector .collector-menu .infoLobby .info .players .player .nick {
+              display: inline-block; }
+            /* line 93, stdin */
+            .collector .collector-menu .infoLobby .info .players .player .mission {
+              display: inline-block;
+              margin-right: 10px;
+              color: #aeaeae; }
+            /* line 98, stdin */
+            .collector .collector-menu .infoLobby .info .players .player .del {
+              display: inline-block;
+              margin-right: 10px;
+              color: #be1818; }
+        /* line 105, stdin */
+        .collector .collector-menu .infoLobby .info .start {
+          background-color: #344491;
+          color: #ffffff;
+          font-family: "Muller Bold";
+          font-size: 1.2em;
+          padding: 10px 15px;
+          position: absolute;
+          border-radius: 5px;
+          bottom: 30px;
+          right: 20px; }
+/* line 1, stdin */
+.donate {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 102vh;
+  position: absolute;
+  font-family: 'Roboto'; }
+  /* line 7, stdin */
+  .donate .overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 30vmin;
+    position: absolute;
+    z-index: 1; }
+    /* line 14, stdin */
+    .donate .overlay .alert {
+      text-align: center;
+      color: #ff7c7c; }
+    /* line 18, stdin */
+    .donate .overlay .content {
+      background-color: #20232e;
+      width: 30vh;
+      margin: 0 auto;
+      padding: 30px 95px; }
+      /* line 23, stdin */
+      .donate .overlay .content .exit {
+        color: #979797;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.2em; }
+      /* line 30, stdin */
+      .donate .overlay .content h1 {
+        color: #ffffff;
+        font-size: 16px;
+        text-align: center; }
+      /* line 35, stdin */
+      .donate .overlay .content .coin {
+        color: #ffd949;
+        text-align: center;
+        margin: 20px auto; }
+        /* line 38, stdin */
+        .donate .overlay .content .coin span {
+          display: inline-block;
+          font-size: 18px; }
+        /* line 42, stdin */
+        .donate .overlay .content .coin img {
+          display: inline-block;
+          width: 14px;
+          line-height: 18px; }
+      /* line 49, stdin */
+      .donate .overlay .content .buttons {
+        display: flex;
+        justify-content: center; }
+        /* line 52, stdin */
+        .donate .overlay .content .buttons .but {
+          display: table;
+          padding: 10px 20px;
+          text-align: center;
+          color: #ffffff;
+          background-color: #14171f;
+          display: inline-block;
+          margin: 0 10px;
+          position: relative;
+          background-size: cover;
+          border: 1px solid transparent;
+          box-sizing: border-box; }
+          /* line 64, stdin */
+          .donate .overlay .content .buttons .but:hover {
+            border: 1px solid transparent;
+            -webkit-border-image: -webkit-linear-gradient(right top, #FFD949, rgba(255, 217, 73, 0), #FFD949);
+            border-image-slice: 1;
+            box-sizing: border-box; }
+            /* line 69, stdin */
+            .donate .overlay .content .buttons .but:hover .bgcActive {
+              display: block;
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              left: 0;
+              top: 0;
+              background: url(../img/donate/bgActiveItem.png);
+              background-size: cover;
+              background-repeat: no-repeat; }
+          /* line 81, stdin */
+          .donate .overlay .content .buttons .but .bgcActive {
+            display: none; }
+  /* line 88, stdin */
+  .donate .character {
+    position: absolute;
+    width: 70vmin;
+    bottom: 0;
+    left: 0; }
+    /* line 93, stdin */
+    .donate .character.character2 {
+      width: 30vmin; }
+    /* line 96, stdin */
+    .donate .character.character3 {
+      width: 45vmin; }
+  /* line 100, stdin */
+  .donate .content {
+    position: relative;
+    padding: 0 20vmin;
+    padding-top: 7vmin; }
+    /* line 104, stdin */
+    .donate .content .toolbar {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      align-items: center;
+      align-content: center;
+      color: #ffffff;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+      box-sizing: border-box; }
+      /* line 113, stdin */
+      .donate .content .toolbar .left {
+        display: inline-block;
+        width: 20%;
+        text-align: left; }
+        /* line 117, stdin */
+        .donate .content .toolbar .left .coin {
+          color: #ffd949;
+          float: left; }
+          /* line 120, stdin */
+          .donate .content .toolbar .left .coin span {
+            display: inline-block;
+            font-size: 18px; }
+          /* line 124, stdin */
+          .donate .content .toolbar .left .coin img {
+            display: inline-block;
+            width: 14px;
+            line-height: 18px; }
+        /* line 130, stdin */
+        .donate .content .toolbar .left .money {
+          float: left;
+          margin-left: 20px;
+          font-size: 18px;
+          color: #1ec743; }
+      /* line 137, stdin */
+      .donate .content .toolbar .center {
+        width: 60%;
+        display: inline-block;
+        text-align: center; }
+        /* line 141, stdin */
+        .donate .content .toolbar .center .item {
+          display: inline-block;
+          padding: 10px 20px;
+          opacity: 0.5; }
+          /* line 144, stdin */
+          .donate .content .toolbar .center .item.premium {
+            color: #ffd949; }
+            /* line 146, stdin */
+            .donate .content .toolbar .center .item.premium img {
+              display: inline-block;
+              width: 12px;
+              line-height: 18px;
+              vertical-align: sub;
+              margin-right: 5px; }
+          /* line 154, stdin */
+          .donate .content .toolbar .center .item.active.premium {
+            color: #ffd949;
+            border-bottom: 2px solid #FFD949;
+            background-image: url(../img/donate/lightYellow.png); }
+          /* line 160, stdin */
+          .donate .content .toolbar .center .item.active {
+            opacity: 1;
+            border-bottom: 2px solid #fff;
+            background: url(../img/donate/light.png) center;
+            background-repeat: no-repeat;
+            background-size: cover; }
+      /* line 169, stdin */
+      .donate .content .toolbar .right {
+        text-align: right;
+        width: 20%;
+        display: inline-block;
+        font-size: 18px; }
+        /* line 174, stdin */
+        .donate .content .toolbar .right .premium {
+          color: white; }
+          /* line 176, stdin */
+          .donate .content .toolbar .right .premium.active {
+            color: #FFD949; }
+        /* line 180, stdin */
+        .donate .content .toolbar .right img {
+          display: inline-block;
+          width: 14px;
+          line-height: 18px;
+          vertical-align: sub;
+          margin-right: 10px; }
+    /* line 189, stdin */
+    .donate .content .tabs {
+      margin-top: 30px; }
+      /* line 191, stdin */
+      .donate .content .tabs .item {
+        background: url(../img/donate/bgItem.png);
+        background-size: cover;
+        width: calc(100%/5 - 15px);
+        display: inline-block;
+        background-repeat: no-repeat;
+        height: 45vh;
+        margin-right: 18px;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        position: relative;
+        box-sizing: border-box; }
+        /* line 203, stdin */
+        .donate .content .tabs .item.bigCoin {
+          background-image: url(../img/donate/bigCoinItem.png); }
+        /* line 208, stdin */
+        .donate .content .tabs .item .coins {
+          width: 40%;
+          margin: 0 auto;
+          display: block;
+          height: 40%;
+          left: 50%;
+          position: absolute;
+          margin: 30px;
+          margin-left: calc(-40%/2);
+          margin-top: 30px;
+          margin-bottom: 30px; }
+          /* line 219, stdin */
+          .donate .content .tabs .item .coins img {
+            width: 100%; }
+        /* line 223, stdin */
+        .donate .content .tabs .item .info {
+          position: absolute;
+          height: calc(60% + 30px);
+          top: calc(40% - 30px);
+          padding: 0 10px;
+          width: 100%;
+          box-sizing: border-box; }
+          /* line 231, stdin */
+          .donate .content .tabs .item .info .bottom {
+            position: absolute;
+            right: 10px;
+            bottom: 16px;
+            font-size: 14px;
+            width: calc(100% - 20px);
+            padding-left: 10px; }
+            /* line 232, stdin */
+            .donate .content .tabs .item .info .bottom .coin {
+              color: #ffd949;
+              float: left;
+              margin-bottom: 10px; }
+              /* line 236, stdin */
+              .donate .content .tabs .item .info .bottom .coin span {
+                display: inline-block;
+                font-size: 20px; }
+              /* line 240, stdin */
+              .donate .content .tabs .item .info .bottom .coin img {
+                display: inline-block;
+                width: 16px;
+                line-height: 20px;
+                vertical-align: sub; }
+            /* line 247, stdin */
+            .donate .content .tabs .item .info .bottom .bonus {
+              color: #ffd949;
+              margin-top: 8px;
+              margin-bottom: 8px;
+              clear: both;
+              margin: 10px 0; }
+            /* line 260, stdin */
+            .donate .content .tabs .item .info .bottom .name {
+              color: #ffffff;
+              font-size: 16px; }
+            /* line 264, stdin */
+            .donate .content .tabs .item .info .bottom .price {
+              color: #ffffff; }
+            /* line 267, stdin */
+            .donate .content .tabs .item .info .bottom .placeholder {
+              margin-top: 7.5px;
+              color: #7e7e87;
+              font-size: 14px;
+              text-transform: uppercase; }
+            /* line 273, stdin */
+            .donate .content .tabs .item .info .bottom .buy {
+              margin-top: 10px; }
+              /* line 275, stdin */
+              .donate .content .tabs .item .info .bottom .buy .price {
+                color: #ffffff;
+                font-size: 24px;
+                float: left;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 500; }
+              /* line 283, stdin */
+              .donate .content .tabs .item .info .bottom .buy .point {
+                float: right;
+                opacity: 0;
+                line-height: 29px; }
+                /* line 287, stdin */
+                .donate .content .tabs .item .info .bottom .buy .point img {
+                  width: 14px;
+                  display: inline-block; }
+                /* line 291, stdin */
+                .donate .content .tabs .item .info .bottom .buy .point span {
+                  font-size: 14px;
+                  color: #FFFFFF; }
+        /* line 299, stdin */
+        .donate .content .tabs .item:hover {
+          border: 1px solid transparent;
+          -webkit-border-image: -webkit-linear-gradient(right top, #FFD949, rgba(255, 217, 73, 0), #FFD949);
+          border-image-slice: 1;
+          box-sizing: border-box; }
+          /* line 304, stdin */
+          .donate .content .tabs .item:hover .bgcActive {
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            background: url(../img/donate/bgActiveItem.png);
+            background-size: cover;
+            background-repeat: no-repeat; }
+          /* line 316, stdin */
+          .donate .content .tabs .item:hover .info .bottom .point {
+            opacity: 0.5; }
+        /* line 322, stdin */
+        .donate .content .tabs .item:last-child {
+          margin-right: 0; }
+        /* line 325, stdin */
+        .donate .content .tabs .item .bgcActive {
+          display: none; }
+      /* line 332, stdin */
+      .donate .content .tabs .replenish .item .info .coin {
+        display: inline-block;
+        font-size: 20px; }
+        /* line 335, stdin */
+        .donate .content .tabs .replenish .item .info .coin span {
+          display: inline-block;
+          line-height: 20px;
+          width: auto;
+          vertical-align: bottom; }
+        /* line 341, stdin */
+        .donate .content .tabs .replenish .item .info .coin img {
+          width: 20px; }
+      /* line 347, stdin */
+      .donate .content .tabs .replenish .interaction {
+        margin-top: 30px;
+        box-sizing: border-box; }
+        /* line 350, stdin */
+        .donate .content .tabs .replenish .interaction span {
+          color: #ffffff; }
+        /* line 353, stdin */
+        .donate .content .tabs .replenish .interaction .transactions {
+          line-height: 43px;
+          font-size: 14px;
+          color: rgba(255, 255, 255, 0.5);
+          text-decoration: underline;
+          margin-top: 25px;
+          display: block;
+          float: right; }
+        /* line 362, stdin */
+        .donate .content .tabs .replenish .interaction .block {
+          margin-top: 5px;
+          float: left;
+          margin-right: 5vmin; }
+          /* line 367, stdin */
+          .donate .content .tabs .replenish .interaction .block.replenish .elements {
+            width: 100%; }
+          /* line 371, stdin */
+          .donate .content .tabs .replenish .interaction .block.exchange {
+            width: 38%; }
+            /* line 374, stdin */
+            .donate .content .tabs .replenish .interaction .block.exchange .elements input {
+              width: calc(33.3333333% - 20px); }
+              /* line 376, stdin */
+              .donate .content .tabs .replenish .interaction .block.exchange .elements input.yellow {
+                color: #f4bf1a; }
+              /* line 379, stdin */
+              .donate .content .tabs .replenish .interaction .block.exchange .elements input.green {
+                color: #1EC743; }
+            /* line 383, stdin */
+            .donate .content .tabs .replenish .interaction .block.exchange .elements .but {
+              width: calc(33.3333333%); }
+          /* line 389, stdin */
+          .donate .content .tabs .replenish .interaction .block:last-child {
+            margin-right: 0; }
+          /* line 392, stdin */
+          .donate .content .tabs .replenish .interaction .block .elements {
+            margin-top: 5px;
+            position: relative;
+            display: table; }
+            /* line 396, stdin */
+            .donate .content .tabs .replenish .interaction .block .elements .equally {
+              margin-right: 10px;
+              float: left;
+              line-height: 42px; }
+            /* line 401, stdin */
+            .donate .content .tabs .replenish .interaction .block .elements input {
+              margin-right: 10px;
+              display: inline-block;
+              border: 0;
+              font-size: 18px;
+              float: left;
+              padding: 11px 0px;
+              background: url(../img/donate/input.png);
+              background-size: cover;
+              color: #ffffff;
+              text-align: center;
+              width: calc(50% - 5px);
+              box-sizing: border-box; }
+              /* line 414, stdin */
+              .donate .content .tabs .replenish .interaction .block .elements input:focus {
+                outline: none; }
+            /* line 418, stdin */
+            .donate .content .tabs .replenish .interaction .block .elements .but {
+              background-color: #2fa550;
+              font-size: 16px;
+              box-sizing: border-box;
+              padding: 12px 12px;
+              width: calc(50% - 5px);
+              float: left;
+              color: #ffffff;
+              text-align: center; }
+      /* line 435, stdin */
+      .donate .content .tabs .premium .items .item .coins {
+        margin-left: calc(-65%/2);
+        width: 65%; }
+      /* line 440, stdin */
+      .donate .content .tabs .premium .items .item .price .coin {
+        color: #ffd949;
+        float: left; }
+        /* line 443, stdin */
+        .donate .content .tabs .premium .items .item .price .coin span {
+          display: inline-block;
+          font-size: 24px; }
+        /* line 447, stdin */
+        .donate .content .tabs .premium .items .item .price .coin img {
+          display: inline-block;
+          width: 24px;
+          line-height: 24px;
+          vertical-align: middle; }
+      /* line 456, stdin */
+      .donate .content .tabs .premium .items .item .days {
+        color: #ffd949;
+        font-size: 25px;
+        margin-bottom: 10px; }
+      /* line 461, stdin */
+      .donate .content .tabs .premium .items .item .point {
+        margin-top: 7px; }
+      /* line 465, stdin */
+      .donate .content .tabs .premium .items .advantages {
+        width: calc(40% - 13px);
+        display: inline-block;
+        position: relative;
+        height: 45vh;
+        max-height: 45vh;
+        box-sizing: border-box; }
+        /* line 472, stdin */
+        .donate .content .tabs .premium .items .advantages .items {
+          position: absolute; }
+          /* line 475, stdin */
+          .donate .content .tabs .premium .items .advantages .items h1 {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: normal;
+            letter-spacing: 0.03em;
+            color: #EFDFAB; }
+          /* line 485, stdin */
+          .donate .content .tabs .premium .items .advantages .items .advantage .icon {
+            float: left;
+            margin-top: 5px; }
+          /* line 489, stdin */
+          .donate .content .tabs .premium .items .advantages .items .advantage span {
+            color: #ffffff;
+            position: relative;
+            left: 8px;
+            width: calc(100% - 22px);
+            float: left;
+            margin-top: 5px; }
+      /* line 501, stdin */
+      .donate .content .tabs .premium .times {
+        display: table;
+        margin: 0 auto;
+        margin-top: 20px; }
+        /* line 505, stdin */
+        .donate .content .tabs .premium .times h1 {
+          color: #efdfab;
+          font-size: 1.4em; }
+        /* line 509, stdin */
+        .donate .content .tabs .premium .times .button {
+          background: url(../img/donate/bgButton.png) center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          padding: 10px 15px;
+          color: #ffffff;
+          text-align: center;
+          display: table;
+          margin: 0 auto; }
+        /* line 519, stdin */
+        .donate .content .tabs .premium .times .bonus {
+          font-size: 2em;
+          margin-top: 10px; }
+          /* line 522, stdin */
+          .donate .content .tabs .premium .times .bonus .button {
+            font-size: 14px; }
+        /* line 526, stdin */
+        .donate .content .tabs .premium .times .clock {
+          font-size: 2.5em;
+          text-align: center; }
+          /* line 529, stdin */
+          .donate .content .tabs .premium .times .clock .time {
+            position: relative;
+            margin-top: 5px;
+            display: inline-block; }
+            /* line 534, stdin */
+            .donate .content .tabs .premium .times .clock .time.active .number {
+              color: #37d462; }
+            /* line 538, stdin */
+            .donate .content .tabs .premium .times .clock .time .number {
+              font-family: 'TickingTimebomb';
+              color: #ff003d;
+              font-size: 1em; }
+            /* line 543, stdin */
+            .donate .content .tabs .premium .times .clock .time .name {
+              color: #7e7e87;
+              font-size: 0.25em;
+              text-align: center; }
+          /* line 549, stdin */
+          .donate .content .tabs .premium .times .clock .time:last-child:after {
+            content: '';
+            display: inline-block; }
+          /* line 553, stdin */
+          .donate .content .tabs .premium .times .clock .time:after {
+            content: ':';
+            display: inline-block;
+            position: absolute;
+            top: -0.25em;
+            color: #7E7E87;
+            right: -0.25em; }
+      /* line 567, stdin */
+      .donate .content .tabs .amenities .items .item .coins {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+        height: 80%;
+        left: 50%;
+        position: absolute;
+        margin: 30px;
+        margin-left: calc(-80%/2);
+        margin-bottom: 30px;
+        margin-top: 0; }
+        /* line 578, stdin */
+        .donate .content .tabs .amenities .items .item .coins img {
+          width: 100%; }
+      /* line 584, stdin */
+      .donate .content .tabs .amenities .items .item .price .coin img {
+        vertical-align: initial; }
+      /* line 589, stdin */
+      .donate .content .tabs .amenities .items .item .amenitiesText {
+        color: #fff;
+        font-size: 16px;
+        margin-bottom: 10px; }
+      /* line 595, stdin */
+      .donate .content .tabs .amenities .items .vertically {
+        display: inline-block;
+        width: calc(40% - 15px);
+        float: right; }
+        /* line 599, stdin */
+        .donate .content .tabs .amenities .items .vertically .buy {
+          position: absolute;
+          float: right;
+          right: 35px;
+          text-align: right;
+          top: calc(50% - 15px); }
+          /* line 605, stdin */
+          .donate .content .tabs .amenities .items .vertically .buy img {
+            width: 18px; }
+          /* line 608, stdin */
+          .donate .content .tabs .amenities .items .vertically .buy .price {
+            color: #ffffff;
+            font-size: 24px;
+            float: left;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            float: right; }
+          /* line 617, stdin */
+          .donate .content .tabs .amenities .items .vertically .buy .point {
+            float: right;
+            opacity: 0;
+            line-height: 29px; }
+            /* line 621, stdin */
+            .donate .content .tabs .amenities .items .vertically .buy .point img {
+              width: 14px;
+              display: inline-block; }
+            /* line 625, stdin */
+            .donate .content .tabs .amenities .items .vertically .buy .point span {
+              font-size: 14px;
+              color: #FFFFFF; }
+        /* line 631, stdin */
+        .donate .content .tabs .amenities .items .vertically .item {
+          background: url(../img/donate/bgItem.png);
+          background-size: cover;
+          width: 100%;
+          display: inline-block;
+          background-repeat: no-repeat;
+          height: calc(15vh - 3px);
+          margin-right: 18px;
+          border: 1px solid transparent;
+          box-sizing: border-box;
+          position: relative;
+          box-sizing: border-box; }
+          /* line 643, stdin */
+          .donate .content .tabs .amenities .items .vertically .item:hover {
+            border: 1px solid transparent;
+            -webkit-border-image: -webkit-linear-gradient(right top, #FFD949, rgba(255, 217, 73, 0), #FFD949);
+            border-image-slice: 1;
+            box-sizing: border-box; }
+            /* line 650, stdin */
+            .donate .content .tabs .amenities .items .vertically .item:hover .info .bottom .point {
+              float: right;
+              opacity: 0;
+              line-height: 29px; }
+              /* line 654, stdin */
+              .donate .content .tabs .amenities .items .vertically .item:hover .info .bottom .point img {
+                width: 14px;
+                display: inline-block; }
+              /* line 658, stdin */
+              .donate .content .tabs .amenities .items .vertically .item:hover .info .bottom .point span {
+                font-size: 14px;
+                color: #FFFFFF; }
+          /* line 666, stdin */
+          .donate .content .tabs .amenities .items .vertically .item .coins {
+            width: 25%;
+            height: 100%;
+            position: relative;
+            display: block;
+            margin: 0;
+            padding: 0;
+            left: 0;
+            float: left; }
+            /* line 675, stdin */
+            .donate .content .tabs .amenities .items .vertically .item .coins img {
+              height: 100%; }
+          /* line 679, stdin */
+          .donate .content .tabs .amenities .items .vertically .item .info {
+            position: relative;
+            float: left;
+            width: auto; }
+            /* line 683, stdin */
+            .donate .content .tabs .amenities .items .vertically .item .info .name {
+              font-size: 25px;
+              color: #ffd949;
+              text-transform: uppercase; }
+            /* line 688, stdin */
+            .donate .content .tabs .amenities .items .vertically .item .info .bottom {
+              position: relative;
+              width: auto;
+              top: 0px; }
+              /* line 692, stdin */
+              .donate .content .tabs .amenities .items .vertically .item .info .bottom .placeholder {
+                color: #7e7e87;
+                margin-top: 0; }
+              /* line 696, stdin */
+              .donate .content .tabs .amenities .items .vertically .item .info .bottom .amenitiesText {
+                margin-bottom: 5px; }
+      /* line 705, stdin */
+      .donate .content .tabs .referral {
+        width: 70%;
+        margin: 0 auto;
+        position: relative; }
+        /* line 709, stdin */
+        .donate .content .tabs .referral span {
+          color: #efdfab;
+          font-size: 16px;
+          margin: 8px 0;
+          line-height: 1.5em;
+          font-size: 16px;
+          text-transform: uppercase; }
+        /* line 717, stdin */
+        .donate .content .tabs .referral .left {
+          width: 50%;
+          float: left;
+          box-sizing: border-box;
+          position: relative; }
+          /* line 723, stdin */
+          .donate .content .tabs .referral .left .playtime .time {
+            color: #ffffff;
+            margin-left: 20px;
+            display: inline-block; }
+          /* line 729, stdin */
+          .donate .content .tabs .referral .left .input {
+            position: relative;
+            width: 100%; }
+            /* line 732, stdin */
+            .donate .content .tabs .referral .left .input input {
+              background-color: rgba(0, 0, 0, 0.5);
+              width: 100%;
+              border: none;
+              font-size: 16px;
+              padding: 14px 20px;
+              color: #ffffff;
+              box-sizing: border-box; }
+            /* line 741, stdin */
+            .donate .content .tabs .referral .left .input svg {
+              position: absolute;
+              right: 35px;
+              left: auto;
+              top: calc(50% - 10px); }
+            /* line 747, stdin */
+            .donate .content .tabs .referral .left .input .but {
+              position: absolute;
+              right: 10px;
+              top: 5px;
+              display: table;
+              padding: 8px 16px;
+              text-align: center;
+              color: #ffffff;
+              background-color: #2B2E38;
+              box-sizing: border-box; }
+          /* line 759, stdin */
+          .donate .content .tabs .referral .left p {
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.25em;
+            font-size: 14px;
+            margin-top: 10px;
+            margin-bottom: 20px; }
+          /* line 766, stdin */
+          .donate .content .tabs .referral .left .error {
+            color: #ff7c7c;
+            font-size: 14px;
+            margin-top: 10px; }
+        /* line 772, stdin */
+        .donate .content .tabs .referral .right {
+          width: 50%;
+          float: left;
+          box-sizing: border-box;
+          position: relative;
+          padding-left: 20px; }
+          /* line 778, stdin */
+          .donate .content .tabs .referral .right .gameTime {
+            font-size: 12px;
+            color: #ffd949;
+            margin-right: 9px;
+            display: inline-block; }
+          /* line 784, stdin */
+          .donate .content .tabs .referral .right .name {
+            color: #ffffff;
+            display: inline-block;
+            font-size: 16px;
+            vertical-align: middle; }
+          /* line 790, stdin */
+          .donate .content .tabs .referral .right .empty {
+            color: #ffffff;
+            font-size: 16px;
+            display: inline-block; }
+          /* line 795, stdin */
+          .donate .content .tabs .referral .right .invited {
+            margin-bottom: 30px; }
+            /* line 796, stdin */
+            .donate .content .tabs .referral .right .invited span {
+              margin-right: 1vw; }
+          /* line 799, stdin */
+          .donate .content .tabs .referral .right .invites {
+            display: inline-block;
+            vertical-align: top; }
+            /* line 802, stdin */
+            .donate .content .tabs .referral .right .invites .invite {
+              margin: 10px 0; }
+          /* line 806, stdin */
+          .donate .content .tabs .referral .right .got {
+            display: inline-block;
+            margin-left: 1vw; }
+            /* line 810, stdin */
+            .donate .content .tabs .referral .right .got .money img {
+              display: inline-block; }
+            /* line 813, stdin */
+            .donate .content .tabs .referral .right .got .money span {
+              display: inline-block;
+              vertical-align: top;
+              line-height: 40px;
+              color: #37d462; }
+            /* line 820, stdin */
+            .donate .content .tabs .referral .right .got .but {
+              display: table;
+              padding: 10px 30px;
+              text-align: center;
+              color: #ffffff;
+              background-color: #1C1F2A;
+              box-sizing: border-box; }
+              /* line 827, stdin */
+              .donate .content .tabs .referral .right .got .but:hover {
+                background-color: #303649; }
+        /* line 833, stdin */
+        .donate .content .tabs .referral .bottom {
+          clear: both;
+          text-align: center;
+          color: #ffffff;
+          padding-top: 5vh; }
+          /* line 838, stdin */
+          .donate .content .tabs .referral .bottom .circle {
+            color: #FFD949;
+            border: 3px solid #FFD949;
+            width: 30px;
+            height: 30px;
+            font-size: 14px;
+            text-align: center;
+            margin: 10px auto;
+            line-height: 25px;
+            border-radius: 50%;
+            box-sizing: border-box; }
+/* line 1, stdin */
+.menu_fraction {
+  font-family: "Muller Regular";
+  width: 70vw;
+  height: 70vh;
+  margin: 15vh auto;
+  position: relative; }
+
+/* line 8, stdin */
+.menu_fraction .exit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #000;
+  font-size: 1.5em; }
+
+/* line 16, stdin */
+.menu_fraction .toolbar {
+  background-color: rgba(52, 68, 145, 0.95);
+  width: 30%;
+  position: relative;
+  height: 70vh;
+  display: inline-block;
+  padding-top: 20px; }
+
+/* line 24, stdin */
+.menu_fraction .main {
+  padding-top: 20px;
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 70%;
+  float: right;
+  position: relative;
+  overflow-x: hidden;
+  max-height: 70vh; }
+
+/* line 34, stdin */
+.menu_fraction .window {
+  padding-right: 0px;
+  padding-left: 30px; }
+
+/* line 39, stdin */
+.menu_fraction .toolbar ul {
+  width: 80%;
+  margin: 0 auto; }
+
+/* line 43, stdin */
+.menu_fraction .toolbar ul li {
+  list-style-type: none;
+  color: #fff;
+  padding: 20px 10px;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative; }
+
+/* line 50, stdin */
+.menu_fraction .toolbar ul li .notification {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  background-color: #e33c3c;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 24px;
+  font-size: 14px; }
+
+/* line 62, stdin */
+.menu_fraction .toolbar ul li .title {
+  line-height: 16px;
+  font-size: 16px; }
+
+/* line 66, stdin */
+.menu_fraction .toolbar ul li.active {
+  color: #fff; }
+
+/* line 69, stdin */
+.menu_fraction .toolbar ul li.active .icon .iw {
+  color: #fff; }
+
+/* line 73, stdin */
+.menu_fraction .main input {
+  color: #000;
+  border: 1px solid #cacaca;
+  padding: 10px;
+  border-radius: 10px;
+  background: none;
+  outline: none;
+  width: calc(100%  - 20px);
+  margin: 10px 0; }
+
+/* line 83, stdin */
+.menu_fraction .main input:focus {
+  border: 1px solid #485fca; }
+
+/* line 87, stdin */
+.menu_fraction .main .but {
+  background-color: #344491;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  display: inline-table;
+  text-align: center;
+  cursor: pointer;
+  font-family: "Muller Bold";
+  margin: 10px 0; }
+
+/* line 99, stdin */
+.menu_fraction .main .two {
+  width: 50%;
+  float: left; }
+
+/* line 103, stdin */
+.menu_fraction .main .two:first-child {
+  padding-right: 10px;
+  width: calc(50% - 11px);
+  border-right: 1px solid #f1f1f1; }
+
+/* line 108, stdin */
+.menu_fraction .main .two:last-child {
+  margin-left: 10px;
+  width: calc(50% - 10px); }
+
+/* line 113, stdin */
+.menu_fraction .main #list_players li {
+  margin: 5px 0; }
+
+/* line 116, stdin */
+.menu_fraction .main ul li {
+  list-style: none;
+  color: rgba(0, 0, 0, 0.6); }
+
+/* line 120, stdin */
+.menu_fraction .main ul li:hover {
+  color: #000; }
+
+/* line 123, stdin */
+.menu_fraction .icon .iw {
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  float: left;
+  font-size: 2.3em; }
+
+/* line 129, stdin */
+.menu_fraction .stars {
+  margin: 10px 0; }
+
+/* line 132, stdin */
+.menu_fraction .stars .star {
+  display: inline-block;
+  font-size: 1.3em;
+  color: #abb2d2; }
+
+/* line 137, stdin */
+.menu_fraction .stars .star .active {
+  color: #344491; }
+
+/* line 140, stdin */
+.menu_fraction #actions {
+  display: inline-block;
+  margin-left: 10px; }
+
+/* line 144, stdin */
+.menu_fraction #actions .action {
+  display: inline-block;
+  color: #fff;
+  padding: 5px;
+  background-color: #6074d2;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 0 2px; }
+
+/* line 153, stdin */
+.menu_fraction #actions .action.blue {
+  background-color: #6074d2; }
+
+/* line 156, stdin */
+.menu_fraction #actions .action.red {
+  background-color: #e33c3c; }
+
+/* line 159, stdin */
+.menu_fraction #actions .action.green {
+  background-color: #39985a; }
+
+/* line 162, stdin */
+.menu_fraction #actions .action.white {
+  background-color: #9c9c9c; }
+
+/* line 165, stdin */
+.menu_fraction .search_online li:hover #actions {
+  display: inline-block; }
+
+/* line 168, stdin */
+.menu_fraction .search_online li {
+  margin: 0; }
+
+/* line 171, stdin */
+.menu_fraction .search_online li #actions {
+  display: none; }
+
+/* line 174, stdin */
+.menu_fraction .search_online #text {
+  margin: 5px 0;
+  display: inline-block; }
+
+/* line 178, stdin */
+.menu_fraction #employees table th {
+  text-align: left;
+  margin: 0 20px; }
+
+/* line 182, stdin */
+.menu_fraction #employees table tbody tr {
+  color: #777;
+  text-align: left; }
+
+/* line 186, stdin */
+.menu_fraction #employees #actions {
+  opacity: 0; }
+
+/* line 189, stdin */
+.menu_fraction #employees table tr:hover #actions {
+  opacity: 1; }
+
+/* line 192, stdin */
+.menu_fraction #employees table tbody tr:hover {
+  color: #000; }
+
+/* line 195, stdin */
+.menu_fraction #employees table {
+  width: 100%; }
+
+/* line 198, stdin */
+.menu_fraction #employees table thead tr {
+  text-align: left; }
+
+/* line 201, stdin */
+.menu_fraction #employees table tbody tr {
+  text-align: left; }
+
+/* line 204, stdin */
+.menu_fraction #challenges ul li {
+  margin: 10px 0;
+  color: #000; }
+
+/* line 208, stdin */
+.menu_fraction #challenges ul li .action {
+  font-size: 12px; }
+
+/* line 211, stdin */
+.menu_fraction #challenges ul li #left {
+  display: inline-block; }
+
+/* line 214, stdin */
+.menu_fraction #challenges ul li #discription {
+  display: inline-block;
+  width: 60%;
+  font-size: 18px; }
+
+/* line 219, stdin */
+.menu_fraction #challenges ul li i {
+  color: #7186eb;
+  margin-right: 5px; }
+
+@media screen and (max-width: 1024px) {
+  /* line 225, stdin */
+  .menu_fraction {
+    width: 85vw; } }
+/* line 1, stdin */
+#help {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0F121A;
+  color: #ffffff;
+  max-height: 595px; }
+
+/* line 12, stdin */
+#help > .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/helpMenu/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.15; }
+
+/* line 25, stdin */
+#help > .close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 12px;
+  line-height: 12px;
+  width: 12px;
+  cursor: pointer;
+  z-index: 999; }
+
+/* line 36, stdin */
+#help > .close-button > svg {
+  height: 100%;
+  width: 100%; }
+
+/* line 41, stdin */
+#help > .close-button > svg path {
+  fill: #979797; }
+
+/* line 45, stdin */
+#help > .container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap; }
+
+/* line 53, stdin */
+#help > .container .top {
+  padding: 20px 20px 20px 40px; }
+
+/* line 57, stdin */
+#help > .container .top .menu {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative; }
+
+/* line 68, stdin */
+#help > .container .top .menu::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.15); }
+
+/* line 78, stdin */
+#help > .container .top .menu .item {
+  padding: 0 22.5px 15px 22.5px;
+  cursor: pointer;
+  position: relative;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.05rem;
+  color: rgba(255, 255, 255, 0.55); }
+
+/* line 89, stdin */
+#help > .container .top .menu .item.active {
+  color: white; }
+
+/* line 93, stdin */
+#help > .container .top .menu .item.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(farthest-side at 50% 100%, rgba(255, 255, 255, 0.5) 0%, rgba(29, 29, 34, 0) 80%); }
+
+/* line 103, stdin */
+#help > .container .top .menu .item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+
+/* line 114, stdin */
+#help > .container .main {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 20px 20px 40px 40px; }
+
+/* line 122, stdin */
+#help > .container .main .sidebar {
+  padding-right: 28px;
+  overflow-y: scroll;
+  overflow-x: visible;
+  min-width: 221px;
+  min-height: 461px;
+  max-height: 461px; }
+
+/* line 131, stdin */
+#help > .container .main .scrollbar::-webkit-scrollbar {
+  width: 4px; }
+
+/* line 135, stdin */
+#help > .container .main .scrollbar::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 4px; }
+
+/* line 140, stdin */
+#help > .container .main .scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 4px; }
+
+/* line 145, stdin */
+#help > .container .main .sidebar .menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+/* line 154, stdin */
+#help > .container .main .sidebar .menu .item {
+  position: relative;
+  width: 100%; }
+
+/* line 159, stdin */
+#help > .container .main .sidebar .menu .item > .item-title {
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+  position: relative;
+  transition: all 0.15s ease; }
+
+/* line 166, stdin */
+#help > .container .main .sidebar .menu:not(.submenu) > .item:first-child > .item-title > .label-toggle {
+  margin-top: 0; }
+
+/* line 170, stdin */
+#help > .container .main .sidebar .menu:not(.submenu) > .item:last-child > .item-title > .label-toggle {
+  margin-bottom: 0; }
+
+/* line 174, stdin */
+#help > .container .main .sidebar .menu .item > .item-title .toggle {
+  display: none; }
+
+/* line 178, stdin */
+#help > .container .main .sidebar .menu .item > .item-title .label-toggle {
+  display: block;
+  padding: 16px 20px;
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 16px;
+  position: relative;
+  margin: 5px 0; }
+
+/* line 191, stdin */
+#help > .container .main .sidebar .menu .item.active > .item-title > .label-toggle {
+  border: 1px solid #F2C94C;
+  color: #F2C94C; }
+
+/* line 196, stdin */
+#help > .container .main .sidebar .menu .item.active > .item-title > .label-toggle::after {
+  width: 7.5%;
+  padding-top: calc(7.5% - 1px);
+  background-color: black;
+  position: absolute;
+  content: '';
+  top: 50%;
+  transform: rotate(45deg) translateY(-50%);
+  right: -1.5%;
+  border-top: 1px solid #F2C94C;
+  border-right: 1px solid #F2C94C;
+  border-radius: 2px; }
+
+/* line 210, stdin */
+#help > .container .main .sidebar .menu.submenu {
+  padding-left: 50px;
+  padding-right: 10px;
+  margin-right: -10px; }
+
+/* line 216, stdin */
+#help > .container .main .sidebar .menu.submenu .item {
+  width: 100%; }
+
+/* line 220, stdin */
+#help > .container .main .sidebar .menu.submenu .item > .item-title .label-toggle {
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 14px; }
+
+/* line 226, stdin */
+#help > .container .main .sidebar .menu .item .submenu {
+  max-height: 0;
+  overflow: hidden; }
+
+/* line 231, stdin */
+#help > .container .main .sidebar .menu > .item.active .label-toggle + .submenu {
+  max-height: 9999px; }
+
+/* line 235, stdin */
+#help > .container .main .content {
+  padding-left: 32px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  position: relative; }
+
+/* line 245, stdin */
+#help > .container .main .content .info {
+  padding-right: 20px;
+  overflow-y: scroll;
+  max-height: 391px; }
+
+/* line 251, stdin */
+#help > .container .main .content .info .header-img {
+  height: 100px;
+  width: 717px;
+  margin-bottom: 24px; }
+
+/* line 257, stdin */
+#help > .container .main .content .info .header-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; }
+
+/* line 263, stdin */
+#help > .container .main .content .info .description {
+  width: 100%;
+  letter-spacing: 0.03rem;
+  font-size: 14px;
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.75); }
+
+/* line 271, stdin */
+#help > .container .main .content .info .description h1 {
+  margin: 0;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #EFDFAB; }
+
+/* line 280, stdin */
+#help > .container .main .content .info .description p {
+  margin: 0; }
+
+/* line 284, stdin */
+#help > .container .main .content .mark-button {
+  position: absolute;
+  bottom: 0; }
+
+/* line 289, stdin */
+#help > .container .main .content .mark-button .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 52px;
+  background-color: #2C2F39;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff; }
+/* line 1, stdin */
+.mayoralty {
+  width: 40%;
+  margin: 20vh auto;
+  position: absolute;
+  left: 50%;
+  margin-left: -20%;
+  color: #fff;
+  background-color: rgba(47, 61, 132, 0.9);
+  font-family: "Muller Bold";
+  z-index: 1; }
+  /* line 11, stdin */
+  .mayoralty .exit {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.8em;
+    color: #828bb6; }
+    /* line 17, stdin */
+    .mayoralty .exit:hover {
+      color: #ffffff; }
+  /* line 21, stdin */
+  .mayoralty .header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #4a589a; }
+    /* line 22, stdin */
+    .mayoralty .header h1 {
+      font-size: 1.3em; }
+  /* line 28, stdin */
+  .mayoralty .main {
+    padding: 30px 7px;
+    position: relative; }
+    /* line 31, stdin */
+    .mayoralty .main .menu-items {
+      font-size: 1.5em; }
+      /* line 34, stdin */
+      .mayoralty .main .menu-items .items .item {
+        display: inline-block;
+        width: 40%;
+        opacity: .4;
+        position: relative;
+        margin: 5px 5%; }
+        /* line 40, stdin */
+        .mayoralty .main .menu-items .items .item .icon {
+          display: inline-block;
+          vertical-align: bottom;
+          background-color: #fff;
+          border-radius: 50%;
+          width: 3em;
+          height: 3em;
+          position: relative; }
+          /* line 48, stdin */
+          .mayoralty .main .menu-items .items .item .icon i {
+            position: absolute;
+            top: calc(50% - 0.5em);
+            left: 50%;
+            margin-left: -0.5em;
+            font-size: 1.3em;
+            color: #4753b0; }
+        /* line 58, stdin */
+        .mayoralty .main .menu-items .items .item .title {
+          display: inline-block;
+          color: #fff;
+          vertical-align: super;
+          margin-left: 10px;
+          width: calc(100% - 5.5em);
+          font-size: 0.7em; }
+        /* line 66, stdin */
+        .mayoralty .main .menu-items .items .item:hover {
+          opacity: 1; }
+    /* line 72, stdin */
+    .mayoralty .main .window {
+      padding: 0 20px;
+      display: flow-root; }
+    /* line 78, stdin */
+    .mayoralty .main .window.list .list {
+      width: 70%;
+      float: left; }
+      /* line 81, stdin */
+      .mayoralty .main .window.list .list .name {
+        font-size: 1.2em; }
+      /* line 84, stdin */
+      .mayoralty .main .window.list .list .item {
+        margin: 5px 0;
+        opacity: .4; }
+        /* line 87, stdin */
+        .mayoralty .main .window.list .list .item i {
+          margin-left: 10px; }
+        /* line 90, stdin */
+        .mayoralty .main .window.list .list .item:hover {
+          opacity: 1; }
+    /* line 95, stdin */
+    .mayoralty .main .window.list .icon {
+      width: 30%;
+      float: left;
+      font-size: 6em;
+      text-align: center; }
+    /* line 103, stdin */
+    .mayoralty .main .window.salary .main-menu, .mayoralty .main .window.personal-profile .main-menu {
+      width: 70%;
+      float: left; }
+      /* line 106, stdin */
+      .mayoralty .main .window.salary .main-menu .but, .mayoralty .main .window.personal-profile .main-menu .but {
+        margin-top: 30px;
+        background-color: #fff;
+        color: #2f4087;
+        border-radius: 10px;
+        padding: 10px 15px;
+        font-size: 1.2em;
+        display: table; }
+      /* line 115, stdin */
+      .mayoralty .main .window.salary .main-menu p, .mayoralty .main .window.personal-profile .main-menu p {
+        font-size: 1em; }
+    /* line 120, stdin */
+    .mayoralty .main .window.salary .icon, .mayoralty .main .window.personal-profile .icon {
+      text-align: center;
+      width: 30%;
+      float: left;
+      font-size: 6em; }
+/* line 1, stdin */
+.phone {
+  width: 28.709999999999997vh;
+  height: 58.52vh;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-family: 'Proxima Nova Regular'; }
+  /* line 8, stdin */
+  .phone .main {
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    position: relative; }
+    /* line 13, stdin */
+    .phone .main .container {
+      z-index: 1;
+      position: absolute;
+      top: 12%;
+      left: 7%;
+      width: 86%;
+      height: calc(100% - 12% - 13%);
+      max-height: calc(100% - 12% - 13%);
+      background-size: cover; }
+    /* line 23, stdin */
+    .phone .main .status {
+      color: #fff;
+      font-size: 0.6em;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
+      /* line 29, stdin */
+      .phone .main .status i {
+        vertical-align: bottom; }
+      /* line 32, stdin */
+      .phone .main .status .left {
+        text-align: left;
+        display: inline-block; }
+        /* line 35, stdin */
+        .phone .main .status .left i {
+          margin-right: 2px; }
+      /* line 40, stdin */
+      .phone .main .status .center {
+        text-align: center;
+        margin-left: -10%;
+        display: inline-block; }
+      /* line 45, stdin */
+      .phone .main .status .right {
+        text-align: right;
+        display: inline-block; }
+        /* line 48, stdin */
+        .phone .main .status .right i {
+          margin-left: 2px; }
+    /* line 53, stdin */
+    .phone .main .app {
+      color: #fff;
+      height: calc(100% - 0.6em);
+      overflow: hidden; }
+      /* line 57, stdin */
+      .phone .main .app .title {
+        background-color: #141414;
+        padding: 10px 15px 10px 10px;
+        border-bottom: 1px solid #202020; }
+        /* line 61, stdin */
+        .phone .main .app .title .back {
+          color: #7b7b7b;
+          float: left;
+          font-size: 1.7em;
+          margin-right: 5px;
+          line-height: 1em; }
+        /* line 68, stdin */
+        .phone .main .app .title h1 {
+          font-size: 1.2em;
+          display: inline-block; }
+        /* line 72, stdin */
+        .phone .main .app .title .right {
+          float: right; }
+    /* line 77, stdin */
+    .phone .main .homeButton {
+      position: absolute;
+      width: 15%;
+      height: 8%;
+      bottom: 3%;
+      left: calc(50% - 7.5%); }
+  /* line 85, stdin */
+  .phone .background {
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background: url(../img/phone/frame.png) no-repeat;
+    background-size: contain;
+    height: 100%;
+    display: table;
+    position: absolute; }
+/* line 1, stdin */
+.homePage {
+  margin-top: 10px; }
+  /* line 3, stdin */
+  .homePage .appIcon {
+    margin: 1% 3.6%;
+    width: 26%;
+    float: left;
+    position: relative; }
+    /* line 8, stdin */
+    .homePage .appIcon .iconContent {
+      position: relative;
+      height: 0;
+      padding-top: 100%; }
+      /* line 12, stdin */
+      .homePage .appIcon .iconContent .icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 25%; }
+        /* line 19, stdin */
+        .homePage .appIcon .iconContent .icon i {
+          text-align: center;
+          width: 100%;
+          vertical-align: -webkit-baseline-middle;
+          font-size: 3vmin;
+          white-space: nowrap; }
+          /* line 25, stdin */
+          .homePage .appIcon .iconContent .icon i:before {
+            vertical-align: -webkit-baseline-middle; }
+    /* line 31, stdin */
+    .homePage .appIcon .name {
+      font-size: 1.4vmin;
+      text-align: center; }
+
+@media screen and (max-width: 1024px) {
+  /* line 38, stdin */
+  .list_players {
+    width: 60vw; } }
+/* line 3, stdin */
+.phone .profile .items {
+  font-size: 0.9em;
+  font-family: 'Proxima Nova Bold'; }
+  /* line 6, stdin */
+  .phone .profile .items .item {
+    background-color: #141414;
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-bottom: 1px 0; }
+    /* line 11, stdin */
+    .phone .profile .items .item .icon {
+      float: right;
+      text-align: right;
+      color: #868686; }
+    /* line 16, stdin */
+    .phone .profile .items .item.active {
+      background-color: #181818; }
+/* line 2, stdin */
+.contacts .padding {
+  padding: 0 10px;
+  position: relative; }
+
+/* line 6, stdin */
+.contacts .myPhone {
+  padding-top: 10px;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 10px; }
+  /* line 10, stdin */
+  .contacts .myPhone .icon {
+    width: 20%;
+    float: left;
+    font-size: 1.7em;
+    color: #626262; }
+    /* line 15, stdin */
+    .contacts .myPhone .icon i {
+      margin-top: 5px; }
+  /* line 19, stdin */
+  .contacts .myPhone .right {
+    width: 80%;
+    font-size: 0.8em; }
+
+/* line 24, stdin */
+.contacts .contacts {
+  overflow-y: auto;
+  padding: 0px 8px;
+  height: calc(100% - 55px - 45px - 14px);
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box; }
+  /* line 31, stdin */
+  .contacts .contacts .name {
+    background-color: #141414;
+    margin-top: 1px;
+    padding: 5px 0; }
+    /* line 35, stdin */
+    .contacts .contacts .name .right {
+      float: right; }
+
+/* line 40, stdin */
+.contacts .newContacts {
+  background-color: #141414;
+  border-radius: 10px 10px 0 0;
+  z-index: 5;
+  position: absolute;
+  bottom: -2px;
+  width: 100%; }
+  /* line 47, stdin */
+  .contacts .newContacts h1 {
+    margin: 10px 0;
+    font-size: 1.2em; }
+  /* line 51, stdin */
+  .contacts .newContacts input {
+    line-height: 2.5em;
+    margin: 5px 0;
+    background-color: #202020;
+    color: #ffffff;
+    border: 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 10px; }
+    /* line 61, stdin */
+    .contacts .newContacts input:focus {
+      outline: none; }
+  /* line 65, stdin */
+  .contacts .newContacts .but {
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #52ac62;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    padding: 5px 0; }
+/* line 5, stdin */
+.phone .sms .title .right .i {
+  z-index: 5;
+  margin-top: 3px; }
+
+/* line 12, stdin */
+.phone .sms .newSms .padding {
+  padding: 10px; }
+
+/* line 15, stdin */
+.phone .sms .newSms .but {
+  background-color: #65609f;
+  color: #ffffff;
+  border-radius: 10px;
+  margin: 5px 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box; }
+
+/* line 25, stdin */
+.phone .sms .newSms textarea {
+  background-color: #1f1f1f;
+  height: 5em;
+  margin: 5px 0;
+  border: 0;
+  border-radius: 10px;
+  resize: none;
+  width: 100%;
+  color: #ffffff;
+  padding-left: 10px;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  /* line 38, stdin */
+  .phone .sms .newSms textarea:focus {
+    outline: none; }
+
+/* line 42, stdin */
+.phone .sms .newSms input {
+  color: #ffffff;
+  width: 100%;
+  background: #1f1f1f;
+  color: #ffffff;
+  margin: 5px 0;
+  border: 0;
+  height: 3em;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-left: 10px; }
+  /* line 53, stdin */
+  .phone .sms .newSms input:focus {
+    outline: none; }
+
+/* line 58, stdin */
+.phone .sms .items {
+  font-size: 0.9em; }
+  /* line 60, stdin */
+  .phone .sms .items .padding {
+    padding: 0 10px;
+    position: relative; }
+  /* line 64, stdin */
+  .phone .sms .items .item {
+    padding-top: 10px;
+    display: flow-root;
+    border-bottom: 1px solid #1a1a1a; }
+    /* line 68, stdin */
+    .phone .sms .items .item .icon {
+      width: 20%;
+      float: left;
+      font-size: 1.7em;
+      color: #626262; }
+      /* line 73, stdin */
+      .phone .sms .items .item .icon i {
+        margin-top: 5px; }
+    /* line 77, stdin */
+    .phone .sms .items .item .right {
+      width: 80%;
+      float: right; }
+      /* line 82, stdin */
+      .phone .sms .items .item .right .top .name {
+        font-size: 0.7em;
+        float: left; }
+      /* line 86, stdin */
+      .phone .sms .items .item .right .top .time {
+        font-size: 0.7em;
+        float: right; }
+      /* line 91, stdin */
+      .phone .sms .items .item .right .bottom {
+        color: #626262;
+        position: relative; }
+        /* line 94, stdin */
+        .phone .sms .items .item .right .bottom .discription {
+          float: left;
+          width: 90%;
+          white-space: nowrap;
+          font-size: 0.7em;
+          margin-top: 8px; }
+        /* line 101, stdin */
+        .phone .sms .items .item .right .bottom .arrow {
+          text-align: right;
+          width: 10%;
+          float: right;
+          font-size: 1.7em; }
+
+/* line 112, stdin */
+.phone .sms .dialog .messages {
+  overflow-y: auto;
+  padding: 0px 8px;
+  height: calc(74% - 20px);
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box; }
+  /* line 119, stdin */
+  .phone .sms .dialog .messages .message {
+    position: relative;
+    background-color: #1f1f1f;
+    border-radius: 10px 10px 10px 0;
+    padding: 10px 8px;
+    margin: 5px 0; }
+    /* line 125, stdin */
+    .phone .sms .dialog .messages .message .del {
+      position: absolute;
+      top: 5px;
+      right: 10px; }
+    /* line 130, stdin */
+    .phone .sms .dialog .messages .message .text {
+      font-size: 0.8em;
+      line-height: 1.2em; }
+    /* line 134, stdin */
+    .phone .sms .dialog .messages .message .time {
+      color: #8c8c8c;
+      font-size: 0.6em;
+      text-align: right; }
+      /* line 138, stdin */
+      .phone .sms .dialog .messages .message .time .but {
+        font-size: 1.2em;
+        float: left;
+        color: #000; }
+    /* line 144, stdin */
+    .phone .sms .dialog .messages .message.my-message {
+      border-radius: 10px 10px 0 10px;
+      background-color: #dadfff;
+      color: #000000; }
+      /* line 148, stdin */
+      .phone .sms .dialog .messages .message.my-message .text {
+        color: #000000; }
+
+/* line 154, stdin */
+.phone .sms .dialog .textarea {
+  position: absolute;
+  bottom: 0;
+  padding: 5px; }
+  /* line 158, stdin */
+  .phone .sms .dialog .textarea textarea {
+    width: calc(85% - 30px);
+    resize: none;
+    border-radius: 10px;
+    float: left;
+    height: 2.5em;
+    background-color: transparent;
+    border: 1px solid #1f1f1f;
+    padding-left: 10px;
+    color: #ffffff; }
+    /* line 168, stdin */
+    .phone .sms .dialog .textarea textarea:focus {
+      outline: none; }
+  /* line 172, stdin */
+  .phone .sms .dialog .textarea .send {
+    float: right;
+    width: 15%;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #65609f;
+    color: #ffffff;
+    padding: 8px 5px; }
+    /* line 180, stdin */
+    .phone .sms .dialog .textarea .send i {
+      transform: rotate(45deg); }
+/* line 2, stdin */
+.gps .padding {
+  padding: 0 10px;
+  position: relative; }
+
+/* line 6, stdin */
+.gps .main {
+  overflow-y: auto;
+  padding: 0px 8px;
+  height: calc(100% - 59px);
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box; }
+  /* line 14, stdin */
+  .gps .main .points .name {
+    background-color: #141414;
+    margin-top: 1px;
+    padding: 5px 0; }
+    /* line 18, stdin */
+    .gps .main .points .name.active {
+      background-color: #ba4a40; }
+    /* line 21, stdin */
+    .gps .main .points .name .right {
+      float: right; }
+/* line 2, stdin */
+.call .header {
+  margin: 30px;
+  text-align: center; }
+  /* line 5, stdin */
+  .call .header .name {
+    font-size: 1em;
+    color: #ffffff;
+    font-family: 'Proxima Nova Bold'; }
+  /* line 10, stdin */
+  .call .header .number {
+    margin-top: 0.3em;
+    color: #7b7b7b;
+    font-size: 0.7em; }
+
+/* line 16, stdin */
+.call .center {
+  text-align: center;
+  margin-top: 50px; }
+
+/* line 21, stdin */
+.call .callApp .calls {
+  overflow-y: auto;
+  padding: 0px 8px;
+  height: calc(100% - 55px - 45px - 14px);
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box; }
+  /* line 28, stdin */
+  .call .callApp .calls .name {
+    background-color: #141414;
+    margin-top: 1px;
+    padding: 5px 0; }
+    /* line 32, stdin */
+    .call .callApp .calls .name .right {
+      float: right; }
+
+/* line 37, stdin */
+.call .callApp .buttons {
+  bottom: 10px; }
+
+/* line 40, stdin */
+.call .callApp .numberCall {
+  height: 100; }
+  /* line 42, stdin */
+  .call .callApp .numberCall input {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    padding: 0.2em 0.2em;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box; }
+    /* line 51, stdin */
+    .call .callApp .numberCall input:focus {
+      outline: none; }
+
+/* line 56, stdin */
+.call .callApp .butNumber {
+  margin: 3% 3.6%;
+  width: 26%;
+  float: left;
+  position: relative; }
+  /* line 61, stdin */
+  .call .callApp .butNumber .butCall {
+    position: relative;
+    height: 0;
+    padding-top: 100%; }
+    /* line 65, stdin */
+    .call .callApp .butNumber .butCall .number {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      border: 1px solid #f6f6f6;
+      color: #ffffff;
+      left: 0; }
+      /* line 74, stdin */
+      .call .callApp .butNumber .butCall .number span {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        font-size: 3.3vmin;
+        vertical-align: -webkit-baseline-middle;
+        margin-top: 1vmin; }
+  /* line 86, stdin */
+  .call .callApp .butNumber.cancel .number {
+    background-color: #ba4a40;
+    border: none; }
+  /* line 92, stdin */
+  .call .callApp .butNumber.access .number {
+    border: none;
+    background-color: #52ac62; }
+
+/* line 99, stdin */
+.call .buttons {
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  width: 100%; }
+  /* line 104, stdin */
+  .call .buttons .but {
+    width: 25%;
+    float: left;
+    position: relative;
+    border-radius: 50%; }
+    /* line 109, stdin */
+    .call .buttons .but.cancel {
+      background-color: #ba4a40;
+      float: left;
+      margin-left: 10px; }
+      /* line 113, stdin */
+      .call .buttons .but.cancel .radius {
+        transform: rotate(136deg); }
+      /* line 116, stdin */
+      .call .buttons .but.cancel .name {
+        margin-left: 3px; }
+    /* line 120, stdin */
+    .call .buttons .but.center {
+      margin-left: calc(50% - 24px); }
+      /* line 122, stdin */
+      .call .buttons .but.center .name {
+        margin-left: -2px; }
+    /* line 126, stdin */
+    .call .buttons .but.access {
+      background-color: #52ac62;
+      float: right;
+      margin-right: 10px; }
+      /* line 130, stdin */
+      .call .buttons .but.access .name {
+        margin-right: -5px; }
+    /* line 134, stdin */
+    .call .buttons .but .main {
+      position: relative;
+      height: 0;
+      padding-top: 100%; }
+      /* line 138, stdin */
+      .call .buttons .but .main .radius {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 50%; }
+        /* line 145, stdin */
+        .call .buttons .but .main .radius i {
+          text-align: center;
+          width: 100%;
+          font-size: 3vh;
+          vertical-align: -webkit-baseline-middle; }
+          /* line 150, stdin */
+          .call .buttons .but .main .radius i:before {
+            vertical-align: -webkit-baseline-middle; }
+    /* line 156, stdin */
+    .call .buttons .but .name {
+      position: absolute;
+      bottom: -14px;
+      font-size: 0.6em; }
+/* line 3, stdin */
+.phone .profile .items {
+  font-size: 0.9em;
+  font-family: 'Proxima Nova Bold'; }
+  /* line 6, stdin */
+  .phone .profile .items .item {
+    background-color: #141414;
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-bottom: 1px 0; }
+    /* line 11, stdin */
+    .phone .profile .items .item .icon {
+      float: right;
+      text-align: right;
+      color: #868686; }
+    /* line 16, stdin */
+    .phone .profile .items .item.active {
+      background-color: #181818; }

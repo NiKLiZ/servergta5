@@ -1,0 +1,254 @@
+.bank-menu{
+	font-family: "Muller Regular";
+	width: 60vw;
+	height: 70vh;
+	margin: 15vh auto;
+	position: relative;
+	
+}
+.bank-menu .toolbar{
+	font-family: "Muller Medium";
+	position: relative;
+	background-color: #344491; 
+	height: 70vh;
+	color: #fff;
+	width: 20%;
+	float: left;
+	padding: 20px;
+	.addAccount{
+		position: absolute;
+		border-radius: 10px;
+		background-color: #263580;
+		bottom: 20px;
+		padding: 10px;
+		width: calc(90% - 40px);
+		text-align: center;
+	}
+}
+.bank-menu .toolbar .user .span{
+	float: left;
+}
+.bank-menu .toolbar .user .icon{
+	border-radius: 50%;
+	background-color: #a7a7a7;
+	width: 2.7em;
+	height: 2.7em;
+	position: relative;
+  overflow: hidden;
+	display: inline-block;
+  vertical-align: bottom;
+}
+.bank-menu .toolbar .user .icon i{
+  position: absolute;
+  bottom: 1px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.7em;
+}
+.bank-menu .toolbar .accounts{
+	margin-top: 20px;
+}
+.bank-menu .toolbar .accounts p{
+	font-size: 0.8em;
+	opacity: .4;
+	margin: 0;
+}
+.bank-menu .toolbar .accounts .account{
+	opacity: .20;
+	font-size: 20px;
+	margin: 10px 0;
+}
+.bank-menu .toolbar .accounts .account.active{
+	opacity: 1;
+	font-size: 2em;
+}
+.bank-menu .main .create_account{
+	font-size: 1.2em;
+	text-align: center;
+	padding: 15px 15px;
+	border-radius: 10px;
+	position: relative;
+	display: table;
+	float: right;
+	margin-right: 20px;
+	margin-top: 20px;
+  background: -webkit-linear-gradient(top, #fff 24%, #dcdcdc 100%);
+	z-index: 0;
+	overflow: hidden;
+}
+.bank-menu .main .create_account:after{
+  content: '';
+  position: absolute;
+  top:  2px;
+  left: 2px;
+  z-index: -1;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  background-color: #fff;
+	border-radius: 8px;
+}
+.bank-menu .main .create_account #add{
+	color: #fff;
+	border-radius: 50%;
+	width: 2em;
+	height: 2em;
+	font-size: 1em;
+	background-color: #344491;
+	display: inline-block;
+	margin-right: 10px;
+}
+.bank-menu .main .create_account #add i{
+	margin-top: 10px;
+}
+.bank-menu .main .create_account span{
+	display: inline-block;
+	vertical-align: middle;
+	z-index: 2;
+	color: #000;
+}
+.bank-menu .main{
+	padding-top: 20px;
+	height: 70vh;
+	background-color: #fff;
+	width: calc(80% - 80px);
+	float: left;
+  overflow-x: hidden;
+  max-height: 70vh;
+  position: relative;
+	padding: 20px;
+}
+.bank-menu .main .money{
+	float: left;
+	width: 50%;
+}
+.bank-menu .main .create_cart{
+	float: left;
+	width: 50%;
+}
+.bank-menu .main span{
+	color: #8b8b8b;
+}
+.bank-menu .main span b{
+	color: #000;
+}
+.bank-menu .main h1{
+	margin: 5px 0;	
+}
+.bank-menu .main .buttons{
+	clear: both;
+	padding: 10px 0;
+}
+.bank-menu .main .but,.bank .bank-input .but{
+	display: inline-block;
+	color: #9d9d9d;
+	font-size: 1.1em;
+	padding: 10px 15px;
+	font-weight: 600;
+	margin-left: 20px 5px;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+}
+.bank-menu .main .but:hover,.bank .bank-input .but:hover{
+	border: 1px solid #344491;
+	background-color: #344491;
+	color: #fff;
+}
+.bank .bank-input .but{
+	color: #000;
+}
+.bank-menu .main .transactions{
+	margin-top: 15px;
+}
+.bank-menu .main .transactions .transaction{
+	margin: 5px 0;
+}
+.bank-menu .main .transactions .transaction .price{
+	display: inline-block;
+}
+.bank-menu .main .transactions .transaction .discription{
+	margin-left: 15px;
+	display: inline-block;
+}
+.bank-menu .main .exit{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: #666;
+	font-size: 1.3em;
+}
+.bank .bank-input{
+	background-color: #fff;
+	font-family: "Muller Regular";
+	width: 20vw;
+	max-height: 60vh;
+	margin: 15vh auto;
+	margin-top: 200px;
+	position: relative;
+	text-align: center;
+	padding: 40px 30px;
+}
+.bank .overlay{
+	position: absolute;
+	background-color: rgba(0,0,0,.6);
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 9999999;
+}
+.bank .bank-input .exit{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: #666;
+	font-size: 1.3em;
+}
+.bank .bank-input input{
+	display: table;
+	width: calc(100% - 20px);	
+	padding: 10px 10px;
+	border: 0px;
+	font-family: "Muller Regular";
+	border: 2px solid #e4e4e4;
+	font-size: 1em;
+	border-radius: 5px;
+	clear: both;
+	margin: 15px 0;
+	text-align: center;
+	outline: none;
+}
+.bank .bank-input input:focus {
+  border: 2px solid #485fca;
+
+}
+.bank .bank-input h3{
+	margin: 10px 0;
+	}
+.bank .bank-input span{
+	color: #8b8b8b;
+}
+.bank .bank-input .icon{
+	display: inline-block;
+	margin: 10px 10px;
+	
+}
+.bank .bank-input .icon.active{
+	color: #344491;
+}
+.bank-menu.atm{
+	width: 50vw;
+}
+.bank-menu.atm .logo{
+	font-family: "Muller Medium";
+	font-size: 1.4em;
+	color: #c3c3c3;
+}
+.bank-menu.atm .logo:first-letter{
+	border-bottom: 2px #c3c3c3 solid;
+}
+
+@media screen and (max-width: 1024px){
+	.bank-menu{
+		width: 85vw;
+	}
+}

@@ -1,0 +1,158 @@
+{
+    "vehs": [
+        {
+            "model": "ambulance",
+            "pos": {
+                "x": -451.8529968261719,
+                "y": -455.9549865722656,
+                "z": 32.7920036315918
+            },
+            "heading": 350.3054504394531,
+            "color": [
+                0,
+                0
+            ],
+            "rank": 1
+        },
+        {
+            "model": "ambulance",
+            "pos": {
+                "x": -448.4778747558594,
+                "y": -455.9549865722656,
+                "z": 32.7920036315918
+            },
+            "heading": 350.3054504394531,
+            "color": [
+                0,
+                0
+            ],
+            "rank": 1
+        },
+        {
+            "model": "ambulance",
+            "pos": {
+                "x": -444.9289855957031,
+                "y": -455.9549865722656,
+                "z": 32.7920036315918
+            },
+            "heading": 350.3054504394531,
+            "color": [
+                0,
+                0
+            ],
+            "rank": 1
+        },
+        {
+            "model": "ambulance",
+            "pos": {
+                "x": -441.36248779296875,
+                "y": -455.9549865722656,
+                "z": 32.7920036315918
+            },
+            "heading": 350.3054504394531,
+            "color": [
+                0,
+                0
+            ],
+            "rank": 1
+        },
+        {
+            "model": "ambulance",
+            "pos": {
+                "x": -437.9389343261719,
+                "y": -455.9549865722656,
+                "z": 32.7920036315918
+            },
+            "heading": 350.3054504394531,
+            "color": [
+                0,
+                0
+            ],
+            "rank": 1
+        },
+        {
+            "model": "lguard",
+            "pos": {
+                "x": -443.8887939453125,
+                "y": -446.334228515625,
+                "z": 32.63301467895508
+            },
+            "heading": 262.38671875,
+            "color": [
+                0,
+                0
+            ],
+            "rank": 3
+        },
+        {
+            "model": "lguard",
+            "pos": {
+                "x": 452.70404052734375,
+                "y": -445.2026672363281,
+                "z": 32.73628616333008
+            },
+            "heading": 262.7926330566406,
+            "color": [
+                0,
+                0
+            ],
+            "rank": 3
+        }
+    ],
+    "rank": [
+        {
+            "name": "Интерн",
+			"salary": 50,
+            "treat": true,
+            "pill": true
+        },
+        {
+            "name": "Спасатель ",
+			"salary": 75,
+            "treat": true,
+            "pill": true
+        },
+        {
+            "name": "Нарколог ",
+			"salary": 100,
+            "treat": true,
+            "pill": true
+        },
+        {
+            "name": "Терапевт",
+			"salary": 125,
+            "treat": true,
+            "pill": true
+        },
+        {
+            "name": "Хирург ",
+			"salary": 150,
+            "treat": true,
+            "pill": true
+        },
+        {
+            "name": "Глава Отдела",
+			"salary": 200,
+            "treat": true,
+            "pill": true
+        },
+        {
+            "name": "Заместитель главного врача",
+			"salary": 250,
+            "treat": true,
+            "pill": true
+        },
+        {
+            "name": "Главный врач",
+			"salary": 325,
+            "upWarn": true,
+            "lastWarn": true,
+            "clear": true,
+            "downWarn":true,
+            "invite": true,
+            "treat": true,
+            "pill": true
+        }
+    ],
+    "minemaized": false
+}

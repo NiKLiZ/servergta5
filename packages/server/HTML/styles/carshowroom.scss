@@ -1,0 +1,394 @@
+.carshowroom{
+
+    .container {
+        margin: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 1250px;
+        height: 100vh;
+    }
+    
+    .headline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 125px;
+        h2 {
+            position: relative;
+            font-size: 31px;
+            font-weight: 400;
+            text-shadow: 1px 1px 0 rgba(0,0,0,.2), -1px -1px rgba(0,0,0,.2);
+            color: #fff;
+            &:after {
+                content: "";
+                display: block;
+                margin-top: 44px;
+                background-image: url('../img/carshowroom/header_line.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+                width: 100%;
+                height: 3px;
+            }
+        }
+    }
+    
+    .carroom_item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url('../img/carshowroom/carroom_bg.png');
+        background-repeat: repeat;
+        background-position: center;
+        background-size: 100%;
+        width: 100%;
+        height: 147px;
+        &-top {
+            margin: 0 auto;
+            display: flex;
+            padding-bottom: 17px;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: solid 1px rgba(255,255,255,.07);
+            max-width: 855px;
+            width: 100%;
+            height: 36px;
+            &__slide {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 265px;
+                width: 100%;
+                height: 36px;
+                .button {
+                    border: 0;
+                    opacity: .25;
+                    cursor: pointer;
+                    display: block;
+                    border-radius: 50%;
+                    background: transparent url('../img/carshowroom/arrow-slide.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100%;
+                    transition: .5s;
+                    width: 36px;
+                    height: 36px;
+                    &:hover {
+                        opacity: 1;
+                    }
+                    &:last-child {
+                        transform: scale(-1);
+                    }
+                }
+                p {
+                    font-size: 21px;
+                    font-weight: 400;
+                    color: #fff;
+                }
+            }
+            &__price {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 21px;
+                font-weight: 400;
+                color: #41c346;
+                max-width: 150px;
+                width: 100%;
+                height: 36px;
+                i {
+                    content: "";
+                    display: block;
+                    margin-right: 12px;
+                    background-image: url('../img/carshowroom/icons/price-icon.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100%;
+                    width: 32px;
+                    height: 32px;
+                }
+    
+            }
+            &__colors {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 375px;
+                width: 100%;
+                p {
+                    text-transform: uppercase;
+                    margin-right: 12px;
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: #fff;
+                }
+                ul {
+                    display: flex;
+                    align-items: center;
+                    li {
+                        content: "";
+                        display: block;
+                        cursor: pointer;
+                        margin-right: 10px;
+                        border-radius: 50%;
+                        border: solid 2px transparent;
+                        transition: .3s;
+                        width: 24px;
+                        height: 24px;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        &.active {
+                            border: solid 2px #fff;
+                        }
+                        &.orange {
+                            background-color: #ed8f4a;
+                        }
+                        &.green {
+                            background-color: #7ad573;
+                        }
+                        &.blue {
+                            background-color: #64b4d9;
+                        }
+                        &.red {
+                            background-color: #ef4f4f;
+                        }
+                        &.yellow {
+                            background-color: #fae44d;
+                        }
+                        &.silver {
+                            background-color: #dedede;
+                        }
+                    }
+                }
+            }
+        }
+        &-bottom {
+            margin: 0 auto;
+            display: flex;
+            margin-top: 18px;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 770px;
+            width: 100%;
+            height: 36px;
+            &__info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 500px;
+                width: 100%;
+                height: 36px;
+                li {
+                    display: flex;
+                    align-items: center;
+                    list-style: none;
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: #fff;
+                    height: 36px;
+                    i {
+                        content: "";
+                        display: block;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 100%;
+                        margin-right: 14px;
+                        &.speed {
+                            background-image: url('../img/carshowroom/icons/speedometr.png');
+                            width: 27px;
+                            height: 18px;
+                        }
+                        &.condition {
+                            background-image: url('../img/carshowroom/icons/vector.png');
+                            width: 21px;
+                            height: 21px;
+                        }
+                        &.fuel {
+                            background-image: url('../img/carshowroom/icons/fuel.png');
+                            width: 20px;
+                            height: 24px;
+                        }
+                        &.wheel {
+                            background-image: url('../img/carshowroom/icons/wheel.png');
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+                }
+            }
+            &__buttons {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 225px;
+                width: 100%;
+                height: 36px;
+                &-buy {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #299c2d;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    border-radius: 18px;
+                    transition: .5s;
+                    font-size: 18px;
+                    font-weight: 400;
+                    max-width: 111px;
+                    color: #fff;
+                    width: 100%;
+                    height: 35px;
+                    &:hover {
+                        background-color: #248627;
+                    }
+                }
+                &-exit {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    transition: .5s;
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: #fff;
+                    &:hover {
+                        opacity: .7;
+                    }
+                }
+                i {
+                    content: "";
+                    display: block;
+                    background-image: url('../img/carshowroom/icons/arrow-panel.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100%;
+                    width: 19px;
+                    height: 13px;
+                }
+            }
+        }
+    }
+    .modal-buy {
+        display: flex;
+        position: fixed; 
+        z-index: 999;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        &_content {
+            margin: auto;
+            display: flex;
+            padding: 0 53px;
+            position: relative;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            background-image: url('../img/carshowroom/modal_bg.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            max-width: 565px;
+            color: #fff;
+            width: 100%;
+            height: 264px;
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+            &__header {
+                display: flex;
+                position: relative;
+                align-items: center;
+                font-size: 21px;
+                font-weight: 400;
+                color: #ffd789;
+                width: 100%;
+                height: 68px;
+                img {
+                    margin-right: 18px;
+                }
+                .close {
+                    right: 0;
+                    opacity: .6;
+                    content: "";
+                    cursor: pointer;
+                    position: absolute;
+                    background-image: url('../img/carshowroom/close.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100%;
+                    transition: .3s;
+                    width: 25px;
+                    height: 25px;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+            p {
+                font-family: 'Roboto', sans-serif;
+                text-align: center;
+                font-size: 18px;
+                font-weight: 400;
+                color: #ffffff;
+                max-width: 375px;
+                margin: 0 auto;
+            }
+            &__buttons {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 465px;
+                width: 100%;
+                height: 50px;
+                a {
+                    opacity: .35;
+                    position: relative;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    text-align: center;
+                    transition: .5s;
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: #fff;
+                    width: 50%;
+                    height: 40px;
+                    &:hover {
+                        opacity: 1;
+                    }
+                    &:after {
+                        left: 0;
+                        right: 0;
+                        top: 43px;
+                        content: "";
+                        margin: auto;
+                        position: absolute;
+                        transition: .5s;
+                        width: 100%;
+                        height: 2px;
+                    }
+                }
+                .accept {
+                    &:hover:after {
+                        background-color: #41c346;
+                        box-shadow:0px 0px 35px 5px rgba(65,195,70,.75);
+                    }
+                }
+                .cancel {
+                    &:hover:after {
+                        background-color: #dd5f55;
+                        box-shadow:0px 0px 35px 5px rgba(221,95,85,.75);
+                    }
+                }
+            }
+        }
+    }
+}

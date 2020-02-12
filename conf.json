@@ -1,0 +1,16 @@
+{
+	"maxplayers" : 100,
+	"name" : "WEST ROLEPLAY", 
+	"gamemode" : "Role play", 
+	"stream-distance" : 300,
+	"announce" : false,
+	"port": 22006,
+	"bridge" : false,
+	"allow-cef-debugging":true,
+	"broadcast-threads": 8,
+	"encryption": true,
+	"disallow-multiple-connections-per-ip": true,
+	"url": "westrp.ru",
+	"language": "ru",
+	"voice-chat": true
+}

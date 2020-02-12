@@ -1,0 +1,196 @@
+#table{
+	font-family: "Muller Regular";
+	width: 40vw;
+	height: 70vh;
+	margin: 15vh auto;
+	z-index: 99999;
+	position: absolute;
+	left:50%; 
+	margin-left:-20vw;
+}
+#table .title{
+	padding: 10px 3vw;
+	background-color: #344491;
+	color: #fff;
+	line-height: 2em;
+	text-align: center;
+}
+#table .list {
+	background-color: rgba(0,0,0,.95);
+	color: #7f7f7f;
+	padding: 15px 3vw;
+	font-size: 1.2em;
+	max-height: 50vh;
+	overflow: auto;
+	position: relative;
+}
+#table .exit{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #fff;
+}
+#table .list table{
+	width: 100%;
+}
+#table .list table thead tr{
+	text-align: left;
+}
+#table .list table tbody tr{
+	text-align: left;
+}
+#table .list table tbody tr td{
+	border-bottom: 1px solid #171717;
+	padding: 12px 0;	
+	text-align: left;	
+}
+#table .list table tbody{
+  overflow: auto;
+}
+#table .list .active{
+	color: #fff;
+}
+/* line 1, stdin */
+#input-call {
+  width: 30%;
+  margin: 20vh auto;
+  position: absolute;
+  left: 50%;
+  margin-left: -15%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 999; }
+
+/* line 11, stdin */
+#input-call .main {
+  padding: 10px 20px 20px 20px; }
+
+/* line 14, stdin */
+#input-call .title {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 200;
+  background-color: #344491;
+  padding: 10px; }
+
+/* line 21, stdin */
+#input-call #placeholder {
+  text-align: center;
+  margin-bottom: 10px; }
+
+/* line 25, stdin */
+#input-call .button {
+  display: inline-block;
+  color: #fff;
+  width: calc(50% - 10px);
+  margin-top: 10px;
+  padding: 10px 0;
+  text-align: center; }
+
+/* line 33, stdin */
+#input-call .button#one {
+  background-color: #d24a43; }
+
+/* line 36, stdin */
+#input-call .button#two {
+  background-color: #52ac62;
+  float: right; }
+
+/* line 40, stdin */
+#input-call .input {
+  color: #7189ff;
+  width: 100%;
+  display: block;
+  position: relative; }
+
+/* line 46, stdin */
+#input-call .input input {
+  display: table;
+  width: calc(100% - 20px);
+  padding: 10px 10px;
+  border: 0px;
+  background-color: #3c50b1;
+  clear: both;
+  color: #fff; }
+
+/* line 55, stdin */
+#input-call .input input::-webkit-input-placeholder {
+  color: #7189ff;
+  margin-left: 10px; }
+/* line 19, stdin */
+.document {
+  background-image: url(../img/documents/USA.png);
+  background-clip: border-box;
+  font-family: "Muller Medium";
+  position: absolute;
+  width: 39vw;
+  background-size: 100%;
+  height: 19vw;
+  border: 3px solid #000;
+  border-radius: 10px;
+  z-index: 999; }
+
+/* line 31, stdin */
+.document .exit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff; }
+
+/* line 37, stdin */
+.document .passport {
+  position: relative;
+  padding: 40px 10px; }
+
+/* line 41, stdin */
+.document .title {
+  padding: 10px;
+  background-color: #344491;
+  color: #fff;
+  text-align: center; }
+
+/* line 47, stdin */
+.document .passport {
+  width: 60%;
+  position: relative; }
+
+/* line 51, stdin */
+.document .passport ul li {
+  height: 2.5em; }
+
+/* line 54, stdin */
+.document .passport ul li span {
+  font-size: 15px;
+  font-family: "Muller Regular"; }
+
+/* line 58, stdin */
+.document .passport ul #avtograp {
+  font-family: "Autograf";
+  font-size: 1.5em; }
+
+/* line 62, stdin */
+.document .passport ul .value {
+  font-size: 17px;
+  font-family: "Muller Medium"; }
+
+/* line 66, stdin */
+.document .passport ul {
+  column-count: 2;
+  float: left;
+  font-size: 1em;
+  width: 100%;
+  display: inline-block;
+  list-style: none; }
+
+/* line 74, stdin */
+.document #photo {
+  width: 30%;
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+  border: 4px solid #acacac;
+  margin-top: 10px; }
+
+/* line 82, stdin */
+.document .passport {
+  display: inline-block; }

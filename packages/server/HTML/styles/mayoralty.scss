@@ -1,0 +1,129 @@
+.mayoralty{
+	width: 40%;
+	margin: 20vh auto;
+	position: absolute;
+	left:50%; 
+	margin-left:-20%;
+	color: #fff;
+    background-color: rgba(47, 61, 132,.90);
+    font-family: "Muller Bold";
+    z-index: 1;
+    .exit{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 1.8em;
+        color: #828bb6;
+        &:hover{
+            color: #ffffff;
+        }
+    }
+    .header{
+        h1{
+            font-size: 1.3em;
+        }
+        padding: 15px 20px;
+        border-bottom: 1px solid #4a589a;
+    }
+    .main{
+        padding: 30px 7px;
+        position: relative;
+        .menu-items{
+            font-size: 1.5em;
+            .items{
+                .item{
+                    display: inline-block;
+                    width: 40%;
+                    opacity: .4;
+                    position: relative;
+                    margin: 5px 5%;
+                    .icon{
+                        display: inline-block;
+                        vertical-align: bottom;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        width: 3em;
+                        height: 3em;
+                        position: relative;
+                        i{
+                            position: absolute;
+                            top: calc(50% - 0.5em);
+                            left: 50%;
+                            margin-left: -0.5em;
+                            font-size: 1.3em;
+                            color: #4753b0;
+                        }
+                        
+                    }
+                    .title{
+                        display: inline-block;
+                        color: #fff;
+                        vertical-align: super;
+                        margin-left: 10px;
+                        width: calc(100% - 5.5em);
+                        font-size: 0.7em;
+                    }
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .window{
+            padding: 0 20px;
+            display: flow-root;
+        }
+
+        .window.list{
+            .list{
+                width: 70%;
+                float: left;
+                .name{
+                    font-size: 1.2em;
+                }
+                .item{
+                    margin: 5px 0;
+                    opacity: .4;
+                    i{
+                        margin-left: 10px;
+                    }
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
+            .icon{
+                width: 30%;
+                float: left;
+                font-size: 6em;
+                text-align: center;
+            }
+        }
+        .window.salary,.window.personal-profile{
+            .main-menu{
+                width: 70%;
+                float: left;
+                .but{
+                    margin-top: 30px ;
+                    background-color: #fff;
+                    color: #2f4087;
+                    border-radius: 10px;
+                    padding: 10px 15px;
+                    font-size: 1.2em;
+                    display: table;
+                }
+                p{
+                    font-size: 1em;
+                }
+                    
+            }
+            .icon{
+                text-align: center;
+                width: 30%;
+                float: left;
+                font-size: 6em;
+            }
+        }
+        
+    }
+}

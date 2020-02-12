@@ -1,0 +1,228 @@
+.menu_fraction{
+	font-family: "Muller Regular";
+	width: 70vw;
+	height: 70vh;
+	margin: 15vh auto;
+	position: relative;
+}
+.menu_fraction .exit{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #000;
+	font-size: 1.5em;
+}
+
+.menu_fraction .toolbar{
+	background-color: rgba(52, 68, 145, .95);
+	width: 30%;
+	position: relative;
+	height: 70vh;
+	display: inline-block;
+	padding-top: 20px;
+}
+.menu_fraction .main{
+	padding-top: 20px;
+	height: 70vh;
+	background-color: rgba(255,255,255,.95);
+	width: 70%;
+  float: right;
+  position: relative;
+  overflow-x: hidden;
+  max-height: 70vh;
+}
+.menu_fraction .window{
+  padding-right: 0px;
+  padding-left: 30px;
+
+}
+.menu_fraction .toolbar ul{
+	width: 80%;
+	margin: 0 auto;
+}
+.menu_fraction .toolbar ul li{
+	list-style-type: none;
+	color: #fff;
+	padding: 20px 10px;
+	color: rgba(255,255,255,.7);
+	position: relative;
+}
+.menu_fraction .toolbar ul li .notification{
+	position: absolute;
+	top: 5px;
+	right: 0;
+	background-color: #e33c3c;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 24px;
+	font-size: 14px;
+}
+.menu_fraction .toolbar ul li .title{
+	line-height: 16px;
+	font-size: 16px;
+}
+.menu_fraction .toolbar ul li.active{
+	color: #fff;
+}
+.menu_fraction .toolbar ul li.active .icon .iw{
+	color: #fff;
+}
+
+.menu_fraction .main input{
+	color: #000;
+  border: 1px solid #cacaca;
+  padding: 10px;
+  border-radius: 10px;
+  background:none;
+  outline:none;
+  width: calc(100%  - 20px);
+  margin: 10px 0;
+}
+.menu_fraction .main input:focus{
+  border: 1px solid #485fca;
+	
+}
+.menu_fraction .main .but{
+	background-color: #344491;
+	color: #fff;
+	border-radius: 6px;
+	padding: 10px 15px;
+	font-size: 1.2em;
+	display: inline-table;
+	text-align: center;
+	cursor: pointer;
+	font-family: "Muller Bold";
+	margin: 10px 0;
+}
+.menu_fraction .main .two{
+	width: 50%;
+	float: left;
+}
+.menu_fraction .main .two:first-child{
+	padding-right: 10px;
+	width: calc(50% - 11px);
+	border-right: 1px solid #f1f1f1;
+}
+.menu_fraction .main .two:last-child{
+	margin-left: 10px;
+	width: calc(50% - 10px);
+
+}
+.menu_fraction .main #list_players li{
+	margin: 5px 0;
+}
+.menu_fraction .main ul li{
+	list-style: none;
+	color: rgba(0,0,0,.6);
+}
+.menu_fraction .main ul li:hover{
+	color: #000;
+}
+.menu_fraction .icon .iw{
+	margin-right: 10px;
+	color: rgba(255,255,255,.3);
+	float: left;
+	font-size: 2.3em;
+}
+.menu_fraction .stars{
+	margin: 10px 0;
+}
+.menu_fraction  .stars .star{
+	display: inline-block;
+	font-size: 1.3em;
+	color: #abb2d2;
+}
+.menu_fraction  .stars .star .active{
+	color: #344491;
+}
+.menu_fraction #actions{
+	display: inline-block;
+	margin-left: 10px;
+}
+.menu_fraction #actions .action{
+	display: inline-block;
+	color: #fff;
+	padding: 5px;
+	background-color: #6074d2;
+	border-radius: 3px;
+	font-size: 14px;
+	margin: 0 2px;
+}
+.menu_fraction #actions .action.blue{
+	background-color: #6074d2;
+}
+.menu_fraction #actions .action.red{
+	background-color: #e33c3c;
+}
+.menu_fraction #actions .action.green{
+	background-color: #39985a;
+}
+.menu_fraction #actions .action.white{
+	background-color: #9c9c9c;
+}
+.menu_fraction .search_online li:hover #actions{
+	display: inline-block;
+}
+.menu_fraction .search_online li{
+	margin: 0;
+}
+.menu_fraction .search_online li #actions{
+	display: none;
+}
+.menu_fraction .search_online #text{
+	margin: 5px 0;
+	display: inline-block;
+}
+.menu_fraction #employees table th{
+	text-align: left;
+	margin: 0 20px;
+}
+.menu_fraction #employees table tbody tr{
+	color: #777;
+	text-align: left;
+}
+.menu_fraction #employees #actions{
+	opacity: 0;
+}
+.menu_fraction #employees table tr:hover #actions{
+	opacity: 1;
+}
+.menu_fraction #employees table tbody tr:hover{
+	color: #000;
+}
+.menu_fraction #employees table {
+	width: 100%;
+}
+.menu_fraction #employees table thead tr{
+	text-align: left;
+}
+.menu_fraction #employees table tbody tr{
+	text-align: left;
+}
+.menu_fraction #challenges ul li{
+	margin: 10px 0;
+	color: #000;
+}
+.menu_fraction #challenges ul li .action{
+	font-size: 12px;
+}
+.menu_fraction #challenges ul li #left{
+	display: inline-block;
+}
+.menu_fraction #challenges ul li #discription{
+	display: inline-block;
+	width: 60%;
+	font-size: 18px;
+}
+.menu_fraction #challenges ul li i{
+	color: #7186eb;
+	margin-right: 5px;
+}
+
+@media screen and (max-width: 1024px){
+	.menu_fraction{
+		width: 85vw;
+	}
+}

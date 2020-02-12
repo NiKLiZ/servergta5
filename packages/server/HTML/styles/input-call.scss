@@ -1,0 +1,58 @@
+#input-call{
+	width: 30%;
+	margin: 20vh auto;
+	position: absolute;
+	left:50%; 
+	margin-left:-15%;
+	color: #fff;
+	background-color: rgba(0,0,0,.95);
+	z-index: 999;
+}
+#input-call .main{
+	padding: 10px 20px 20px 20px;	
+}
+#input-call .title{
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 200;
+	background-color: #344491;
+	padding: 10px;
+}
+#input-call #placeholder{
+	text-align: center;
+	margin-bottom: 10px;
+}
+#input-call .button{
+	display: inline-block;
+	color: #fff;
+	width: calc(50% - 10px);
+	margin-top: 10px;
+	padding: 10px 0;
+	text-align: center;
+}
+#input-call .button#one{
+	background-color: #d24a43;
+}
+#input-call .button#two{
+		background-color: #52ac62;
+		float: right;	
+}
+#input-call .input{
+  color: #7189ff;
+  width: 100%;
+  display: block;
+  position: relative;	
+}
+#input-call .input input{
+	display: table;
+	width: calc(100% - 20px);	
+	padding: 10px 10px;
+  border: 0px;
+  background-color: #3c50b1;
+  clear: both;
+	color: #fff;
+}
+#input-call .input input::-webkit-input-placeholder{
+	color: #7189ff;
+	margin-left: 10px;
+}

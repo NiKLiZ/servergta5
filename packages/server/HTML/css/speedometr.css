@@ -1,0 +1,91 @@
+.speedometr_backgroud{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	fill: rgba(0, 0, 0, 0.7);
+	z-index: -3;
+}
+.speedometr_backgroud_area{
+	z-index: -3;
+}
+.speedometr-border{
+	stroke:rgba(0, 0, 0, 0.15);
+	fill: transparent;
+  stroke-width: 2;
+	z-index: 2;
+}
+.speedometr-punct{
+	fill:transparent ;
+  stroke-width: .5;
+	z-index: 2;
+}
+.speedometr{
+	z-index: -1;
+}
+.speedometr-punct-line{
+	fill: #344491;
+	stroke-width: .5;
+	z-index: 2;
+}
+.speedometr-center{
+	stroke:#fff;
+	fill: transparent;
+  stroke-width: 2;
+	z-index: 2;
+}
+.speedometr-center-border{
+	stroke:#fff;
+	fill: transparent;
+	stroke: #525252;
+	stroke-width: 2;
+	z-index: 2;
+}
+.speedometr-punct-line-border{
+	fill: transparent;
+}
+.speedometr-line{
+	fill: #fff;
+	font-size: 0.5em;
+	font-family: "Muller Regular";
+}
+.speedometr-km{
+	color: #fff;
+	position: absolute;
+	right: 0;
+	font-size: 2em;
+	font-family: "Muller Regular";
+	text-align: center;
+}
+.speedometr-gear{
+	position: absolute;
+	font-size: 1em;
+	right: 0;
+}
+.speedometr-gear span{
+	display: table;
+	font-family: "Muller Regular";
+	color: #7990ff;
+	border: 1px solid #7990ff;
+	border-radius: 10px;
+	padding: 5px;
+	text-align: center;
+	margin: 0 auto;
+}
+.speedometr-background-fuel{
+	fill: #f2f3f8;
+}
+.speedometr-fuel{
+	fill: #344491;
+}
+.speedometr-type{
+	color: #555555;
+	position: absolute;
+	right: 0;
+	font-size: 1em;
+	font-family: "Muller Regular";
+	text-align: center;
+}
+.speedometr-canvas{
+	position: absolute;
+	z-index: -2;
+}

@@ -1,0 +1,163 @@
+.call{
+    .header{
+        margin: 30px;
+        text-align: center;
+        .name{
+            font-size: 1em;
+            color: #ffffff;
+            font-family: 'Proxima Nova Bold';
+        }
+        .number{
+            margin-top: 0.3em;
+            color: #7b7b7b;
+            font-size: 0.7em;
+        }
+    }
+    .center{
+        text-align: center;
+        margin-top: 50px;
+    }
+    .callApp{
+        .calls{
+            overflow-y: auto;
+            padding: 0px 8px;
+            height: calc(100% - 55px - 45px - 14px);
+            position: absolute;
+            width: 100%;
+            box-sizing: border-box;
+            .name{
+                background-color: #141414;
+                margin-top: 1px;
+                padding: 5px 0;
+                .right{
+                    float: right;
+                }
+            }
+        }
+        .buttons{
+            bottom: 10px;
+        }
+        .numberCall{
+            height: 100;
+            input{
+                background-color: transparent;
+                border: none;
+                color: #fff;
+                font-size: 2em;
+                padding: 0.2em 0.2em;
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+        .butNumber{
+            margin: 3% 3.6%;
+            width: 26%;
+            float: left;
+            position: relative;
+            .butCall{
+                position: relative;
+                height: 0;
+                padding-top: 100%;
+                .number{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 50%;
+                    border: 1px solid #f6f6f6;
+                    color: #ffffff;
+                    left: 0;
+                    span{
+                        display: inline-block;
+                        text-align: center;
+                        width: 100%;
+                        font-size: 3.3vmin;
+                        vertical-align: -webkit-baseline-middle;
+                        margin-top: 1vmin;
+                    }
+
+                }
+            }
+            &.cancel{
+                .number{
+                    background-color: #ba4a40;
+                    border: none;
+                }
+            }
+            &.access{
+                .number{
+                    border: none;
+                    background-color: #52ac62;
+                }
+            }
+        }
+    }
+    .buttons{
+        position: absolute;
+        bottom: 30px;
+        left: 0px;
+        width: 100%;
+        .but{
+            width: 25%;
+            float: left;
+            position: relative;
+            border-radius: 50%;
+            &.cancel{
+                background-color: #ba4a40;
+                float: left;
+                margin-left: 10px;
+                .radius{
+                    transform: rotate(136deg);
+                }
+                .name{
+                    margin-left: 3px;
+                }
+            }
+            &.center{
+                margin-left: calc(50% - 24px);
+                .name{
+                    margin-left: -2px;
+                }
+            }
+            &.access{
+                background-color: #52ac62;
+                float: right;
+                margin-right: 10px;
+                .name{
+                    margin-right: -5px;
+                }
+            }
+            .main{
+                position: relative;
+                height: 0;
+                padding-top: 100%;
+                .radius{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border-radius: 50%;
+                    i{
+                        text-align: center;
+                        width: 100%;
+                        font-size: 3vh;
+                        vertical-align: -webkit-baseline-middle;
+                        &:before{
+                            vertical-align: -webkit-baseline-middle;
+                        }
+                    }
+                }
+            }
+            .name{
+                position: absolute;
+                bottom: -14px;
+                font-size: 0.6em;
+            }
+        }
+    }
+}

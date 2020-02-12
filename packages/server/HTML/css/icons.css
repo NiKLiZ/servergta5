@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'iconsWest';
+    src: url('../fonts/icons.woff2') format('woff2'),
+         url('../fonts/icons.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.iw{
+	font-family: 'iconsWest';
+	font-size: 1em;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+.iw.wallettool::before{
+    content: 'a';
+}
+.iw.user-silhouette::before{
+    content: 'g';
+}
+.iw.backpack::before{
+    content: 'n';
+}
+.iw.info::before{
+    content: 'z';
+}
+.iw.tr::before{
+    content: 'c';
+}
+.iw.wanted::before{
+    content: 'b';
+}
+.iw.fine::before{
+    content: 'v';
+}
+.iw.challenges::before{
+    content: 's';
+}
+.iw.search::before{
+    content: 'i';
+}
+.iw.cooperate::before{
+    content: 'f';
+}
+.iw.web-page-home::before{
+    content: 'x';
+}
+.iw.circular-wall-clock::before{
+    content: 'd';
+}
+.iw.messenger-user-avatar::before{
+    content: 'q';
+}
+.iw.blocked-padlock::before{
+    content: 'r';
+}
+.iw.approved::before{
+    content: 'l';
+}
+.iw.job::before{
+    content: 'k';
+}
+.iw.salary::before{
+    content: 'j';
+}
+.iw.personal-profile::before{
+    content: 'h';
+}
+.iw.battery::before{
+    content: 'w';
+}
+.iw.contact_avatar::before{
+    content: 'e';
+}
+.iw.contacts::before{
+    content: 't';
+}
+.iw.gps::before{
+    content: 'y';
+}
+.iw.internet::before{
+    content: 'u';
+}
+.iw.network::before{
+    content: 'o';
+}
+.iw.icon-phone::before{
+    content: 'P';
+}
+.iw.send_msg::before{
+    content: 'Q';
+}
+.iw.settings::before{
+    content: 'W';
+}
+.iw.sms::before{
+    content: 'E';
+}
+.iw.phone-user::before{
+    content: 'R';
+}
+.iw.zz::before{
+    content: 'T';
+}
